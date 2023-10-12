@@ -31,7 +31,7 @@ interface LayoutProps {
   children: React.ReactNode;
 }
 
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://pestetot-server.onrender.com";
 
 const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   const { resetUser, resetFocuses, resetLoginFocuses, resetLoginUser } =

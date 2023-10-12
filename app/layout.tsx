@@ -18,7 +18,7 @@ const rubik = Rubik({
   weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://pestetot-server.onrender.com";
 
 const getCategories = async () => {
   const res = await axios.get("/api/categories");
