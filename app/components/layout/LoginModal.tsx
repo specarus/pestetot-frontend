@@ -45,7 +45,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
 
   async function login(ev: any) {
     ev.preventDefault();
-    const res = await axios.post("http://localhost:3001/login", loginUser, {
+    const res = await axios.post("/login", loginUser, {
       withCredentials: true,
     });
     const data = res.data;

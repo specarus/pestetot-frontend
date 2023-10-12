@@ -9,7 +9,6 @@ import axios from "axios";
 import Swal from "sweetalert2";
 
 import { User } from "../types/User";
-import { Product } from "../types/Lanseta";
 
 import { CartContext } from "./CartContext";
 
@@ -71,17 +70,9 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const { clearCart } = useContext(CartContext);
 
-  const favoritesFromLocalStorage = JSON.parse(
-    localStorage.getItem("favorites") || "[]"
-  );
-
   // logout user
   async function logout() {
-    const res = await axios.post(
-      "http://localhost:3001/logout",
-      {},
-      { withCredentials: true }
-    );
+    const res = await axios.post("/logout", {}, { withCredentials: true });
     const data = res.data;
     if (data.status === "ok") {
       Swal.fire({
@@ -108,7 +99,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   async function savePersonal(ev: any) {
     ev.preventDefault();
     const res = await axios.put(
-      "http://localhost:3001/api/personal",
+      "/api/personal",
       {
         username: user.username,
         email: user.email,
@@ -141,7 +132,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   async function saveAddress(ev: any) {
     ev.preventDefault();
     const res = await axios.put(
-      "http://localhost:3001/api/address",
+      "/api/address",
       { address: user.address },
       {
         withCredentials: true,
@@ -190,12 +181,9 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   // delete user
   async function deleteUser() {
-    const res = await axios.delete(
-      `http://localhost:3001/profile/${user?._id}`,
-      {
-        withCredentials: true,
-      }
-    );
+    const res = await axios.delete(`/profile/${user?._id}`, {
+      withCredentials: true,
+    });
     const data = res.data;
     if (data.status === "ok") {
       Swal.fire({
@@ -317,7 +305,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     if (!user?._id) {
       axios
-        .get("http://localhost:3001/profile", { withCredentials: true })
+        .get("/profile", { withCredentials: true })
         .then((res) => setUser(res.data));
       setIsMounted(true);
     }

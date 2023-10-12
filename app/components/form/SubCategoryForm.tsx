@@ -33,10 +33,7 @@ const SubCategoryForm: React.FC<SubCategoryFormProps> = ({
     ev.preventDefault();
     if (_id) {
       const subCategoryData = { ...subCategory, _id };
-      const res = await axios.put(
-        "http://localhost:3001/api/subcategories",
-        subCategoryData
-      );
+      const res = await axios.put("/api/subcategories", subCategoryData);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/subcategorii");
@@ -55,10 +52,7 @@ const SubCategoryForm: React.FC<SubCategoryFormProps> = ({
         });
       }
     } else {
-      const res = await axios.post(
-        "http://localhost:3001/api/subcategories",
-        subCategory
-      );
+      const res = await axios.post("/api/subcategories", subCategory);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/subcategorii");

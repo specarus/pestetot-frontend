@@ -86,10 +86,7 @@ const MulinetaForm: React.FC<MulinetaFormProps> = ({
     ev.preventDefault();
     if (_id) {
       const mulinetaData = { ...mulineta, _id };
-      const res = await axios.put(
-        `http://localhost:3001/api/products/mulinete`,
-        mulinetaData
-      );
+      const res = await axios.put(`/api/products/mulinete`, mulinetaData);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/produse");
@@ -108,10 +105,7 @@ const MulinetaForm: React.FC<MulinetaFormProps> = ({
         });
       }
     } else {
-      const res = await axios.post(
-        `http://localhost:3001/api/products/mulinete`,
-        mulineta
-      );
+      const res = await axios.post(`/api/products/mulinete`, mulineta);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/produse");

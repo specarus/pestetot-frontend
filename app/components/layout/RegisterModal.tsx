@@ -36,7 +36,7 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
   async function register(ev: any) {
     ev.preventDefault();
     const res = await axios.post(
-      "http://localhost:3001/register",
+      "/register",
       {
         ...user,
         confirmPassword,

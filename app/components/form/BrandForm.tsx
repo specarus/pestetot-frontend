@@ -38,10 +38,7 @@ const BrandForm: React.FC<BrandFormProps> = ({
     ev.preventDefault();
     if (_id) {
       const brandData = { ...brand, _id };
-      const res = await axios.put(
-        "http://localhost:3001/api/brands",
-        brandData
-      );
+      const res = await axios.put("/api/brands", brandData);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/branduri");
@@ -60,7 +57,7 @@ const BrandForm: React.FC<BrandFormProps> = ({
         });
       }
     } else {
-      const res = await axios.post("http://localhost:3001/api/brands", brand);
+      const res = await axios.post("/api/brands", brand);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/branduri");

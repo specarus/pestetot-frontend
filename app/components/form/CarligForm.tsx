@@ -77,10 +77,7 @@ const CarligForm: React.FC<CarligFormProps> = ({
     ev.preventDefault();
     if (_id) {
       const carligData = { ...carlig, _id };
-      const res = await axios.put(
-        `http://localhost:3001/api/products/carlige`,
-        carligData
-      );
+      const res = await axios.put(`/api/products/carlige`, carligData);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/produse");
@@ -99,10 +96,7 @@ const CarligForm: React.FC<CarligFormProps> = ({
         });
       }
     } else {
-      const res = await axios.post(
-        `http://localhost:3001/api/products/carlige`,
-        carlig
-      );
+      const res = await axios.post(`/api/products/carlige`, carlig);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/produse");

@@ -80,7 +80,7 @@ const firForm: React.FC<firFormProps> = ({
     if (_id) {
       const firData = { ...fir, _id };
       const res = await axios.put(
-        `http://localhost:3001/api/products/fire`,
+        `/api/products/fire`,
         firData
       );
       const data = res.data;
@@ -102,7 +102,7 @@ const firForm: React.FC<firFormProps> = ({
       }
     } else {
       const res = await axios.post(
-        `http://localhost:3001/api/products/fire`,
+        `/api/products/fire`,
         fir
       );
       const data = res.data;

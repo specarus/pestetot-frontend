@@ -28,10 +28,7 @@ const CategoryForm: React.FC<CategoryFormProps> = ({ _id, title, slug }) => {
     ev.preventDefault();
     if (_id) {
       const categoryData = { ...category, _id };
-      const res = await axios.put(
-        "http://localhost:3001/api/categories",
-        categoryData
-      );
+      const res = await axios.put("/api/categories", categoryData);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/categorii");
@@ -50,10 +47,7 @@ const CategoryForm: React.FC<CategoryFormProps> = ({ _id, title, slug }) => {
         });
       }
     } else {
-      const res = await axios.post(
-        "http://localhost:3001/api/categories",
-        category
-      );
+      const res = await axios.post("/api/categories", category);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/categorii");

@@ -82,7 +82,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     if (_id) {
       const lansetaData = { ...lanseta, _id };
       const res = await axios.put(
-        `http://localhost:3001/api/products/lansete`,
+        `/api/products/lansete`,
         lansetaData
       );
       const data = res.data;
@@ -104,7 +104,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
       }
     } else {
       const res = await axios.post(
-        `http://localhost:3001/api/products/lansete`,
+        `/api/products/lansete`,
         lanseta
       );
       const data = res.data;
