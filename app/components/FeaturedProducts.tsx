@@ -5,7 +5,7 @@ const FeaturedProducts = () => {
     <div className="w-full grid grid-cols-5 gap-8">
       <Link
         href="/catalog/mulinete"
-        className="group relative col-span-1 h-80 bg-white rounded-md shadow-lg overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+        className="group relative col-span-1 h-80 bg-white rounded-md shadow-lg hover:shadow-xl overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
       >
         <div className="w-full h-full grid place-content-center p-10">
           <img
@@ -23,7 +23,7 @@ const FeaturedProducts = () => {
       </Link>
       <Link
         href="/catalog/scaune-umbrele"
-        className="group relative col-span-1 h-80 bg-white shadow-lg rounded-md overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+        className="group relative col-span-1 h-80 bg-white shadow-lg hover:shadow-xl rounded-md overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
       >
         <div className="w-full h-full grid place-content-center">
           <img
@@ -41,7 +41,7 @@ const FeaturedProducts = () => {
       </Link>
       <Link
         href="/catalog/plase"
-        className="group relative col-span-1 h-80 bg-white shadow-lg rounded-md overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+        className="group relative col-span-1 h-80 bg-white shadow-lg hover:shadow-xl rounded-md overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
       >
         <div className="w-full h-full grid place-content-center">
           <img
@@ -59,7 +59,7 @@ const FeaturedProducts = () => {
       </Link>
       <Link
         href="/catalog/suporti-bete"
-        className="group relative col-span-1 h-80 bg-white rounded-md shadow-lg overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+        className="group relative col-span-1 h-80 bg-white rounded-md shadow-lg hover:shadow-xl overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
       >
         <div className="w-full h-full grid place-content-center p-4">
           <img
@@ -77,7 +77,7 @@ const FeaturedProducts = () => {
       </Link>
       <Link
         href="/catalog/cutii-plastic"
-        className="group relative col-span-1 h-80 bg-white shadow-lg rounded-md overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
+        className="group relative col-span-1 h-80 bg-white shadow-lg hover:shadow-xl rounded-md overflow-hidden border border-gray-100 hover:-translate-y-1 transition-all duration-300"
       >
         <div className="w-full h-full grid place-content-center p-4">
           <img

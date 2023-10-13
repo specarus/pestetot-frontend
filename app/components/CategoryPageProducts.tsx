@@ -795,7 +795,7 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
                 return (
                   <div
                     key={brand._id}
-                    className="w-44 h-24 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-[2px] grid place-content-center transition-all duration-200"
+                    className="w-44 h-24 border border-gray-100 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
                   >
                     <BrandCard brand={brand} />
                   </div>
@@ -822,7 +822,7 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
                 return (
                   <div
                     key={brand._id}
-                    className="w-44 h-24 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-[2px] grid place-content-center transition-all duration-200"
+                    className="w-44 h-24 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 border border-gray-100 grid place-content-center transition-all duration-200"
                   >
                     <BrandCard brand={brand} />
                   </div>

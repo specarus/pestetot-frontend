@@ -24,22 +24,6 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
 }) => {
   const { filters, setShowAppliedFilters } = useContext(HomePageFiltersContext);
 
-  function shuffle(array: any) {
-    const newArray = [...array];
-    const length = newArray.length;
-
-    for (let start = 0; start < length; start++) {
-      const randomPosition = Math.floor(
-        (newArray.length - start) * Math.random()
-      );
-      const randomItem = newArray.splice(randomPosition, 1);
-
-      newArray.push(...randomItem);
-    }
-
-    return newArray;
-  }
-
   const filter = products.filter((product) => {
     if (filters.availability.length > 0) {
       if (filters.minPrice && filters.maxPrice) {
@@ -225,7 +209,7 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
                   <Link
                     href={`/catalog/brand/${brand.slug}`}
                     key={brand._id}
-                    className="w-44 h-24 bg-white rounded-md shadow-md hover:shadow-lg hover:-translate-y-[2px] grid place-content-center transition-all duration-200"
+                    className="w-44 h-24 bg-white border border-gray-100 rounded-md shadow-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
                   >
                     <BrandCard brand={brand} />
                   </Link>
@@ -252,7 +236,7 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
                 return (
                   <div
                     key={brand._id}
-                    className="w-44 h-24 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-[2px] grid place-content-center transition-all duration-200"
+                    className="w-44 h-24 border border-gray-100 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
                   >
                     <BrandCard brand={brand} />
                   </div>
