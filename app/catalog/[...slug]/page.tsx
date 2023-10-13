@@ -77,18 +77,3 @@ const CategoryPage = async ({ params }: { params: { slug: string } }) => {
 };
 
 export default CategoryPage;
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { slug: string };
-}) {
-  const { slug } = params;
-  const categorySlug = slug[0];
-  const category = await getCategory(categorySlug);
-  return {
-    title: `PesteTot | ${category.title
-      .charAt(0)
-      .toUpperCase()}${category.title.slice(1, category.title.length)}`,
-  };
-}

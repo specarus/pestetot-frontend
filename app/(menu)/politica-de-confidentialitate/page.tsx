@@ -1,7 +1,5 @@
 import Title from "@/app/components/layout/Title";
 
-import type { Metadata } from "next";
-
 const PrivacyPolicyPage = () => {
   return (
     <div className="w-full h-full">
@@ -22,7 +20,3 @@ const PrivacyPolicyPage = () => {
 };
 
 export default PrivacyPolicyPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Politica de confidentalitate",
-};
