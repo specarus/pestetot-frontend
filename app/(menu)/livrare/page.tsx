@@ -14,7 +14,7 @@ const ShippingPage = () => {
         </div>
       </section>
 
-      <section className="pl-20 pr-96 mb-24 flex flex-col gap-8"></section>
+      <section className="pl-20 pr-96 mb-52 flex flex-col gap-8"></section>
     </div>
   );
 };
