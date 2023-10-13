@@ -3,6 +3,7 @@ import axios from "axios";
 import ProductCard from "@/app/components/ProductCard";
 
 import { Category } from "@/app/types/Category";
+import Image from "next/image";
 
 const getBrand = async (brandSlug: string) => {
   const res = await axios.get(`/api/brands/single/${brandSlug}`);
@@ -40,9 +41,11 @@ const BrandProductsPage = async ({ params }: { params: { brand: string } }) => {
       </section>
 
       <section className="w-28 h-auto mb-8 select-none pointer-events-none border px-2">
-        <img
+        <Image
           src={brand.img}
           alt="Brand"
+          width={700}
+          height={700}
           className="w-full h-full object-cover"
         />
       </section>
@@ -50,7 +53,7 @@ const BrandProductsPage = async ({ params }: { params: { brand: string } }) => {
       <section>
         {categories.map((category: Category) => {
           return (
-            <div>
+            <div key={category._id}>
               {products.filter(
                 (product: any) => product.category === category.title
               ).length > 0 && (
