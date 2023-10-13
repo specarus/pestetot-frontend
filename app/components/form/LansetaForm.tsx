@@ -125,7 +125,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
   async function uploadCoverImage(file: any) {
     const form = new FormData();
     form.append("file", file);
-    form.append("upload_preset", "wexhjujl");
+    form.append("upload_preset", "jpi7vh5i");
 
     axios
       .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
@@ -139,7 +139,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
   async function uploadDetailsImage(file: any) {
     const form = new FormData();
     form.append("file", file);
-    form.append("upload_preset", "wexhjujl");
+    form.append("upload_preset", "jpi7vh5i");
 
     axios
       .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
@@ -154,7 +154,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     const form = new FormData();
     for (const file of files) {
       form.append("file", file);
-      form.append("upload_preset", "wexhjujl");
+      form.append("upload_preset", "jpi7vh5i");
       axios
         .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
         .then((res) => {
