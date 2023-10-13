@@ -444,7 +444,8 @@ const CarligForm: React.FC<CarligFormProps> = ({
             <div className="flex gap-4">
               {carlig.extraImgs.map((image) => {
                 return (
-                  <img
+                  <Image
+                    key={image}
                     src={image}
                     width={200}
                     height={200}
