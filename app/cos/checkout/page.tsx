@@ -1,7 +1,5 @@
 import Title from "@/app/components/layout/Title";
 
-import type { Metadata } from "next";
-
 const CheckoutPage = () => {
   return (
     <div className="w-full h-full px-20 mb-20">
@@ -24,7 +22,3 @@ const CheckoutPage = () => {
 };
 
 export default CheckoutPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Checkout",
-};
