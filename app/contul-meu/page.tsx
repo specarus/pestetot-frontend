@@ -42,7 +42,7 @@ const AccountPage = () => {
   }
 
   return (
-    <div className="w-full h-full pl-20 pr-72">
+    <div className="w-full h-full pl-20 pr-96">
       {!!user && (
         <div className="relative w-full h-full">
           {isAdmin && (
