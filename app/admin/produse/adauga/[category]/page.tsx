@@ -12,8 +12,6 @@ import MulinetaForm from "@/app/components/form/MulinetaForm";
 import FirForm from "@/app/components/form/FirForm";
 import CarligForm from "@/app/components/form/CarligForm";
 
-import type { Metadata } from "next";
-
 const NewProductPage = ({ params }: { params: { category: string } }) => {
   const { category } = params;
   const { isAdmin } = useContext(UserContext);
@@ -65,7 +63,3 @@ const NewProductPage = ({ params }: { params: { category: string } }) => {
 };
 
 export default NewProductPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Adauga un produs",
-};

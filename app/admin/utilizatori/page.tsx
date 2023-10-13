@@ -10,8 +10,6 @@ import { useContext, useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
 
-import type { Metadata } from "next";
-
 import { User } from "@/app/types/User";
 import { UserContext } from "@/app/contexts/UserContext";
 import Title from "@/app/components/layout/Title";
@@ -145,7 +143,3 @@ const UsersPage = () => {
 };
 
 export default UsersPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Utilizatori",
-};

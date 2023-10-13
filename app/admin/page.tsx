@@ -8,8 +8,6 @@ import { UserContext } from "../contexts/UserContext";
 import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
 import Title from "../components/layout/Title";
 
-import type { Metadata } from "next";
-
 const AdminPage = () => {
   const { isAdmin } = useContext(UserContext);
 
@@ -53,7 +51,3 @@ const AdminPage = () => {
 };
 
 export default AdminPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot |Dashboard",
-};

@@ -9,8 +9,6 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { useContext } from "react";
 import Title from "@/app/components/layout/Title";
 
-import type { Metadata } from "next";
-
 const NewSubCategoryPage = () => {
   const { isAdmin } = useContext(UserContext);
 
@@ -56,7 +54,3 @@ const NewSubCategoryPage = () => {
 };
 
 export default NewSubCategoryPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Adauga o subcategorie",
-};

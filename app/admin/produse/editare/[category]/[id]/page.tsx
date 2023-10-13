@@ -8,8 +8,6 @@ import { useParams } from "next/navigation";
 
 import { useContext, useEffect, useState } from "react";
 
-import type { Metadata } from "next";
-
 import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
 import { UserContext } from "@/app/contexts/UserContext";
 import Title from "@/app/components/layout/Title";
@@ -90,7 +88,3 @@ const EditProductPage = () => {
 };
 
 export default EditProductPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Editeaza produsul",
-};

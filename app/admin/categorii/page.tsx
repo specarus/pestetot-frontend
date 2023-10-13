@@ -18,8 +18,6 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import Title from "@/app/components/layout/Title";
 
-import type { Metadata } from "next";
-
 const CategoriesAdminPage = () => {
   const [categories, setCategories] = useState([]);
 
@@ -144,7 +142,3 @@ const CategoriesAdminPage = () => {
 };
 
 export default CategoriesAdminPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Categorii",
-};

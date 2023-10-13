@@ -4,7 +4,6 @@ import Title from "@/app/components/layout/Title";
 import Link from "next/link";
 
 import { Category } from "@/app/types/Category";
-import type { Metadata } from "next";
 
 import axios from "axios";
 
@@ -89,7 +88,3 @@ const ChooseNewProductPage = async () => {
 };
 
 export default ChooseNewProductPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Alege o categorie",
-};

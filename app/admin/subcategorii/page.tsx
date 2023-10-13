@@ -8,8 +8,6 @@ import { FiEdit3 } from "react-icons/fi";
 
 import { useState, useEffect, useContext } from "react";
 
-import type { Metadata } from "next";
-
 import Swal from "sweetalert2";
 import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
 import { SubCategory } from "@/app/types/SubCategory";
@@ -173,7 +171,3 @@ const SubCategoriesAdminPage = () => {
 };
 
 export default SubCategoriesAdminPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Subcategorii",
-};

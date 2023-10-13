@@ -9,8 +9,6 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
 import Title from "@/app/components/layout/Title";
 
-import type { Metadata } from "next";
-
 const NewBrandPage = () => {
   const { isAdmin } = useContext(UserContext);
 
@@ -56,7 +54,3 @@ const NewBrandPage = () => {
 };
 
 export default NewBrandPage;
-
-export const metadata: Metadata = {
-  title: "PesteTot | Adauga un brand",
-};
