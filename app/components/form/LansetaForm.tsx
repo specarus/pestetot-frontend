@@ -125,44 +125,43 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
   async function uploadCoverImage(file: any) {
     const form = new FormData();
     form.append("file", file);
-    form.append("upload_preset", "jpi7vh5i");
+    form.append("upload_preset", "wexhjujl");
 
-    const res = await axios.post(
-      "https://api.cloudinary.com/v1_1/dzgermdhe/image/upload",
-      form
-    );
-    setLanseta((prev) => {
-      return { ...prev, coverImg: res.data.url };
-    });
+    axios
+      .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
+      .then((res) =>
+        setLanseta((prev) => {
+          return { ...prev, coverImg: res.data.url };
+        })
+      );
   }
 
   async function uploadDetailsImage(file: any) {
     const form = new FormData();
     form.append("file", file);
-    form.append("upload_preset", "jpi7vh5i");
+    form.append("upload_preset", "wexhjujl");
 
-    const res = await axios.post(
-      "https://api.cloudinary.com/v1_1/dzgermdhe/image/upload",
-      form
-    );
-    setLanseta((prev) => {
-      return { ...prev, detailsImg: res.data.url };
-    });
+    axios
+      .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
+      .then((res) =>
+        setLanseta((prev) => {
+          return { ...prev, detailsImg: res.data.url };
+        })
+      );
   }
 
   async function uploadExtraImages(files: any) {
     const form = new FormData();
     for (const file of files) {
       form.append("file", file);
-      form.append("upload_preset", "jpi7vh5i");
-
-      const res = await axios.post(
-        "https://api.cloudinary.com/v1_1/dzgermdhe/image/upload",
-        form
-      );
-      setLanseta((prev: any) => {
-        return { ...prev, extraImgs: [...prev.extraImgs, res.data.url] };
-      });
+      form.append("upload_preset", "wexhjujl");
+      axios
+        .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
+        .then((res) => {
+          setLanseta((prev: any) => {
+            return { ...prev, extraImgs: [...prev.extraImgs, res.data.url] };
+          });
+        });
     }
   }
 
