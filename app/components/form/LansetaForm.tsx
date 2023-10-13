@@ -128,7 +128,9 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     form.append("upload_preset", "jpi7vh5i");
 
     axios
-      .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
+      .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
       .then((res) =>
         setLanseta((prev) => {
           return { ...prev, coverImg: res.data.url };
@@ -142,7 +144,9 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     form.append("upload_preset", "jpi7vh5i");
 
     axios
-      .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
+      .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form, {
+        headers: { "Access-Control-Allow-Origin": "*" },
+      })
       .then((res) =>
         setLanseta((prev) => {
           return { ...prev, detailsImg: res.data.url };
@@ -156,7 +160,9 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
       form.append("file", file);
       form.append("upload_preset", "jpi7vh5i");
       axios
-        .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
+        .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form, {
+          headers: { "Access-Control-Allow-Origin": "*" },
+        })
         .then((res) => {
           setLanseta((prev: any) => {
             return { ...prev, extraImgs: [...prev.extraImgs, res.data.url] };
@@ -395,8 +401,8 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
             {lanseta.coverImg && (
               <Image
                 alt="Lanseta"
-                width={200}
-                height={200}
+                width={500}
+                height={500}
                 src={lanseta.coverImg}
                 className="h-40 w-40 object-cover"
               />
@@ -425,8 +431,8 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
             {lanseta.detailsImg && (
               <Image
                 alt="Lanseta"
-                width={200}
-                height={200}
+                width={500}
+                height={500}
                 src={lanseta.detailsImg}
                 className="h-40 w-40 object-contain"
               />
@@ -461,8 +467,8 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
                   <Image
                     key={image}
                     alt="Lanseta"
-                    width={200}
-                    height={200}
+                    width={500}
+                    height={500}
                     src={image}
                     className="h-40 w-40 object-contain"
                   />
