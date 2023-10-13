@@ -19,7 +19,9 @@ interface CartContextProps {
 export const CartContext = createContext<CartContextProps>(null!);
 
 const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
-  const cartFromLocalStorage = JSON.parse(localStorage.getItem("cart") || "[]");
+  const cartFromLocalStorage = JSON.parse(
+    (typeof window !== "undefined" && localStorage.getItem("cart")) || "[]"
+  );
 
   const [cart, setCart] = useState(cartFromLocalStorage);
 
@@ -61,14 +63,14 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
       setCart(newCart);
 
       // push to db
-      await axios.put("http://localhost:3001/api/cart", newCart, {
+      await axios.put("/api/cart", newCart, {
         withCredentials: true,
       });
     } else {
       // add new item
       setCart([...cart, newItem]);
       // push to db
-      await axios.put("http://localhost:3001/api/cart", [...cart, newItem], {
+      await axios.put("/api/cart", [...cart, newItem], {
         withCredentials: true,
       });
     }
@@ -82,7 +84,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
     setCart(newCart);
 
     // push to db
-    await axios.put("http://localhost:3001/api/cart", newCart, {
+    await axios.put("/api/cart", newCart, {
       withCredentials: true,
     });
   }
@@ -115,7 +117,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
       setCart(newCart);
 
       // push to db
-      await axios.put("http://localhost:3001/api/cart", newCart, {
+      await axios.put("/api/cart", newCart, {
         withCredentials: true,
       });
     }

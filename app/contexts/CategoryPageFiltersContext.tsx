@@ -42,6 +42,8 @@ const CategoryPageFiltersContextProvider = ({
     availability: [],
     subCategories: [],
     brands: [],
+    minPrice: "",
+    maxPrice: "",
     sortBy: "Recomandate",
   });
 

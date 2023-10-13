@@ -2,7 +2,6 @@
 
 import { createContext, useState } from "react";
 import { IFilters } from "../types/HomePageFilters";
-import PreviousMap from "postcss/lib/previous-map";
 
 interface HomePageFiltersContextProps {
   showModal: number;
@@ -36,6 +35,8 @@ const HomePageFiltersContextProvider = ({
   const [filters, setFilters] = useState<any>({
     availability: [],
     sortBy: "Recomandate",
+    maxPrice: "",
+    minPrice: "",
   });
 
   function selectInStock() {

@@ -636,16 +636,16 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
     if (showAppliedFilters) {
       setFilteredProducts(sort);
     }
-  }, [filters, showAppliedFilters, sort]);
+  }, [filters]);
 
   useEffect(() => {
     setFilteredProducts(sort);
-  }, [filters.sortBy, sort]);
+  }, [filters.sortBy]);
 
   useEffect(() => {
     setFilteredProducts(sort);
     resetAllFilters();
-  }, [resetAllFilters, sort]);
+  }, []);
 
   function applyFilters() {
     setFilteredProducts(sort);

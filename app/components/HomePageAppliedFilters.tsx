@@ -22,7 +22,7 @@ const HomePageAppliedFilters = () => {
     ) {
       setShowAppliedFilters(false);
     }
-  }, [filters, setShowAppliedFilters]);
+  }, [filters]);
 
   return (
     <div className="w-full">
@@ -45,12 +45,12 @@ const HomePageAppliedFilters = () => {
               </div>
             );
           })}
-        {filters.minPrice && (
+        {filters.minPrice && filters.maxPrice && (
           <div className="bg-yellow-500 text-white rounded-full px-4 py-1">
             {"> " + filters.minPrice + " lei"}
           </div>
         )}
-        {filters.maxPrice && (
+        {filters.maxPrice && filters.minPrice && (
           <div className="flex items-center gap-4 bg-yellow-500 text-white rounded-full px-4 py-1">
             <p>{"< " + filters.maxPrice + " lei"}</p>
             <button

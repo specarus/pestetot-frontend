@@ -11,8 +11,6 @@ const CategoryPageAppliedFilters = () => {
     filters,
     setShowAppliedFilters,
     resetPrice,
-    resetBrands,
-    resetSubCategories,
     removeSingleAvailability,
     removeSingleBrand,
     removeSingleSubCategory,
@@ -28,7 +26,7 @@ const CategoryPageAppliedFilters = () => {
     ) {
       setShowAppliedFilters(false);
     }
-  }, [filters, setShowAppliedFilters]);
+  }, [filters]);
 
   return (
     <div className="w-full">

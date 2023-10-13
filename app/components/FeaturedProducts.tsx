@@ -32,6 +32,7 @@ const FeaturedProducts = () => {
           <Image
             src="/assets/images/featured/scaune-umbrele.jpeg"
             alt="Card"
+            priority
             width={700}
             height={700}
             className="w-full h-full object-contain group-hover:blur-[2px] transition-all duration-300"

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Category } from "@/app/types/Category";
 
@@ -29,7 +29,8 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
 
   // search
   const [search, setSearch] = useState("");
-  const searchInput = document.getElementById("searchInput");
+
+  // const searchInput = document.getElementById("searchInput");
 
   const {
     showCartContent,
@@ -47,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
   const { totalAmount } = useContext(CartContext);
 
   return (
-    <aside className="relative w-full h-full flex flex-col pt-6 z-50">
+    <div className="relative w-full h-full flex flex-col pt-6 z-50">
       {/* Cart overlay */}
       <div
         onClick={() => {
@@ -82,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
             setShowMenuModal(false);
             setTimeout(() => {
               setShowSearchContent(true);
-              setTimeout(() => searchInput?.focus(), 200);
+              //  setTimeout(() => searchInput?.focus(), 200);
             }, 500);
             setTimeout(() => setShowCartModal(false), 200);
           }}
@@ -237,7 +238,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
         </ul>
       </section>
       {/* Categories */}
-    </aside>
+    </div>
   );
 };
 

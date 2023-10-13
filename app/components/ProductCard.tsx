@@ -38,6 +38,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         <Image
           src={product.coverImg}
           alt="Cover"
+          priority
           width={500}
           height={500}
           className="w-full h-full object-contain p-4 select-none pointer-events-none"
