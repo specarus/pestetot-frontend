@@ -45,9 +45,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
 
   async function login(ev: any) {
     ev.preventDefault();
-    const res = await axios.post("/login", loginUser, {
-      withCredentials: true,
-    });
+    const res = await axios.post("/login", loginUser);
     const data = res.data;
     if (data.status === "error") {
       Swal.fire({
