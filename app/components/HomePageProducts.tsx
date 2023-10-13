@@ -92,16 +92,16 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
     if (showAppliedFilters) {
       setFilteredProducts(sort);
     }
-  }, [filters]);
+  }, [filters, showAppliedFilters, sort]);
 
   useEffect(() => {
     setFilteredProducts(sort);
-  }, [filters.sortBy]);
+  }, [filters.sortBy, sort]);
 
   useEffect(() => {
     setFilteredProducts(sort);
     resetAllFilters();
-  }, []);
+  }, [resetAllFilters, sort]);
 
   function applyFilters() {
     setFilteredProducts(sort);

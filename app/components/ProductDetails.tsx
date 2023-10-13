@@ -69,7 +69,10 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
           <div className="w-[60rem] h-80 flex gap-4">
             {product.extraImgs.map((imageUrl: string) => {
               return (
-                <div className="relative w-80 h-80 p-8 border border-gray-100">
+                <div
+                  key={imageUrl}
+                  className="relative w-80 h-80 p-8 border border-gray-100"
+                >
                   {/* Creme background */}
                   <span className="w-full h-full absolute top-0 left-0 bg-neutral-400 bg-opacity-10" />
                   {/* Creme background */}

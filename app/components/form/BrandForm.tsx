@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useState, useEffect } from "react";
 
 import Swal from "sweetalert2";
@@ -106,7 +108,7 @@ const BrandForm: React.FC<BrandFormProps> = ({
     if (brand.category) {
       setCategoryFocus(true);
     }
-  });
+  }, [brand.category, brand, slug, brand.title]);
 
   return (
     <form
@@ -200,7 +202,13 @@ const BrandForm: React.FC<BrandFormProps> = ({
       <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
         <label htmlFor="image">Imagine</label>
         {brand.img && (
-          <img src={brand.img} className="h-40 w-40 object-contain" />
+          <Image
+            alt="Brand"
+            src={brand.img}
+            width={200}
+            height={200}
+            className="h-40 w-40 object-contain"
+          />
         )}
         <input
           id="image"

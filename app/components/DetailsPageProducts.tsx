@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
 import ProductCard from "./ProductCard";
+import Image from "next/image";
 
 interface FeaturedProductsProps {
   productId: string;
@@ -36,7 +37,9 @@ const DetailsPageProducts: React.FC<FeaturedProductsProps> = ({
   return (
     <div className="w-full">
       <section className="relative w-full h-40 mb-10 select-none pointer-events-none border-t-2 border-b-2 border-primary">
-        <img
+        <Image
+          width={1000}
+          height={500}
           src="/assets/images/fisherman.jpg"
           alt="Fishing"
           className="w-full h-full object-cover"

@@ -49,11 +49,9 @@ export default async function RootLayout({
               <HomePageFiltersContextProvider>
                 <html lang="en">
                   <body className={rubik.className}>
-                    <Layout
-                      categories={categories}
-                      products={products}
-                      children={children}
-                    />
+                    <Layout categories={categories} products={products}>
+                      {children}
+                    </Layout>
                   </body>
                 </html>
               </HomePageFiltersContextProvider>

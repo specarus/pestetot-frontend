@@ -79,7 +79,18 @@ const UserForm = () => {
     if (user.address?.flat) {
       setFlatFocus(true);
     }
-  });
+  }, [
+    user.address?.building,
+    user.address?.flat,
+    user.address?.postalCode,
+    user.address?.stair,
+    user.address?.street,
+    user.email,
+    user.firstName,
+    user.lastName,
+    user.phoneNumber,
+    user.username,
+  ]);
 
   return (
     <div className="w-full h-full">

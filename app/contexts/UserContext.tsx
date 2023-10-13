@@ -309,7 +309,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
         .then((res) => setUser(res.data));
       setIsMounted(true);
     }
-  }, []);
+  }, [user?._id]);
 
   return (
     <UserContext.Provider

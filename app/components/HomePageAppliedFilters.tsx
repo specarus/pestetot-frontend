@@ -22,7 +22,7 @@ const HomePageAppliedFilters = () => {
     ) {
       setShowAppliedFilters(false);
     }
-  }, [filters]);
+  }, [filters, setShowAppliedFilters]);
 
   return (
     <div className="w-full">

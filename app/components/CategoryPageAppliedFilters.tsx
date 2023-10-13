@@ -28,7 +28,7 @@ const CategoryPageAppliedFilters = () => {
     ) {
       setShowAppliedFilters(false);
     }
-  }, [filters]);
+  }, [filters, setShowAppliedFilters]);
 
   return (
     <div className="w-full">

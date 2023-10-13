@@ -24,7 +24,7 @@ const CartPageProductCard: React.FC<CartPageProductCardProps> = ({ item }) => {
     axios
       .get(`/api/products/edit/${item.category}/${item._id}`)
       .then((res) => setProduct(res.data));
-  }, []);
+  }, [item.category, item._id]);
 
   return (
     <div className="flex items-center justify-between">

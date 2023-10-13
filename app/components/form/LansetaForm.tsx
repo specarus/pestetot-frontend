@@ -13,6 +13,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
 import { LansetaOption } from "@/app/types/LansetaOption";
+import Image from "next/image";
 
 interface LansetaFormProps {
   _id?: string;
@@ -392,7 +393,13 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
           <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
             <label htmlFor="coverImg">Coperta</label>
             {lanseta.coverImg && (
-              <img src={lanseta.coverImg} className="h-40 w-40 object-cover" />
+              <Image
+                alt="Lanseta"
+                width={200}
+                height={200}
+                src={lanseta.coverImg}
+                className="h-40 w-40 object-cover"
+              />
             )}
             <input
               id="coverImg"
@@ -416,7 +423,10 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
           <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
             <label htmlFor="detailsImg">Detalii</label>
             {lanseta.detailsImg && (
-              <img
+              <Image
+                alt="Lanseta"
+                width={200}
+                height={200}
                 src={lanseta.detailsImg}
                 className="h-40 w-40 object-contain"
               />
@@ -447,7 +457,16 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
           {lanseta.extraImgs.length > 0 && (
             <div className="flex gap-4">
               {lanseta.extraImgs.map((image) => {
-                return <img src={image} className="h-40 w-40 object-contain" />;
+                return (
+                  <Image
+                    key={image}
+                    alt="Lanseta"
+                    width={200}
+                    height={200}
+                    src={image}
+                    className="h-40 w-40 object-contain"
+                  />
+                );
               })}
             </div>
           )}

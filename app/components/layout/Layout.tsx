@@ -24,6 +24,7 @@ import { BsArrowRight } from "react-icons/bs";
 import { UserContext } from "@/app/contexts/UserContext";
 import { ModalContext } from "@/app/contexts/ModalContext";
 import { SidebarContext } from "@/app/contexts/SidebarContext";
+import Image from "next/image";
 
 interface LayoutProps {
   products: any[];
@@ -129,9 +130,11 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
               )}
             </span>
             <div className="select-none pointer-events-none">
-              <img
+              <Image
                 src="/assets/images/placeholder.jpg"
                 alt="Placeholder"
+                width={500}
+                height={500}
                 className="w-10 h-10 rounded-full"
               />
             </div>
@@ -162,7 +165,9 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
               <AiOutlineMenu className="text-xl" />
             </span>
             <div className="select-none pointer-events-none">
-              <img
+              <Image
+                width={500}
+                height={500}
                 src="/assets/images/placeholder.jpg"
                 alt="Placeholder"
                 className="w-10 h-10 rounded-full"

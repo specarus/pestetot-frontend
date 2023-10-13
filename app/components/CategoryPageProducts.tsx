@@ -636,16 +636,16 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
     if (showAppliedFilters) {
       setFilteredProducts(sort);
     }
-  }, [filters]);
+  }, [filters, showAppliedFilters, sort]);
 
   useEffect(() => {
     setFilteredProducts(sort);
-  }, [filters.sortBy]);
+  }, [filters.sortBy, sort]);
 
   useEffect(() => {
     setFilteredProducts(sort);
     resetAllFilters();
-  }, []);
+  }, [resetAllFilters, sort]);
 
   function applyFilters() {
     setFilteredProducts(sort);
@@ -757,9 +757,11 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
                 height={2000}
                 alt="Fishing"
               />
-              <img
+              <Image
                 src="/assets/images/sunset-2.jpg"
                 className="w-full h-full object-cover"
+                width={2000}
+                height={2000}
                 alt="Fishing"
               />
               <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20" />

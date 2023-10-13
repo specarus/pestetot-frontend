@@ -13,6 +13,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
 import { CarligOption } from "@/app/types/CarligOption";
+import Image from "next/image";
 
 interface CarligFormProps {
   _id?: string;
@@ -378,7 +379,13 @@ const CarligForm: React.FC<CarligFormProps> = ({
           <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
             <label htmlFor="coverImg">Coperta</label>
             {carlig.coverImg && (
-              <img src={carlig.coverImg} className="h-40 w-40 object-cover" />
+              <Image
+                width={200}
+                height={200}
+                alt="Carlig"
+                src={carlig.coverImg}
+                className="h-40 w-40 object-cover"
+              />
             )}
             <input
               id="coverImg"
@@ -402,7 +409,10 @@ const CarligForm: React.FC<CarligFormProps> = ({
           <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
             <label htmlFor="detailsImg">Detalii</label>
             {carlig.detailsImg && (
-              <img
+              <Image
+                width={200}
+                height={200}
+                alt="Carlig"
                 src={carlig.detailsImg}
                 className="h-40 w-40 object-contain"
               />
@@ -433,7 +443,15 @@ const CarligForm: React.FC<CarligFormProps> = ({
           {carlig.extraImgs.length > 0 && (
             <div className="flex gap-4">
               {carlig.extraImgs.map((image) => {
-                return <img src={image} className="h-40 w-40 object-contain" />;
+                return (
+                  <img
+                    src={image}
+                    width={200}
+                    height={200}
+                    alt="Carlig"
+                    className="h-40 w-40 object-contain"
+                  />
+                );
               })}
             </div>
           )}

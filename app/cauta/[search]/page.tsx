@@ -35,7 +35,9 @@ const SearchPage = () => {
         <p>{filteredProducts.length}</p>
         <p>{filteredProducts.length === 1 ? "rezultat al" : "rezultate ale"}</p>
         <p>cautarii:</p>
-        <span className="font-medium">"{search.split("-").join(" ")}"</span>
+        <span className="font-medium">
+          &ldquo;{search.split("-").join(" ")}&rdquo;
+        </span>
       </section>
       <section className="grid grid-cols-7 gap-x-4 gap-y-8">
         {filteredProducts.map((product: any) => {

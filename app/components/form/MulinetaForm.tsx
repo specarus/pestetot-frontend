@@ -12,6 +12,7 @@ import Swal from "sweetalert2";
 import { IoMdClose } from "react-icons/io";
 import { AiOutlinePlus } from "react-icons/ai";
 import { IoSaveOutline } from "react-icons/io5";
+import Image from "next/image";
 
 interface MulinetaFormProps {
   _id?: string;
@@ -413,7 +414,13 @@ const MulinetaForm: React.FC<MulinetaFormProps> = ({
           <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
             <label htmlFor="coverImg">Coperta</label>
             {mulineta.coverImg && (
-              <img src={mulineta.coverImg} className="h-40 w-40 object-cover" />
+              <Image
+                alt="Mulineta"
+                width={200}
+                height={200}
+                src={mulineta.coverImg}
+                className="h-40 w-40 object-cover"
+              />
             )}
             <input
               id="coverImg"
@@ -437,7 +444,10 @@ const MulinetaForm: React.FC<MulinetaFormProps> = ({
           <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
             <label htmlFor="detailsImg">Detalii</label>
             {mulineta.detailsImg && (
-              <img
+              <Image
+                alt="Mulineta"
+                width={200}
+                height={200}
                 src={mulineta.detailsImg}
                 className="h-40 w-40 object-contain"
               />
@@ -467,7 +477,16 @@ const MulinetaForm: React.FC<MulinetaFormProps> = ({
           {mulineta.extraImgs.length > 0 && (
             <div className="flex flex-wrap gap-x-4 gap-y-8">
               {mulineta.extraImgs.map((image) => {
-                return <img src={image} className="h-40 w-40 object-contain" />;
+                return (
+                  <Image
+                    key={image}
+                    alt="Mulineta"
+                    width={200}
+                    height={200}
+                    src={image}
+                    className="h-40 w-40 object-contain"
+                  />
+                );
               })}
             </div>
           )}

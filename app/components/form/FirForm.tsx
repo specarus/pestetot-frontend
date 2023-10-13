@@ -13,6 +13,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import { useRouter } from "next/navigation";
 
 import { FirOption } from "@/app/types/FirOption";
+import Image from "next/image";
 
 interface FirFormProps {
   _id?: string;
@@ -385,7 +386,13 @@ const FirForm: React.FC<FirFormProps> = ({
           <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
             <label htmlFor="coverImg">Coperta</label>
             {fir.coverImg && (
-              <img src={fir.coverImg} className="h-40 w-40 object-cover" />
+              <Image
+                alt="Fir"
+                width={200}
+                height={200}
+                src={fir.coverImg}
+                className="h-40 w-40 object-cover"
+              />
             )}
             <input
               id="coverImg"
@@ -409,7 +416,13 @@ const FirForm: React.FC<FirFormProps> = ({
           <div className="w-[47.5%] h-auto flex flex-col gap-4 relative px-4 py-2 border border-gray-300">
             <label htmlFor="detailsImg">Detalii</label>
             {fir.detailsImg && (
-              <img src={fir.detailsImg} className="h-40 w-40 object-contain" />
+              <Image
+                alt="Fir"
+                width={200}
+                height={200}
+                src={fir.detailsImg}
+                className="h-40 w-40 object-contain"
+              />
             )}
             <input
               id="detailsImg"
@@ -437,7 +450,16 @@ const FirForm: React.FC<FirFormProps> = ({
           {fir.extraImgs.length > 0 && (
             <div className="flex gap-4">
               {fir.extraImgs.map((image) => {
-                return <img src={image} className="h-40 w-40 object-contain" />;
+                return (
+                  <Image
+                    key={image}
+                    alt="Fir"
+                    width={200}
+                    height={200}
+                    src={image}
+                    className="h-40 w-40 object-contain"
+                  />
+                );
               })}
             </div>
           )}
