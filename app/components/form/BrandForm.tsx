@@ -106,7 +106,7 @@ const BrandForm: React.FC<BrandFormProps> = ({
     if (brand.category) {
       setCategoryFocus(true);
     }
-  }, []);
+  });
 
   return (
     <form

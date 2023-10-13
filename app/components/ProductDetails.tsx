@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import CarligOptionCard from "./CarligOptionCard";
 import FireOptionCard from "./FirOptionCard";
 import LansetaOptionCard from "./LansetaOptionCard";
@@ -54,8 +56,10 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
           {/* Creme background */}
           <span className="w-full h-full absolute top-0 left-0 bg-neutral-400 bg-opacity-10" />
           {/* Creme background */}
-          <img
+          <Image
             src={product.detailsImg}
+            width={1000}
+            height={1000}
             alt="Details"
             className="w-full h-full object-contain select-none pointer-events-none p-4"
           />
@@ -69,10 +73,12 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
                   {/* Creme background */}
                   <span className="w-full h-full absolute top-0 left-0 bg-neutral-400 bg-opacity-10" />
                   {/* Creme background */}
-                  <img
+                  <Image
                     src={imageUrl}
                     alt="Extra"
-                    className="w-full h-full object-contain select-none pointer-events-none"
+                    width={700}
+                    height={700}
+                    className="w-full h.-full object-contain select-none pointer-events-none"
                   />
                 </div>
               );

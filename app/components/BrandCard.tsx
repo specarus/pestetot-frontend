@@ -1,4 +1,5 @@
 import { Brand } from "@/app/types/Brand";
+import Image from "next/image";
 
 interface BrandCardProps {
   brand: Brand;
@@ -6,9 +7,11 @@ interface BrandCardProps {
 
 const BrandCard: React.FC<BrandCardProps> = ({ brand }) => {
   return (
-    <img
+    <Image
       src={brand.img}
       alt="Brand"
+      width={500}
+      height={500}
       className="h-auto w-28 object-contain select-none pointer-events-none"
     />
   );

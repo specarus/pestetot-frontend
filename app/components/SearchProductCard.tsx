@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 
 import { useState } from "react";
@@ -49,9 +50,11 @@ const SearchProductCard: React.FC<SearchProductCartProps> = ({
         } w-full h-full flex transition-all duration-200`}
       >
         <div className="relative w-20 h-full grid place-content-center">
-          <img
+          <Image
             src={product.coverImg}
             alt="Search"
+            width={300}
+            height={300}
             className="w-full h-full object-contain select-none pointer-events-none"
           />
 

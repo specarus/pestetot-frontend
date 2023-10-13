@@ -7,6 +7,8 @@ import { useContext, useEffect, useState } from "react";
 import ProductCard from "./ProductCard";
 import BrandCard from "./BrandCard";
 
+import Image from "next/image";
+
 import FeaturedProducts from "./FeaturedProducts";
 
 import { FaFilter } from "react-icons/fa";
@@ -181,9 +183,11 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
       {filteredProducts.length > 35 && (
         <section className="px-10">
           <div className="relative w-full h-80 border mb-10">
-            <img
+            <Image
               src="/assets/images/waves.jpg"
               alt="Fishing"
+              width={2000}
+              height={2000}
               className="w-full h-full object-cover"
             />
             <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20" />

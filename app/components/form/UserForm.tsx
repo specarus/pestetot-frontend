@@ -79,7 +79,7 @@ const UserForm = () => {
     if (user.address?.flat) {
       setFlatFocus(true);
     }
-  }, []);
+  });
 
   return (
     <div className="w-full h-full">

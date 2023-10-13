@@ -87,7 +87,7 @@ const SubCategoryForm: React.FC<SubCategoryFormProps> = ({
     if (subCategory.category) {
       setCategoryFocus(true);
     }
-  }, []);
+  });
 
   return (
     <form

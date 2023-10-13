@@ -2,6 +2,8 @@
 
 import { useContext } from "react";
 
+import Image from "next/image";
+
 import { CartContext } from "../contexts/CartContext";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
@@ -17,9 +19,11 @@ const CartProduct = ({ item }: { item: any }) => {
         {/* Cream background */}
         <span className="w-full h-full bg-neutral-400 bg-opacity-10 absolute top-0 left-0" />
         {/* Cream background */}
-        <img
+        <Image
           src={item.coverImg}
           alt="Cart"
+          width={500}
+          height={500}
           className="w-full h-full object-cover"
         />
         <div className="w-full absolute bottom-1 left-[50%] -translate-x-[50%]">

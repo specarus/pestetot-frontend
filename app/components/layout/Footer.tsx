@@ -4,6 +4,7 @@ import { SiFacebook } from "react-icons/si";
 import { MdLocalPhone } from "react-icons/md";
 import { BiLogoGmail } from "react-icons/bi";
 import { HiArrowLongRight } from "react-icons/hi2";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -18,9 +19,11 @@ const Footer = () => {
 
       {/* Logo */}
       <div className="col-span-1 h-full flex items-center select-none pointer-events-none p-4">
-        <img
+        <Image
           src="/assets/pestetot-logo-gray-big.svg"
           alt="Logo"
+          width={600}
+          height={600}
           className="w-full h-full object-cover"
         />
       </div>

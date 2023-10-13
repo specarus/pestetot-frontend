@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 import { useState, useContext } from "react";
 
@@ -34,9 +35,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
         {/* Creme background */}
         <span className="w-full h-full absolute top-0 left-0 bg-neutral-400 bg-opacity-10" />
         {/* Creme background */}
-        <img
+        <Image
           src={product.coverImg}
           alt="Cover"
+          width={500}
+          height={500}
           className="w-full h-full object-contain p-4 select-none pointer-events-none"
         />
         {/* Overlay */}

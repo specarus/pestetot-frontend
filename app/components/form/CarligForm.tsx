@@ -214,7 +214,20 @@ const CarligForm: React.FC<CarligFormProps> = ({
     if (option.size) {
       setSizeFocus(true);
     }
-  }, [option.code, option.packingWay, option.size, option.color, option.price]);
+  }, [
+    carlig.availability,
+    carlig.category,
+    carlig.description,
+    carlig.title,
+    carlig.slug,
+    carlig.subCategory,
+    carlig.brand,
+    option.code,
+    option.packingWay,
+    option.size,
+    option.color,
+    option.price,
+  ]);
 
   return (
     <form

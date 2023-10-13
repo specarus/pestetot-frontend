@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import { useContext, useState, useEffect } from "react";
 
 import { CategoryPageFiltersContext } from "../contexts/CategoryPageFiltersContext";
@@ -716,9 +718,11 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
       {filteredProducts.length > 14 && (
         <section className="px-10">
           <div className="relative w-full flex h-80 mb-10 border">
-            <img
+            <Image
               src="/assets/images/boat-top.jpg"
               className="w-full h-full object-cover"
+              width={2000}
+              height={2000}
               alt="Fishing"
             />
             <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20" />
@@ -746,9 +750,11 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
             <div
               className={`relative w-[200%] flex h-full ${imageSlider} transition-all duration-700 ease-in-out`}
             >
-              <img
+              <Image
                 src="/assets/images/boat-on-water.jpg"
                 className="w-full h-full object-cover"
+                width={2000}
+                height={2000}
                 alt="Fishing"
               />
               <img

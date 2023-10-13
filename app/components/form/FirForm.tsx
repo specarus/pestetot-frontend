@@ -14,7 +14,7 @@ import { useRouter } from "next/navigation";
 
 import { FirOption } from "@/app/types/FirOption";
 
-interface firFormProps {
+interface FirFormProps {
   _id?: string;
   title?: string;
   slug?: string;
@@ -37,7 +37,7 @@ interface firFormProps {
   extraImgs?: string[];
 }
 
-const firForm: React.FC<firFormProps> = ({
+const FirForm: React.FC<FirFormProps> = ({
   _id,
   slug,
   options,
@@ -79,10 +79,7 @@ const firForm: React.FC<firFormProps> = ({
     ev.preventDefault();
     if (_id) {
       const firData = { ...fir, _id };
-      const res = await axios.put(
-        `/api/products/fire`,
-        firData
-      );
+      const res = await axios.put(`/api/products/fire`, firData);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/produse");
@@ -101,10 +98,7 @@ const firForm: React.FC<firFormProps> = ({
         });
       }
     } else {
-      const res = await axios.post(
-        `/api/products/fire`,
-        fir
-      );
+      const res = await axios.post(`/api/products/fire`, fir);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/produse");
@@ -227,6 +221,13 @@ const firForm: React.FC<firFormProps> = ({
       setDiameterFocus(true);
     }
   }, [
+    fir.availability,
+    fir.brand,
+    fir.category,
+    fir.subCategory,
+    fir.description,
+    fir.title,
+    fir.slug,
     option.code,
     option.length,
     option.stringResistance,
@@ -771,4 +772,4 @@ const firForm: React.FC<firFormProps> = ({
   );
 };
 
-export default firForm;
+export default FirForm;

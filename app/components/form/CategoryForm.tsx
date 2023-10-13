@@ -78,7 +78,7 @@ const CategoryForm: React.FC<CategoryFormProps> = ({ _id, title, slug }) => {
     if (category.slug) {
       setSlugFocus(true);
     }
-  }, []);
+  });
 
   return (
     <form

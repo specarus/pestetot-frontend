@@ -81,10 +81,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     ev.preventDefault();
     if (_id) {
       const lansetaData = { ...lanseta, _id };
-      const res = await axios.put(
-        `/api/products/lansete`,
-        lansetaData
-      );
+      const res = await axios.put(`/api/products/lansete`, lansetaData);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/produse");
@@ -103,10 +100,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
         });
       }
     } else {
-      const res = await axios.post(
-        `/api/products/lansete`,
-        lanseta
-      );
+      const res = await axios.post(`/api/products/lansete`, lanseta);
       const data = res.data;
       if (data.status === "ok") {
         router.push("/admin/produse");
@@ -233,6 +227,13 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
       setTransportLengthFocus(true);
     }
   }, [
+    lanseta.availability,
+    lanseta.brand,
+    lanseta.category,
+    lanseta.description,
+    lanseta.slug,
+    lanseta.subCategory,
+    lanseta.title,
     option.code,
     option.launchWeight,
     option.length,

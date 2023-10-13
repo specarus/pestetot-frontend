@@ -244,6 +244,13 @@ const MulinetaForm: React.FC<MulinetaFormProps> = ({
       setBrakingSystemFocus(true);
     }
   }, [
+    mulineta.availability,
+    mulineta.brand,
+    mulineta.description,
+    mulineta.subCategory,
+    mulineta.slug,
+    mulineta.title,
+    mulineta.category,
     option.material,
     option.drum,
     option.drumCapacity,

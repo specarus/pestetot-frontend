@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 
+import Image from "next/image";
+
 import { useContext, useEffect, useState } from "react";
 
 import { CartContext } from "../contexts/CartContext";
@@ -20,9 +22,7 @@ const CartPageProductCard: React.FC<CartPageProductCardProps> = ({ item }) => {
 
   useEffect(() => {
     axios
-      .get(
-        `http://localhost:3001/api/products/edit/${item.category}/${item._id}`
-      )
+      .get(`/api/products/edit/${item.category}/${item._id}`)
       .then((res) => setProduct(res.data));
   }, []);
 
@@ -33,9 +33,11 @@ const CartPageProductCard: React.FC<CartPageProductCardProps> = ({ item }) => {
           {/* Cream background */}
           <span className="w-full h-full bg-neutral-400 bg-opacity-10 absolute top-0 left-0" />
           {/* Cream background */}
-          <img
+          <Image
             src={item.coverImg}
             alt="Cart"
+            width={500}
+            height={500}
             className="w-full h-full object-cover"
           />
           <span className="bg-white w-24 border border-gray-300 grid place-content-center absolute bottom-2 left-[50%] -translate-x-[50%] text-sm">
