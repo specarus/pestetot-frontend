@@ -14,6 +14,8 @@ import Swal from "sweetalert2";
 import { UserContext } from "@/app/contexts/UserContext";
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const ProductsAdminPage = () => {
   const [products, setProducts] = useState([]);
 
@@ -185,3 +187,7 @@ const ProductsAdminPage = () => {
 };
 
 export default ProductsAdminPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Produse",
+};

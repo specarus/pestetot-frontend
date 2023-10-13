@@ -1,5 +1,7 @@
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const FAQPage = () => {
   return (
     <div className="w-full h-full">
@@ -20,3 +22,7 @@ const FAQPage = () => {
 };
 
 export default FAQPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Intrebari frecvente",
+};

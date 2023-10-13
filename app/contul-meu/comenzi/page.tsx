@@ -9,6 +9,8 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { BsArrowLeft } from "react-icons/bs";
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const OrdersPage = () => {
   const { user } = useContext(UserContext);
 
@@ -53,3 +55,7 @@ const OrdersPage = () => {
 };
 
 export default OrdersPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Comenzi",
+};

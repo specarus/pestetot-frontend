@@ -15,6 +15,8 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const BrandsAdminPage = () => {
   const [brands, setBrands] = useState([]);
 
@@ -145,3 +147,7 @@ const BrandsAdminPage = () => {
 };
 
 export default BrandsAdminPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Branduri",
+};

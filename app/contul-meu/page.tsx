@@ -12,6 +12,8 @@ import { SlLogout } from "react-icons/sl";
 import Title from "../components/layout/Title";
 import { RiDeleteBin7Line } from "react-icons/ri";
 
+import type { Metadata } from "next";
+
 const AccountPage = () => {
   const { user, isMounted, logout, setShowDeletePopup, isAdmin } =
     useContext(UserContext);
@@ -146,3 +148,7 @@ const AccountPage = () => {
 };
 
 export default AccountPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Contul meu",
+};

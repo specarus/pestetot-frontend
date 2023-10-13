@@ -10,6 +10,8 @@ import { CartContext } from "../contexts/CartContext";
 import CartPageProductCard from "../components/CartPageProductCard";
 import Title from "../components/layout/Title";
 
+import type { Metadata } from "next";
+
 const CartPage = () => {
   const { cart, totalAmount, totalPrice } = useContext(CartContext);
 
@@ -123,3 +125,7 @@ const CartPage = () => {
 };
 
 export default CartPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Cos",
+};

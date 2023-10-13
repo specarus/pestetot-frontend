@@ -6,6 +6,8 @@ import { useEffect, useState } from "react";
 
 import ProductCard from "@/app/components/ProductCard";
 
+import type { Metadata } from "next";
+
 const SearchPage = () => {
   const params = useParams();
   const { search } = params;
@@ -53,3 +55,7 @@ const SearchPage = () => {
 };
 
 export default SearchPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Cauta",
+};

@@ -85,3 +85,12 @@ const BrandProductsPage = async ({ params }: { params: { brand: string } }) => {
 };
 
 export default BrandProductsPage;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { brand: string };
+}) {
+  const brand = await getBrand(params.brand);
+  return { title: `PesteTot | ${brand.title}` };
+}

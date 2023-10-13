@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 
-import { FiDelete } from "react-icons/fi";
 import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
 
 import axios from "axios";
@@ -10,6 +9,8 @@ import axios from "axios";
 import { useContext, useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
+
+import type { Metadata } from "next";
 
 import { User } from "@/app/types/User";
 import { UserContext } from "@/app/contexts/UserContext";
@@ -20,9 +21,7 @@ const UsersPage = () => {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/api/users")
-      .then((res) => setUsers(res.data));
+    axios.get("/api/users").then((res) => setUsers(res.data));
   }, []);
 
   async function deleteUser(id: string) {
@@ -146,3 +145,7 @@ const UsersPage = () => {
 };
 
 export default UsersPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Utilizatori",
+};

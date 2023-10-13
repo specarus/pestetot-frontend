@@ -4,6 +4,8 @@ import HomePageFilters from "./components/HomePageFilters";
 import HomePageProducts from "./components/HomePageProducts";
 import Title from "./components/layout/Title";
 
+import type { Metadata } from "next";
+
 const getCategories = async () => {
   const res = await axios.get("/api/categories");
   const data = res.data;
@@ -56,3 +58,7 @@ export default async function Home() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "PesteTot | Acasa",
+};

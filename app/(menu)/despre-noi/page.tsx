@@ -1,5 +1,7 @@
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const AboutUsPage = () => {
   return (
     <div className="w-full h-full">
@@ -20,3 +22,7 @@ const AboutUsPage = () => {
 };
 
 export default AboutUsPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Despre noi",
+};

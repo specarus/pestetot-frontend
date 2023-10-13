@@ -13,6 +13,8 @@ import { Category } from "@/app/types/Category";
 import { UserContext } from "@/app/contexts/UserContext";
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const EditCategoryPage = () => {
   const params = useParams();
   const { id } = params;
@@ -70,3 +72,7 @@ const EditCategoryPage = () => {
 };
 
 export default EditCategoryPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Editeaza categoria",
+};

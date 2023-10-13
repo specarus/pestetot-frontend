@@ -13,6 +13,8 @@ import BrandForm from "@/app/components/form/BrandForm";
 import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const EditBrandPage = () => {
   const params = useParams();
   const { id } = params;
@@ -68,3 +70,7 @@ const EditBrandPage = () => {
 };
 
 export default EditBrandPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Editeaza brandul",
+};

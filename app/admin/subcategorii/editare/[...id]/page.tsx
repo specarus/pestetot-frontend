@@ -12,6 +12,8 @@ import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
 import { UserContext } from "@/app/contexts/UserContext";
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const EditSubCategoryPage = () => {
   const params = useParams();
   const { id } = params;
@@ -69,3 +71,7 @@ const EditSubCategoryPage = () => {
 };
 
 export default EditSubCategoryPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Editeaza subcategoria",
+};

@@ -9,6 +9,8 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
 import Title from "@/app/components/layout/Title";
 
+import type { Metadata } from "next";
+
 const OrdersAdminPage = () => {
   const { isAdmin } = useContext(UserContext);
 
@@ -52,3 +54,7 @@ const OrdersAdminPage = () => {
 };
 
 export default OrdersAdminPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Comenzi",
+};
