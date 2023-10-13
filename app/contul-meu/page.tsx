@@ -22,7 +22,7 @@ const AccountPage = () => {
 
   if (!user?._id) {
     return (
-      <div className="w-full h-full">
+      <div className="w-full h-full px-20">
         <div className="w-full h-full pb-96 relative">
           <p>Nu sunteti conectat!</p>
           <Link
