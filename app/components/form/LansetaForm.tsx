@@ -127,13 +127,13 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     form.append("file", file);
     form.append("upload_preset", "jpi7vh5i");
 
-    axios
-      .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
-      .then((res) =>
-        setLanseta((prev) => {
-          return { ...prev, coverImg: res.data.url };
-        })
-      );
+    const res = await axios.post(
+      "https://api.cloudinary.com/v1_1/dzgermdhe/image/upload",
+      form
+    );
+    setLanseta((prev) => {
+      return { ...prev, coverImg: res.data.url };
+    });
   }
 
   async function uploadDetailsImage(file: any) {
@@ -141,13 +141,13 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     form.append("file", file);
     form.append("upload_preset", "jpi7vh5i");
 
-    axios
-      .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
-      .then((res) =>
-        setLanseta((prev) => {
-          return { ...prev, detailsImg: res.data.url };
-        })
-      );
+    const res = await axios.post(
+      "https://api.cloudinary.com/v1_1/dzgermdhe/image/upload",
+      form
+    );
+    setLanseta((prev) => {
+      return { ...prev, detailsImg: res.data.url };
+    });
   }
 
   async function uploadExtraImages(files: any) {
@@ -155,13 +155,14 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     for (const file of files) {
       form.append("file", file);
       form.append("upload_preset", "jpi7vh5i");
-      axios
-        .post("https://api.cloudinary.com/v1_1/dzgermdhe/image/upload", form)
-        .then((res) => {
-          setLanseta((prev: any) => {
-            return { ...prev, extraImgs: [...prev.extraImgs, res.data.url] };
-          });
-        });
+
+      const res = await axios.post(
+        "https://api.cloudinary.com/v1_1/dzgermdhe/image/upload",
+        form
+      );
+      setLanseta((prev: any) => {
+        return { ...prev, extraImgs: [...prev.extraImgs, res.data.url] };
+      });
     }
   }
 
