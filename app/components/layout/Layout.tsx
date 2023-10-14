@@ -33,7 +33,6 @@ interface LayoutProps {
 }
 
 axios.defaults.baseURL = "https://pestetot-server.onrender.com";
-axios.defaults.withCredentials = true;
 
 const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   const { resetUser, resetFocuses, resetLoginFocuses, resetLoginUser } =

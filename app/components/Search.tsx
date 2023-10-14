@@ -34,7 +34,7 @@ const Search: React.FC<SearchProps> = ({
       <section className="fixed left-0 top-10 w-80 px-8 z-50">
         <div className="w-full relative mb-4">
           <input
-            // id="searchInput"
+            id="searchInput"
             type="text"
             value={search}
             onChange={(ev) => setSearch(ev.target.value)}

@@ -30,7 +30,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
   // search
   const [search, setSearch] = useState("");
 
-  // const searchInput = document.getElementById("searchInput");
+  const searchInput = document.getElementById("searchInput");
 
   const {
     showCartContent,
@@ -83,7 +83,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
             setShowMenuModal(false);
             setTimeout(() => {
               setShowSearchContent(true);
-              //  setTimeout(() => searchInput?.focus(), 200);
+              setTimeout(() => searchInput?.focus(), 200);
             }, 500);
             setTimeout(() => setShowCartModal(false), 200);
           }}

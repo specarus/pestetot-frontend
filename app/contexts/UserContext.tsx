@@ -72,7 +72,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   // logout user
   async function logout() {
-    const res = await axios.post("/logout", {});
+    const res = await axios.post("/logout", {}, { withCredentials: true });
     const data = res.data;
     if (data.status === "ok") {
       Swal.fire({
@@ -98,13 +98,17 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   // save personal information
   async function savePersonal(ev: any) {
     ev.preventDefault();
-    const res = await axios.put("/api/personal", {
-      username: user.username,
-      email: user.email,
-      firstName: user.firstName,
-      lastName: user.lastName,
-      phoneNumber: user.phoneNumber,
-    });
+    const res = await axios.put(
+      "/api/personal",
+      {
+        username: user.username,
+        email: user.email,
+        firstName: user.firstName,
+        lastName: user.lastName,
+        phoneNumber: user.phoneNumber,
+      },
+      { withCredentials: true }
+    );
     const data = res.data;
     if (data.status === "ok") {
       Swal.fire({
@@ -127,7 +131,11 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   // save address
   async function saveAddress(ev: any) {
     ev.preventDefault();
-    const res = await axios.put("/api/address", { address: user.address });
+    const res = await axios.put(
+      "/api/address",
+      { address: user.address },
+      { withCredentials: true }
+    );
     const data = res.data;
     if (data.status === "ok") {
       Swal.fire({
@@ -292,7 +300,9 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   useEffect(() => {
     if (!user?._id) {
-      axios.get("/profile").then((res) => setUser(res.data));
+      axios
+        .get("/profile", { withCredentials: true })
+        .then((res) => setUser(res.data));
       setIsMounted(true);
     }
   }, []);

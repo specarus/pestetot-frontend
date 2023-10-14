@@ -122,7 +122,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
     }
   }
 
-  async function uploadCoverImage(file: any) {
+  function uploadCoverImage(file: any) {
     const form = new FormData();
     form.append("file", file);
     form.append("upload_preset", "jpi7vh5i");
@@ -136,7 +136,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
       );
   }
 
-  async function uploadDetailsImage(file: any) {
+  function uploadDetailsImage(file: any) {
     const form = new FormData();
     form.append("file", file);
     form.append("upload_preset", "jpi7vh5i");
@@ -150,7 +150,7 @@ const LansetaForm: React.FC<LansetaFormProps> = ({
       );
   }
 
-  async function uploadExtraImages(files: any) {
+  function uploadExtraImages(files: any) {
     const form = new FormData();
     for (const file of files) {
       form.append("file", file);

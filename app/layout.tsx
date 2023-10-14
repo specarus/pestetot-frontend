@@ -19,7 +19,6 @@ const rubik = Rubik({
 });
 
 axios.defaults.baseURL = "https://pestetot-server.onrender.com";
-axios.defaults.withCredentials = true;
 
 const getCategories = async () => {
   const res = await axios.get("/api/categories");
