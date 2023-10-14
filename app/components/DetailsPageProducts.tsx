@@ -49,7 +49,7 @@ const DetailsPageProducts: React.FC<FeaturedProductsProps> = ({
       <div className="px-20 mb-10">
         <div className="text-2xl uppercase border-l-4 border-primary pl-2">
           <h2>
-            Alte {product?.category.split("-").join(" ")}
+            Alte {product?.category.split("-").join(" ")}&nbsp;
             {product?.subCategory.split("-").join(" ")}
           </h2>
         </div>

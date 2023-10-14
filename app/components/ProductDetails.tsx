@@ -39,7 +39,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
         <div className="mb-6">
           <Title title={product.title.toLowerCase()} />
         </div>
-        <p className="bg-yellow-500 w-fit px-6 py-1 text-white rounded-full">
+        <p className="bg-yellow-500 w-fit px-6 py-1 text-white rounded-full select-none">
           {product.brand}
         </p>
       </section>
