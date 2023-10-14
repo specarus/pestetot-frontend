@@ -1,4 +1,5 @@
 import Title from "@/app/components/layout/Title";
+import type { Metadata } from "next";
 
 const TermsAndConditionsPage = () => {
   return (
@@ -117,3 +118,7 @@ const TermsAndConditionsPage = () => {
 };
 
 export default TermsAndConditionsPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Termeni si conditii",
+};

@@ -1,4 +1,5 @@
 import Title from "@/app/components/layout/Title";
+import type { Metadata } from "next";
 
 const ShippingPage = () => {
   return (
@@ -20,3 +21,7 @@ const ShippingPage = () => {
 };
 
 export default ShippingPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Livrare si transport",
+};

@@ -49,3 +49,18 @@ const ProductPage = async ({ params }: { params: { slug: string[] } }) => {
 };
 
 export default ProductPage;
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { slug: string[] };
+}) {
+  const { slug } = params;
+  const category = slug[0];
+  const subCategory = slug[1];
+  const productSlug = slug[2];
+
+  const product = await getProduct(category, subCategory, productSlug);
+
+  return { title: `PesteTot | ${product.title}` };
+}

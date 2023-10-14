@@ -1,4 +1,5 @@
 import Title from "@/app/components/layout/Title";
+import type { Metadata } from "next";
 
 const AboutUsPage = () => {
   return (
@@ -20,3 +21,7 @@ const AboutUsPage = () => {
 };
 
 export default AboutUsPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Despre noi",
+};

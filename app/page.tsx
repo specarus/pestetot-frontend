@@ -1,5 +1,7 @@
 import axios from "axios";
 
+import type { Metadata } from "next";
+
 import HomePageFilters from "./components/HomePageFilters";
 import HomePageProducts from "./components/HomePageProducts";
 import Title from "./components/layout/Title";
@@ -56,3 +58,7 @@ export default async function Home() {
     </div>
   );
 }
+
+export const metadata: Metadata = {
+  title: "PesteTot | Acasa",
+};

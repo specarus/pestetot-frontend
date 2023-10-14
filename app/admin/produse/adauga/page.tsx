@@ -6,6 +6,7 @@ import Link from "next/link";
 import { Category } from "@/app/types/Category";
 
 import axios from "axios";
+import type { Metadata } from "next";
 
 const getCategories = async () => {
   const res = await axios.get("/api/categories");
@@ -88,3 +89,7 @@ const ChooseNewProductPage = async () => {
 };
 
 export default ChooseNewProductPage;
+
+export const metadata: Metadata = {
+  title: "PesteTot | Alege o categorie",
+};
