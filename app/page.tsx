@@ -36,8 +36,6 @@ export default async function Home() {
         <div className="flex items-center gap-3 mb-6">
           <p>Acasa</p>
           <p className="text-primary">/</p>
-          <p>Catalog</p>
-          <p className="text-primary">/</p>
           <p className="text-primary">Toate</p>
         </div>
         <div className="mb-14">

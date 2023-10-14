@@ -132,8 +132,8 @@ const ProductsAdminPage = () => {
                   className={`${
                     product.subCategory === "vergi" && "bg-blue-500"
                   } ${product.subCategory === "bologneze" && "bg-purple-500"} ${
-                    product.subCategory === "spinning" && "bg-cyan-500"
-                  } ${
+                    product.subCategory === "match" && "bg-green-800"
+                  } ${product.subCategory === "spinning" && "bg-cyan-500"} ${
                     product.subCategory === "impletite-spinning" && "bg-red-300"
                   } ${
                     product.subCategory === "boilie" && "bg-yellow-800"
