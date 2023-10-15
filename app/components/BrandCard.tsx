@@ -10,9 +10,9 @@ const BrandCard: React.FC<BrandCardProps> = ({ brand }) => {
     <Image
       src={brand.img}
       alt="Brand"
-      width={500}
-      height={500}
-      className="h-auto w-28 object-contain select-none pointer-events-none"
+      width={800}
+      height={800}
+      className="h-auto desktop:w-28 laptop:w-24 object-contain select-none pointer-events-none"
     />
   );
 };

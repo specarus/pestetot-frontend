@@ -23,10 +23,12 @@ const Cart: React.FC<CartProps> = ({
   const { cart, totalAmount, totalPrice } = useContext(CartContext);
 
   return (
-    <div className="w-full h-full py-10">
+    <div className="w-full h-full desktop:py-10 laptop:py-6">
       {cart.length < 1 ? (
-        <div className="w-full h-full px-10">
-          <p className="border-b pb-4 mb-4">Cosul tau este momentan gol.</p>
+        <div className="w-full h-full desktop:px-10 laptop:px-8">
+          <p className="desktop:text-base laptop:text-sm border-b pb-4 mb-4">
+            Cosul tau este momentan gol.
+          </p>
           <button
             onClick={() => {
               setShowCartContent(false);
@@ -34,10 +36,10 @@ const Cart: React.FC<CartProps> = ({
             }}
             className="rounded-full group relative flex justify-center w-full py-2 bg-primary text-white overflow-hidden"
           >
-            <p className="group-hover:-translate-x-96 transition-all duration-300">
+            <p className="desktop:text-base laptop:text-sm group-hover:-translate-x-96 transition-all duration-300">
               Continua navigarea
             </p>
-            <p className="text-2xl absolute translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+            <p className="desktop:text-2xl laptop:text-xl absolute translate-x-96 group-hover:translate-x-0 transition-all duration-300">
               <BsArrowLeft />
             </p>
           </button>
@@ -49,8 +51,8 @@ const Cart: React.FC<CartProps> = ({
             }}
             className="group absolute bottom-8 right-11 flex items-center gap-2"
           >
-            <SlBag className="text-xl" />
-            <p className="relative">
+            <SlBag className="desktop:text-xl laptop:text-lg" />
+            <p className="desktop:text-base laptop:text-sm relative">
               Vezi cosul
               <span className="absolute left-0 bottom-[1px] bg-black w-0 group-hover:w-full h-[1px] transition-all duration-200" />
             </p>
@@ -58,14 +60,14 @@ const Cart: React.FC<CartProps> = ({
         </div>
       ) : (
         <div className="w-full">
-          <div className="px-10">
-            <p className="border-b mb-10">
+          <div className="desktop:px-10 laptop:px-8">
+            <p className="border-b desktop:mb-10 laptop:mb-8 laptop:text-sm desktop:text-base">
               {totalAmount} {totalAmount === 1 ? "produs" : "produse"} in cosul
               tau
             </p>
           </div>
-          <ul className="w-full h-auto mb-10 px-10">
-            <div className="w-full max-h-[36rem] flex flex-col gap-6 overflow-y-auto overflow-x-hidden">
+          <ul className="w-full h-auto desktop:mb-10 laptop:mb-8 desktop:px-10 laptop:px-8">
+            <div className="w-full desktop:max-h-[36rem] laptop:max-h-[29rem] flex flex-col desktop:gap-6 laptop:gap-4 overflow-y-auto overflow-x-hidden">
               {cart.map((item: any) => {
                 return (
                   <li key={item._id} className="w-full h-auto">
@@ -76,12 +78,12 @@ const Cart: React.FC<CartProps> = ({
             </div>
           </ul>
           {/* Total price */}
-          <section className="mt-4 flex flex-col gap-2 mb-10 px-10">
-            <div className="text-2xl flex items-center gap-2 select-none">
+          <section className="mt-4 flex flex-col gap-2 laptop:mb-10 desktop:px-10 laptop:px-8">
+            <div className="desktop:text-2xl laptop:text-xl flex items-center gap-2 select-none">
               <h2>Total:</h2>
               <span className="font-semibold">{totalPrice}.00 lei</span>
             </div>
-            <p className="text-sm">
+            <p className="desktop:text-sm laptop:text-xs">
               Taxe incluse.&nbsp;
               <Link href="/" className="underline">
                 Tranportul
@@ -92,7 +94,7 @@ const Cart: React.FC<CartProps> = ({
           {/* Total price */}
 
           {/* Buttons */}
-          <section className="w-full flex items-center gap-4 px-10">
+          <section className="w-full flex items-center gap-4 desktop:px-10 laptop:px-8">
             <button
               onClick={() => {
                 setShowCartContent(false);
@@ -100,7 +102,7 @@ const Cart: React.FC<CartProps> = ({
               }}
               className="w-[60%] h-full grid place-content-center"
             >
-              <p className="relative group">
+              <p className="desktop:text-base laptop:text-sm relative group">
                 Continua cumparaturile
                 <span className="w-0 h-[1px] absolute bottom-[1px] left-0 bg-black group-hover:w-full transition-all duration-200" />
               </p>
@@ -113,10 +115,10 @@ const Cart: React.FC<CartProps> = ({
               }}
               className="rounded-full group relative flex justify-center w-[40%] py-2 bg-primary text-white overflow-hidden"
             >
-              <p className="group-hover:translate-x-96 transition-all duration-300">
+              <p className="desktop:text-base laptop:text-sm group-hover:translate-x-96 transition-all duration-300">
                 Vezi cosul
               </p>
-              <p className="text-2xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+              <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
                 <BsArrowRight />
               </p>
             </Link>

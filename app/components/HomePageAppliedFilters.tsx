@@ -32,7 +32,7 @@ const HomePageAppliedFilters = () => {
             return (
               <div
                 key={id}
-                className="flex items-center gap-4 bg-yellow-500 text-white rounded-full px-4 py-1"
+                className="flex items-center gap-4 bg-yellow-500 text-white rounded-full laptop:px-4 laptop:py-1 desktop:text-base laptop:text-sm"
               >
                 <p>{item}</p>
                 <button
@@ -46,12 +46,12 @@ const HomePageAppliedFilters = () => {
             );
           })}
         {filters.minPrice && filters.maxPrice && (
-          <div className="bg-yellow-500 text-white rounded-full px-4 py-1">
+          <div className="bg-yellow-500 text-white rounded-full laptop:px-4 laptop:py-1 desktop:text-base laptop:text-sm">
             {"> " + filters.minPrice + " lei"}
           </div>
         )}
         {filters.maxPrice && filters.minPrice && (
-          <div className="flex items-center gap-4 bg-yellow-500 text-white rounded-full px-4 py-1">
+          <div className="flex items-center gap-4 bg-yellow-500 text-white rounded-full laptop:px-4 laptop:py-1 desktop:text-base laptop:text-sm">
             <p>{"< " + filters.maxPrice + " lei"}</p>
             <button
               onClick={() => {

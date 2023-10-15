@@ -29,16 +29,22 @@ const Filters: React.FC<FiltersProps> = () => {
   } = useContext(HomePageFiltersContext);
 
   return (
-    <div className={`${showAppliedFilters ? "pb-10" : "pb-32"} w-full h-full`}>
+    <div
+      className={`${
+        showAppliedFilters
+          ? "desktop:pb-10 laptop:pb-4"
+          : "desktop:pb-32 laptop:pb-28"
+      } w-full h-full`}
+    >
       {showAppliedFilters ? (
-        <div className="pl-32 pr-2 border py-2 rounded-full w-fit">
+        <div className="desktop:pl-32 laptop:pl-24 desktop:pr-2 laptop:pr-1 border desktop:py-2 laptop:py-1 rounded-full w-fit">
           <HomePageAppliedFilters />
         </div>
       ) : (
         <div className="absolute top-0 left-0 w-full h-full z-10">
           <div className="relative w-full flex justify-between">
             <section>
-              <p className="text-sm mb-1">Filtre:</p>
+              <p className="laptop:text-sm desktop:mb-1">Filtre:</p>
               <div className="flex items-center gap-4 mb-1">
                 {/* Availability */}
                 <button
@@ -48,10 +54,12 @@ const Filters: React.FC<FiltersProps> = () => {
                   }}
                   className={`${
                     showModal === 1 ? "border-gray-400" : "border-gray-300"
-                  } relative border w-40 px-4 py-3 hover:border-gray-400 transition-all duration-200`}
+                  } relative border desktop:w-40 laptop:w-36 laptop:px-4 desktop:py-3 laptop:py-2 hover:border-gray-400 transition-all duration-200`}
                 >
                   <div className="flex items-center justify-between">
-                    <p>Valabilitate</p>
+                    <p className="desktop:text-base laptop:text-sm">
+                      Valabilitate
+                    </p>
                     <BsChevronDown
                       className={`${
                         showModal === 1 && "rotate-180"
@@ -63,7 +71,7 @@ const Filters: React.FC<FiltersProps> = () => {
 
                 {/* Availability modal */}
                 {showModal === 1 && (
-                  <div className="absolute top-20 -left-0 text-sm h-auto w-80 bg-white border border-gray-300 shadow-md">
+                  <div className="absolute desktop:top-20 laptop:top-16 -left-0 desktop:text-sm laptop:text-xs h-auto desktop:w-80 laptop:w-64 bg-white border border-gray-300 shadow-md">
                     <div className="flex items-center justify-between py-2 px-4 border-b border-gray-300">
                       <p>{filters.availability.length} selectate</p>
                       <button
@@ -75,7 +83,7 @@ const Filters: React.FC<FiltersProps> = () => {
                         Reseteaza
                       </button>
                     </div>
-                    <ul className="flex flex-col gap-2 items-start py-3 px-4">
+                    <ul className="flex flex-col laptop:gap-2 items-start desktop:py-3 laptop:py-2 px-4">
                       <li>
                         <button
                           onClick={() => selectInStock()}
@@ -117,10 +125,10 @@ const Filters: React.FC<FiltersProps> = () => {
                   }}
                   className={`${
                     showModal === 2 ? "border-gray-400" : "border-gray-300"
-                  } relative border px-4 w-24 py-3 hover:border-gray-400 transition-all duration-200`}
+                  } relative border laptop:w-24 laptop:px-4 desktop:py-3 laptop:py-2 hover:border-gray-400 transition-all duration-200`}
                 >
                   <div className="flex items-center justify-between">
-                    <p>Pret</p>
+                    <p className="desktop:text-base laptop:text-sm">Pret</p>
                     <BsChevronDown
                       className={`${
                         showModal === 2 && "rotate-180"
@@ -132,7 +140,7 @@ const Filters: React.FC<FiltersProps> = () => {
 
                 {/* Price modal */}
                 {showModal === 2 && (
-                  <div className="absolute top-20 left-44 h-auto w-auto text-sm bg-white border border-gray-300 shadow-md">
+                  <div className="absolute desktop:top-20 laptop:top-16 desktop:left-44 laptop:left-40 h-auto w-auto desktop:text-sm laptop:text-xs bg-white border border-gray-300 shadow-md">
                     <div className="flex items-center justify-between py-2 px-4 border-b border-gray-300">
                       <button
                         className="underline"
@@ -143,14 +151,14 @@ const Filters: React.FC<FiltersProps> = () => {
                         Reseteaza
                       </button>
                     </div>
-                    <div className="w-full flex items-center gap-2 p-2">
+                    <div className="w-full flex items-center desktop:gap-2 laptop:gap-1 desktop:p-2 laptop:p-1">
                       <div className="relative">
                         <input
                           type="number"
                           placeholder="0"
                           value={filters.minPrice}
                           onChange={(event) => handleChangeMinPrice(event)}
-                          className="w-32 h-8 pl-10 pr-2 border focus:border-gray-400 transition-all duration-200"
+                          className="desktop:w-32 laptop:w-28 desktop:h-8 laptop:h-6 pl-10 pr-2 border focus:border-gray-400 transition-all duration-200"
                         />
                         <span className="absolute left-2 top-[50%] text-gray-400 -translate-y-[50%]">
                           min
@@ -162,7 +170,7 @@ const Filters: React.FC<FiltersProps> = () => {
                           placeholder="0"
                           value={filters.maxPrice}
                           onChange={(event) => handleChangeMaxPrice(event)}
-                          className="w-32 h-8 pl-10 pr-2 border focus:border-gray-400 transition-all duration-200"
+                          className="desktop:w-32 laptop:w-28 desktop:h-8 laptop:h-6 pl-10 pr-2 border focus:border-gray-400 transition-all duration-200"
                         />
                         <span className="absolute left-2 top-[50%] text-gray-400 -translate-y-[50%]">
                           max
@@ -176,7 +184,7 @@ const Filters: React.FC<FiltersProps> = () => {
             </section>
 
             <section>
-              <p className="mb-1 text-sm">Sortare dupa:</p>
+              <p className="desktop:mb-1 laptop:text-sm">Sortare dupa:</p>
               {/* Sort by */}
               <button
                 onClick={() => {
@@ -185,10 +193,12 @@ const Filters: React.FC<FiltersProps> = () => {
                 }}
                 className={`${
                   showModal === 3 ? "border-gray-400" : "border-gray-300"
-                } relative border py-3 px-4 w-52 hover:border-gray-400 transition-all duration-200`}
+                } relative border desktop:w-52 laptop:w-48 laptop:px-4 desktop:py-3 laptop:py-2 py-3 px-4 hover:border-gray-400 transition-all duration-200`}
               >
                 <div className="flex items-center justify-between">
-                  <p>{filters.sortBy}</p>
+                  <p className="desktop:text-base laptop:text-sm">
+                    {filters.sortBy}
+                  </p>
                   <BsChevronDown
                     className={`${
                       showModal === 3 && "rotate-180"
@@ -200,7 +210,7 @@ const Filters: React.FC<FiltersProps> = () => {
 
               {/* Sort by modal */}
               {showModal === 3 && (
-                <div className="absolute top-20 right-0 h-auto w-52 bg-white border border-gray-300 shadow-md overflow-hidden">
+                <div className="absolute desktop:top-20 laptop:top-16 right-0 h-auto desktop:w-52 laptop:w-48 desktop:text-base laptop:text-sm bg-white border border-gray-300 shadow-md overflow-hidden">
                   <ul className="flex flex-col">
                     <li className="w-full">
                       <button
@@ -208,7 +218,7 @@ const Filters: React.FC<FiltersProps> = () => {
                           selectSortBy("Recomandate");
                           setShowModal(0);
                         }}
-                        className="w-full flex self-start py-3 px-4 hover:bg-cream transition-all duration-200"
+                        className="w-full flex self-start desktop:py-3 laptop:py-2 px-4 hover:bg-cream transition-all duration-200"
                       >
                         Recomandate
                       </button>
@@ -219,7 +229,7 @@ const Filters: React.FC<FiltersProps> = () => {
                           selectSortBy("Pret descrescator");
                           setShowModal(0);
                         }}
-                        className="w-full flex self-start py-3 px-4 hover:bg-cream transition-all duration-200"
+                        className="w-full flex self-start desktop:py-3 laptop:py-2 px-4 hover:bg-cream transition-all duration-200"
                       >
                         Pret descrescator
                       </button>
@@ -230,7 +240,7 @@ const Filters: React.FC<FiltersProps> = () => {
                           selectSortBy("Pret crescator");
                           setShowModal(0);
                         }}
-                        className="w-full flex self-start py-3 px-4 hover:bg-cream transition-all duration-200"
+                        className="w-full flex self-start desktop:py-3 laptop:py-2 px-4 hover:bg-cream transition-all duration-200"
                       >
                         Pret crescator
                       </button>

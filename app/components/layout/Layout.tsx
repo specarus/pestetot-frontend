@@ -248,7 +248,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
         </section>
         {/* Account modal */}
 
-        <div className="w-80 fixed h-full z-20 bg-white shadow-md border-r border-gray-100">
+        <div className="desktop:w-80 laptop:w-64 fixed h-full z-20 bg-white shadow-md border-r border-gray-100">
           {/* Green bar */}
           <span className="absolute h-full w-2 bg-primary left-0 top-0" />
           {/* Green bar */}
@@ -259,12 +259,12 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
           </section>
           {/* Sidebar */}
         </div>
-        <div className="pl-80 relative w-full h-full z-10 transition-all duration-500 ease-in-out">
+        <div className="desktop:pl-80 laptop:pl-64 relative w-full h-full z-10 transition-all duration-500 ease-in-out">
           <section className="fixed w-full top-0 left-0 z-20">
             <Announcement />
           </section>
           {/* Hero video */}
-          <section className="w-full h-96 border-b mb-10">
+          <section className="w-full desktop:h-96 laptop:h-72 border-b desktop:mb-10 laptop:mb-6">
             <Hero />
           </section>
           {/* Hero video */}

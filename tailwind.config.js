@@ -11,6 +11,10 @@ module.exports = {
         primary: "#59A96A",
         cream: "#f6f6f6",
       },
+      screens: {
+        desktop: "1750px",
+        laptop: "1300px",
+      },
     },
   },
 

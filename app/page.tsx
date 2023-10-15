@@ -32,13 +32,13 @@ export default async function Home() {
   return (
     <div className="w-full h-full">
       {/* All products */}
-      <section className="px-20 mb-6">
-        <div className="flex items-center gap-3 mb-6">
+      <section className="desktop:px-20 laptop:px-16 desktop:mb-6 laptop:mb-4">
+        <div className="flex items-center gap-3 desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
           <p>Acasa</p>
           <p className="text-primary">/</p>
           <p className="text-primary">Toate</p>
         </div>
-        <div className="mb-14">
+        <div className="desktop:mb-14 laptop:mb-10">
           <Title title="Toate produsele" />
         </div>
 
@@ -49,7 +49,7 @@ export default async function Home() {
       {/* All products */}
 
       {products && (
-        <section className="mb-24">
+        <section className="desktop:mb-48 laptop:mb-32">
           <HomePageProducts products={products} brands={brands} />
         </section>
       )}

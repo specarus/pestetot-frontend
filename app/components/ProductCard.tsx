@@ -26,11 +26,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >
-      <div className="relative w-full h-40 grid place-content-center overflow-hidden border-b border-gray-100">
+      <div className="relative w-full desktop:h-40 laptop:h-32 grid place-content-center overflow-hidden border-b border-gray-100">
         <span
           className={`${
             product.availability === "in stoc" ? "bg-green-500" : "bg-red-500"
-          } absolute top-2 left-2 w-2 h-2 rounded-full`}
+          } absolute desktop:top-2 desktop:left-2 laptop:top-1 laptop:left-1 desktop:w-2 desktop:h-2 laptop:w-1 laptop:h-1 rounded-full`}
         />
         {/* Creme background */}
         <span className="w-full h-full absolute top-0 left-0 bg-neutral-400 bg-opacity-10" />
@@ -41,7 +41,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           priority
           width={500}
           height={500}
-          className="w-full h-full object-contain p-4 select-none pointer-events-none"
+          className="w-full h-full object-contain desktop:p-4 laptop:p-6 select-none pointer-events-none"
         />
         {/* Overlay */}
         <Link
@@ -61,7 +61,9 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
               setTimeout(() => setShowCartContent(true), 200);
             }, 150);
           }}
-          className={`${hover ? "h-10 opacity-1" : "h-0 opacity-0"} ${
+          className={`${
+            hover ? "desktop:h-10 laptop:h-8 opacity-1" : "h-0 opacity-0"
+          } ${
             product.availability === "in stoc"
               ? "bg-primary"
               : "bg-gray-300 pointer-events-none"
@@ -70,7 +72,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           <p
             className={`${
               product.availability === "in stoc" && "group-hover:-translate-y-8"
-            } transition-all duration-200`}
+            } transition-all duration-200 desktop:text-base laptop:text-sm`}
           >
             {product.availability === "in stoc"
               ? "Adauga in cos"
@@ -78,10 +80,12 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
           </p>
           <p
             className={`${
-              product.availability === "in stoc" ? "group-hover:top-2" : ""
-            } absolute top-10 left-[50%] -translate-x-[50%] transition-all duration-200`}
+              product.availability === "in stoc"
+                ? "desktop:group-hover:top-2 laptop:group-hover:top-[6px]"
+                : ""
+            } absolute laptop:top-10 left-[50%] -translate-x-[50%] transition-all duration-200`}
           >
-            <SlBag className="text-2xl" />
+            <SlBag className="desktop:text-2xl laptop:text-xl" />
           </p>
         </button>
         {/* Button */}
@@ -89,11 +93,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       <Link
         onClick={() => {}}
         href={`/detalii/${product.category}/${product.subCategory}/${product.slug}`}
-        className="relative w-full bg-white flex flex-col p-3 pb-2 justify-between h-28"
+        className="relative w-full bg-white flex flex-col desktop:p-3 laptop:p-2 desktop:pb-2 laptop:pb-1 justify-between desktop:h-28 laptop:h-20"
       >
-        <p>{product.title}</p>
+        <p className="desktop:text-base laptop:text-sm">{product.title}</p>
         <div className="flex items-center gap-6">
-          <div className="w-fit relative flex items-center gap-1">
+          <div className="w-fit relative flex items-center gap-1 desktop:text-base laptop:text-sm">
             <p>
               {product.options.length > 1 &&
                 Number(product.options[0].price.split(" ")[0]) !==
@@ -111,9 +115,11 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
             </p>
             {/* Min price */}
 
-            <p className="absolute -top-1 left-full text-xs">&nbsp;.00</p>
+            <p className="absolute -top-1 left-full desktop:text-xs laptop:text-[10px]">
+              &nbsp;.00
+            </p>
           </div>
-          <p>Lei</p>
+          <p className="desktop:text-base laptop:text-sm">Lei</p>
         </div>
       </Link>
     </div>

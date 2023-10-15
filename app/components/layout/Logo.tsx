@@ -4,13 +4,13 @@ import Image from "next/image";
 
 const Logo = () => {
   return (
-    <Link href="/" className="text-2xl">
+    <Link href="/">
       <Image
         src="/assets/pestetot-logo-primary-small.svg"
         alt="Logo"
         width={500}
         height={500}
-        className="w-28 object-cover pointer-events-none select-none"
+        className="desktop:w-28 laptop:w-24 object-cover pointer-events-none select-none"
       />
     </Link>
   );

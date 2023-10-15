@@ -31,7 +31,7 @@ const Search: React.FC<SearchProps> = ({
     <div className="w-full h-full">
       <span className="fixed h-full w-2 bg-primary left-0 top-0" />
       {/* Input */}
-      <section className="fixed left-0 top-10 w-80 px-8 z-50">
+      <section className="fixed left-0 top-10 desktop:w-80 laptop:w-64 desktop:px-8 laptop:px-6 z-50">
         <div className="w-full relative mb-4">
           <input
             // id="searchInput"
@@ -75,7 +75,7 @@ const Search: React.FC<SearchProps> = ({
           )}
         </div>
         {search && (
-          <div className="text-sm border-b flex gap-1 select-none">
+          <div className="desktop:text-sm laptop:text-xs border-b flex gap-1 select-none">
             <p>{filteredProducts.length}</p>
             <p>{filteredProducts.length === 1 ? "rezultat" : "rezultate"}</p>
           </div>
@@ -83,7 +83,7 @@ const Search: React.FC<SearchProps> = ({
       </section>
       {/* Input */}
 
-      <section className="pt-32 pb-4 w-full h-full px-8">
+      <section className="pt-32 pb-4 w-full h-full desktop:px-8 laptop:px-6">
         <div className="w-full h-full overflow-x-hidden overflow-y-auto">
           <SearchProducts
             filteredProducts={filteredProducts}

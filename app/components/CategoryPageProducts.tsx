@@ -668,6 +668,12 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
     setShowAppliedFilters(false);
   }
 
+  const [w, setW] = useState(window.innerWidth);
+
+  window.onresize = function (event) {
+    setW(window.innerWidth);
+  };
+
   return (
     <div className="w-full h-full">
       {!showAppliedFilters && (
@@ -694,9 +700,9 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
       )}
       {/* Reset button */}
 
-      <section className="relative grid grid-cols-7 gap-x-4 gap-y-8 px-20 mb-10">
+      <section className="relative desktop:px-20 laptop:px-16 w-full grid desktop:grid-cols-7 laptop:grid-cols-6 desktop:gap-x-4 laptop:gap-x-3 desktop:gap-y-8 laptop:gap-y-5 desktop:mb-10 laptop:mb-8">
         {filteredProducts.length > 0 && (
-          <div className="absolute -top-8 left-20 text-sm flex items-center gap-1 select-none pointer-events-none">
+          <div className="absolute -top-8 desktop:left-20 laptop:left-16 deskop:text-sm laptop:text-xs flex items-center gap-1 select-none pointer-events-none">
             <p>{filteredProducts.length}</p>
             <p>{filteredProducts.length === 1 ? "produs" : "produse"}</p>
           </div>

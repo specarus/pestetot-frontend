@@ -9,7 +9,7 @@ const Announcement = () => {
     <div
       className={`${
         user?._id ? "pr-64" : "pr-32"
-      } w-full h-10 bg-primary grid place-content-center cursor-default`}
+      } w-full desktop:h-10 laptop:h-8 deskto:text-md laptop:text-sm bg-primary grid place-content-center cursor-default`}
     >
       <Marquee className="text-white" pauseOnHover direction="right" speed={80}>
         <div className="w-[50vw]">

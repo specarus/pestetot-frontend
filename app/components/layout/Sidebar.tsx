@@ -48,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
   const { totalAmount } = useContext(CartContext);
 
   return (
-    <div className="relative w-full h-full flex flex-col pt-6 z-50">
+    <div className="relative w-full h-full flex flex-col desktop:pt-6 laptop:pt-4 z-50">
       {/* Cart overlay */}
       <div
         onClick={() => {
@@ -57,7 +57,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
         }}
         className={`${
           showCartModal ? "opacity-1 visible" : "opacity-0 invisible"
-        } absolute top-0 left-80 w-screen h-screen bg-black bg-opacity-30 z-40 transition-all duration-200`}
+        } absolute top-0 desktop:left-80 laptop:left-64 w-screen h-screen bg-black bg-opacity-30 z-40 transition-all duration-200`}
       />
       {/* Cart overlay */}
 
@@ -70,7 +70,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
         }}
         className={`${
           showSearchModal ? "opacity-1 visible" : "opacity-0 invisible"
-        } absolute top-0 left-80 w-screen h-screen bg-black bg-opacity-30 z-40 transition-all duration-200`}
+        } absolute top-0 desktop:left-80 laptop:left-64 w-screen h-screen bg-black bg-opacity-30 z-40 transition-all duration-200`}
       />
       {/* Search overlay */}
 
@@ -87,7 +87,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
             }, 500);
             setTimeout(() => setShowCartModal(false), 200);
           }}
-          className="text-2xl hover:text-primary transition-all duration-200"
+          className="desktop:text-2xl laptop:text-xl hover:text-primary transition-all duration-200"
         >
           <IoSearchOutline />
         </button>
@@ -105,7 +105,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
               setTimeout(() => setShowCartContent(true), 200);
             }
           }}
-          className="w-7 h-7 text-lg bg-primary text-white font-medium rounded-full grid place-content-center"
+          className="desktop:w-7 desktop:h-7 laptop:w-6 laptop:h-6 desktop:text-lg laptop:text-base bg-primary text-white font-medium rounded-full grid place-content-center"
         >
           {totalAmount}
         </button>
@@ -149,8 +149,10 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
       {/* Cart Modal */}
       <div
         className={`${
-          showCartModal ? "w-[31rem] visible" : "w-0 invisible"
-        } absolute top-0 left-80 h-full bg-white border-r transition-all duration-300 ease-in-out z-50`}
+          showCartModal
+            ? "desktop:w-[31rem] laptop:w-96 visible"
+            : "w-0 invisible"
+        } absolute top-0 desktop:left-80 laptop:left-64 h-full bg-white border-r transition-all duration-300 ease-in-out z-50`}
       >
         <div
           className={`${
@@ -166,20 +168,20 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
       {/* Cart Modal */}
 
       {/* Logo */}
-      <section className="px-10 mb-12">
+      <section className="desktop:px-10 desktop:mb-12 laptop:px-6 laptop:mb-8">
         <Logo />
       </section>
       {/* Logo */}
 
       {/* Navigation */}
-      <section className="px-10 mb-8">
-        <ul className="relative flex flex-col gap-1">
+      <section className="desktop:px-10 desktop:mb-8 laptop:px-6 laptop:mb-4">
+        <ul className="relative flex flex-col desktop:gap-1 laptop:gap-[2px]">
           <li className="group relative">
             <Link
               href="/"
               className={`${
                 pathname === "/" && "text-white"
-              } block w-full text-lg px-4 py-[1px] group-hover:text-white group-hover:duration-200 transition-all duration-300`}
+              } block w-full desktop:text-lg laptop:text-base laptop:px-4 laptop:py-[1px] group-hover:text-white group-hover:duration-200 transition-all duration-300`}
             >
               <p>Acasa</p>
               <span
@@ -198,9 +200,12 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
                     pathname.includes("/catalog") &&
                     pathname.includes(category.slug) &&
                     "text-white"
-                  } block w-full text-lg capitalize px-4 py-[1px] group-hover:text-white transition-all ease-in-out group-hover:duration-200 duration-300`}
+                  } block w-full desktop:text-lg laptop:text-base laptop:px-4 laptop:py-[1px] group-hover:text-white group-hover:duration-200 transition-all duration-300`}
                 >
-                  <p>{category.title.toLowerCase()}</p>
+                  <p>
+                    {category.title.charAt(0).toUpperCase()}
+                    {category.title.slice(1, category.title.length)}
+                  </p>
                   <span
                     className={`${
                       pathname.includes("/catalog") &&
@@ -217,12 +222,12 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
       {/* Navigation */}
 
       {/* Categories */}
-      <section className="px-12">
+      <section className="desktop:px-12 laptop:px-10">
         <ul className="flex flex-col">
           <li>
             <Link
               href="/despre-noi"
-              className="ml-2 hover:border-l-4 hover:pl-2 border-primary transition-all duration-100"
+              className="laptop:text-sm desktop:text-base ml-2 hover:border-l-4 hover:pl-2 border-primary transition-all duration-100"
             >
               Despre noi
             </Link>
@@ -230,7 +235,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
           <li>
             <Link
               href="/intrebari-frecvente"
-              className="ml-2 hover:border-l-4 hover:pl-2 border-primary transition-all duration-100"
+              className="laptop:text-sm desktop:text-base ml-2 hover:border-l-4 hover:pl-2 border-primary transition-all duration-100"
             >
               Intrebari frecvente
             </Link>

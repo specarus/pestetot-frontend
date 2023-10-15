@@ -27,7 +27,7 @@ const SearchProductCard: React.FC<SearchProductCartProps> = ({
     <div
       onMouseOver={() => setShowButton(true)}
       onMouseOut={() => setShowButton(false)}
-      className="relative block w-full h-20"
+      className="relative block w-full desktop:h-20 laptop:h-16"
     >
       <Link
         href={`/detalii/${product.category}/${product.subCategory}/${product.slug}`}
@@ -49,7 +49,7 @@ const SearchProductCard: React.FC<SearchProductCartProps> = ({
           showButton && "blur-[1px]"
         } w-full h-full flex transition-all duration-200`}
       >
-        <div className="relative w-20 h-full grid place-content-center">
+        <div className="relative desktop:w-20 laptop:w-16 h-full grid place-content-center">
           <Image
             src={product.coverImg}
             alt="Search"
@@ -64,7 +64,7 @@ const SearchProductCard: React.FC<SearchProductCartProps> = ({
             } absolute bottom-[6px] right-[6px] w-[6px] h-[6px] rounded-full`}
           />
         </div>
-        <div className="px-6 text-sm h-full flex items-center w-44 select-none">
+        <div className="desktop:px-6 laptop:px-4 desktop:text-sm laptop:text-xs h-full flex items-center desktop:w-44 laptop:w-40 select-none">
           <p id="productTitle">{product.title}</p>
         </div>
       </div>

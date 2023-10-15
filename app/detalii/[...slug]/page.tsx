@@ -34,14 +34,14 @@ const ProductPage = async ({ params }: { params: { slug: string[] } }) => {
 
   return (
     <div className="w-full h-full">
-      <section className="mb-24">
+      <section className="desktop:mb-24 laptop:mb-20">
         <ProductDetails
           product={product}
           category={category}
           subCategory={subCategory}
         />
       </section>
-      <section className="mb-24">
+      <section className="desktop:mb-24 laptop:mb-20">
         <DetailsPageProducts productId={product._id} products={products} />
       </section>
     </div>

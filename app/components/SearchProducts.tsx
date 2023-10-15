@@ -19,7 +19,7 @@ const SearchProducts: React.FC<SearchProductsProps> = ({
 }) => {
   return (
     <div className="w-full h-full">
-      <ul className="w-full h-full flex flex-col gap-4">
+      <ul className="w-full h-full flex flex-col desktop:gap-4 laptop:gap-2">
         {filteredProducts.map((product) => {
           return (
             <div key={product._id}>
