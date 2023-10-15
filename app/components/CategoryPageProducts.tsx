@@ -668,10 +668,10 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
     setShowAppliedFilters(false);
   }
 
-  const [w, setW] = useState(window.innerWidth);
+  const [w, setW] = useState(1920);
 
   window.onresize = function (event) {
-    setW(window.innerWidth);
+    if (typeof window !== "undefined") setW(window.innerWidth);
   };
 
   return (
