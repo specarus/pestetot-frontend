@@ -37,9 +37,10 @@ const DetailsPageProducts: React.FC<FeaturedProductsProps> = ({
 
   const [w, setW] = useState(1920);
 
-  window.onresize = function (event) {
-    if (typeof window !== "undefined") setW(window.innerWidth);
-  };
+  if (typeof window !== "undefined")
+    window.onresize = function (event) {
+      setW(window.innerWidth);
+    };
 
   return (
     <div className="w-full">
