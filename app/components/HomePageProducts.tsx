@@ -212,22 +212,22 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
               );
             })}
       </section>
-      {w > 1750
+      {(w > 1750
         ? filteredProducts.length > 35
-        : filteredProducts.length > 30 && (
-            <section className="desktop:px-10 laptop:px-8">
-              <div className="relative w-full desktop:h-80 laptop:h-72 border desktop:mb-10 laptop:mb-8">
-                <Image
-                  src="/assets/images/waves.jpg"
-                  alt="Fishing"
-                  width={2000}
-                  height={2000}
-                  className="w-full h-full object-cover"
-                />
-                <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20" />
-              </div>
-            </section>
-          )}
+        : filteredProducts.length > 30) && (
+        <section className="desktop:px-10 laptop:px-8">
+          <div className="relative w-full desktop:h-80 laptop:h-72 border desktop:mb-10 laptop:mb-8">
+            <Image
+              src="/assets/images/waves.jpg"
+              alt="Fishing"
+              width={2000}
+              height={2000}
+              className="w-full h-full object-cover"
+            />
+            <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20" />
+          </div>
+        </section>
+      )}
       <section className="grid desktop:grid-cols-7 laptop:grid-cols-6 desktop:gap-x-4 laptop:gap-x-3 desktop:gap-y-8 laptop:gap-y-5 desktop:mb-10 laptop:mb-8 desktop:px-20 laptop:px-16">
         {w > 1750
           ? filteredProducts.slice(35, 56).map((product: any) => {
@@ -246,27 +246,27 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
             })}
       </section>
 
-      {w > 1750
+      {(w > 1750
         ? filteredProducts.length > 56
-        : filteredProducts.length > 48 && (
-            <section>
-              <div className="w-full desktop:px-20 laptop:px-16 desktop:py-10 laptop:py-8 bg-cream border-t border-b desktop:mb-10 laptop:mb-8">
-                <div className="w-full flex desktop:gap-8 laptop:gap-4">
-                  {brands.slice(0, 7).map((brand) => {
-                    return (
-                      <Link
-                        href={`/catalog/brand/${brand.slug}`}
-                        key={brand._id}
-                        className="w-44 h-24 bg-white border border-gray-100 rounded-md shadow-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
-                      >
-                        <BrandCard brand={brand} />
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-          )}
+        : filteredProducts.length > 48) && (
+        <section>
+          <div className="w-full desktop:px-20 laptop:px-16 desktop:py-10 laptop:py-8 bg-cream border-t border-b desktop:mb-10 laptop:mb-8">
+            <div className="w-full flex desktop:gap-8 laptop:gap-4">
+              {brands.slice(0, 7).map((brand) => {
+                return (
+                  <Link
+                    href={`/catalog/brand/${brand.slug}`}
+                    key={brand._id}
+                    className="w-44 h-24 bg-white border border-gray-100 rounded-md shadow-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
+                  >
+                    <BrandCard brand={brand} />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
       <section className="grid desktop:grid-cols-7 laptop:grid-cols-6 desktop:gap-x-4 laptop:gap-x-3 desktop:gap-y-8 laptop:gap-y-5 desktop:mb-10 laptop:mb-8 desktop:px-20 laptop:px-16">
         {w > 1750
           ? filteredProducts.slice(56, 77).map((product: any) => {
@@ -284,27 +284,27 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
               );
             })}
       </section>
-      {w > 1750
+      {(w > 1750
         ? filteredProducts.length > 77
-        : filteredProducts.length > 66 && (
-            <section>
-              <div className="w-full desktop:px-20 laptop:px-16 desktop:py-10 laptop:py-8 bg-cream border-t border-b desktop:mb-10 laptop:mb-8">
-                <div className="w-full flex desktop:gap-8 laptop:gap-4">
-                  {brands.slice(7, 14).map((brand) => {
-                    return (
-                      <Link
-                        href={`/catalog/brand/${brand.slug}`}
-                        key={brand._id}
-                        className="w-44 h-24 border border-gray-100 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
-                      >
-                        <BrandCard brand={brand} />
-                      </Link>
-                    );
-                  })}
-                </div>
-              </div>
-            </section>
-          )}
+        : filteredProducts.length > 66) && (
+        <section>
+          <div className="w-full desktop:px-20 laptop:px-16 desktop:py-10 laptop:py-8 bg-cream border-t border-b desktop:mb-10 laptop:mb-8">
+            <div className="w-full flex desktop:gap-8 laptop:gap-4">
+              {brands.slice(7, 14).map((brand) => {
+                return (
+                  <Link
+                    href={`/catalog/brand/${brand.slug}`}
+                    key={brand._id}
+                    className="w-44 h-24 border border-gray-100 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
+                  >
+                    <BrandCard brand={brand} />
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      )}
       <section className="grid desktop:grid-cols-7 laptop:grid-cols-6 desktop:gap-x-4 laptop:gap-x-3 desktop:gap-y-8 laptop:gap-y-5 desktop:mb-10 laptop:mb-8 desktop:px-20 laptop:px-16">
         {w > 1750
           ? filteredProducts
