@@ -222,7 +222,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
       {/* Navigation */}
 
       {/* Categories */}
-      <section className="desktop:px-12 laptop:px-10">
+      <section className="desktop:px-12 laptop:px-8">
         <ul className="flex flex-col">
           <li>
             <Link

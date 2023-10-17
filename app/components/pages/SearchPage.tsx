@@ -25,13 +25,13 @@ const SearchPage = () => {
   return (
     <div className="w-full h-full">
       <section>
-        <div className="flex items-center gap-3 mb-6">
+        <div className="flex items-center desktop:gap-3 laptop:gap-2 desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
           <p>Acasa</p>
           <p className="text-primary">/</p>
           <p className="text-primary">Cauta</p>
         </div>
       </section>
-      <section className="border-b flex items-center gap-1 mb-10 select-none">
+      <section className="border-b flex items-center gap-1 desktop:mb-10 laptop:mb-8 select-none desktop:text-base laptop:text-sm">
         <p>{filteredProducts.length}</p>
         <p>{filteredProducts.length === 1 ? "rezultat al" : "rezultate ale"}</p>
         <p>cautarii:</p>
@@ -39,7 +39,7 @@ const SearchPage = () => {
           &ldquo;{search.split("-").join(" ")}&rdquo;
         </span>
       </section>
-      <section className="grid grid-cols-7 gap-x-4 gap-y-8">
+      <section className="grid desktop:grid-cols-7 laptop:grid-cols-6 desktop:gap-x-4 laptop:gap-x-3 desktop:gap-y-8 laptop:gap-y-5">
         {filteredProducts.map((product: any) => {
           return (
             <div key={product._id}>

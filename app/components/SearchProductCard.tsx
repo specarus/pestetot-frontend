@@ -40,9 +40,9 @@ const SearchProductCard: React.FC<SearchProductCartProps> = ({
           showButton
             ? "translate-x-0 opacity-1 visible"
             : "translate-x-10 opacity-0 invisible"
-        } rounded-full absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] py-1 px-6 bg-primary text-white overflow-hidden transition-all duration-200 shadow-md z-50`}
+        } rounded-full absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] py-1 desktop:px-6 laptop:px-4 bg-primary text-white overflow-hidden transition-all duration-200 shadow-md z-50 `}
       >
-        <BsArrowRight className="text-xl" />
+        <BsArrowRight className="desktop:text-xl laptop:text-lg" />
       </Link>
       <div
         className={`${

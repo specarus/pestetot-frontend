@@ -83,31 +83,31 @@ const Filters: React.FC<FiltersProps> = () => {
                         Reseteaza
                       </button>
                     </div>
-                    <ul className="flex flex-col laptop:gap-2 items-start desktop:py-3 laptop:py-2 px-4">
-                      <li>
+                    <ul className="w-full h-auto flex flex-col py-1">
+                      <li className="desktop:px-4 laptop:px-3 laptop:py-1">
                         <button
                           onClick={() => selectInStock()}
-                          className="flex items-center gap-4"
+                          className="flex items-center desktop:gap-4 laptop:gap-3"
                         >
                           <span
                             className={`${
                               filters.availability.includes("in stoc") &&
                               "bg-primary"
-                            } w-4 h-4 rounded-full border border-gray-300`}
+                            } desktop:w-4 laptop:w-3 desktop:h-4 laptop:h-3 rounded-full border border-gray-300`}
                           />
                           <p>in stoc</p>
                         </button>
                       </li>
-                      <li>
+                      <li className="desktop:px-4 laptop:px-3 laptop:py-1">
                         <button
                           onClick={() => selectOutOfStock()}
-                          className="flex items-center gap-4"
+                          className="flex items-center desktop:gap-4 laptop:gap-3"
                         >
                           <span
                             className={`${
                               filters.availability.includes("stoc epuizat") &&
                               "bg-primary"
-                            } w-4 h-4 rounded-full border border-gray-300`}
+                            } desktop:w-4 laptop:w-3 desktop:h-4 laptop:h-3 rounded-full border border-gray-300`}
                           />
                           <p>stoc epuizat</p>
                         </button>

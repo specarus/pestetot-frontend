@@ -46,7 +46,7 @@ const AccountPage = () => {
       {!!user && (
         <div className="relative w-full h-full">
           {isAdmin && (
-            <ul className="absolute top-[8.5rem] -right-44 flex flex-col bg-white border w-40 rounded-md overflow-hidden">
+            <ul className="absolute desktop:top-[8.5rem] laptop:top-[6.4rem] -right-44 flex flex-col bg-white border w-40 rounded-md overflow-hidden desktop:text-base laptop:text-sm">
               <li className="hover:bg-cream transition-all duration-200">
                 <Link href="/admin" className="block w-full h-full py-2 px-4">
                   Dashboard
@@ -55,7 +55,7 @@ const AccountPage = () => {
               <li className="hover:bg-cream transition-all duration-200">
                 <Link
                   href="/admin/produse"
-                  className="block w-full h-full py-2 px-4"
+                  className="block w-full h-full desktop:py-2 laptop:py-1 px-4"
                 >
                   Produse
                 </Link>
@@ -103,27 +103,27 @@ const AccountPage = () => {
             </ul>
           )}
 
-          <section className="mb-6">
-            <div className="flex items-center gap-3 mb-6">
+          <section className="desktop:mb-6 laptop:mb-4">
+            <div className="flex items-center desktop:gap-3 laptop:gap-2 desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
               <p>Acasa</p>
               <p className="text-primary">/</p>
               <p className="text-primary">Contul meu</p>
             </div>
-            <div className="mb-14">
+            <div className="desktop:mb-14 laptop:mb-10">
               <Title title="Contul meu" />
             </div>
           </section>
-          <section className="mb-24">
+          <section className="desktop:mb-24 laptop:mb-16">
             <UserForm />
           </section>
-          <section className="w-full mb-20 flex gap-8 justify-end">
-            <div className="w-fit flex items-center gap-8 border rounded-md py-4 px-8">
+          <section className="w-full desktop:mb-20 laptop:mb-16 flex desktop:gap-8 laptop:gap-4 justify-end">
+            <div className="w-fit flex items-center desktop:gap-8 laptop:gap-6 border rounded-md desktop:py-4 laptop:py-2 desktop:px-8 laptop:px-6">
               <button
                 onClick={() => logout()}
                 className="flex items-center gap-2 group"
               >
-                <SlLogout className="text-xl" />
-                <p className="relative">
+                <SlLogout className="desktop:text-xl laptop:text-lg" />
+                <p className="relative desktop:text-base laptop:text-sm">
                   Deconecteaza-te
                   <span className="absolute bottom-[1px] left-0 w-0 h-[1px] bg-black group-hover:w-full transition-all duration-200" />
                 </p>
@@ -131,9 +131,9 @@ const AccountPage = () => {
 
               <button
                 onClick={() => setShowDeletePopup(true)}
-                className="border rounded-full py-1 px-8 hover:text-red-500 hover:border-red-500 transition-all duration-200"
+                className="border rounded-full py-1 desktop:px-8 laptop:px-6 hover:text-red-500 hover:border-red-500 transition-all duration-200"
               >
-                <p className="text-2xl">
+                <p className="desktop:text-2xl laptop:text-xl">
                   <RiDeleteBin7Line />
                 </p>
               </button>

@@ -120,13 +120,15 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
             }}
             className={`${
               showMenuModal ? "shadow-none" : "shadow-md"
-            }  fixed top-3 right-6 h-12 rounded-full z-30 border border-gray-100 bg-white flex items-center p-1 w-52 transition-all duration-300`}
+            }  fixed top-3 right-6 desktop:h-12 laptop:h-10 rounded-full z-30 border border-gray-100 bg-white flex items-center p-1 desktop:w-52 laptop:w-48 transition-all duration-300`}
           >
             <span className="flex justify-center grow">
               {showModal ? (
                 <FiEdit3 className="text-xl" />
               ) : (
-                <p>@{user.username}</p>
+                <p className="desktop:text-base laptop:text-sm">
+                  @{user.username}
+                </p>
               )}
             </span>
             <div className="select-none pointer-events-none">
@@ -135,7 +137,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
                 alt="Placeholder"
                 width={500}
                 height={500}
-                className="w-10 h-10 rounded-full"
+                className="desktop:w-10 laptop:w-8 desktop:h-10 laptop:h-8 rounded-full"
               />
             </div>
           </button>
@@ -159,10 +161,10 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
               setShowCartContent(false);
               setTimeout(() => setShowCartModal(false), 200);
             }}
-            className="fixed top-3 right-6 h-12 w-auto rounded-full z-30 border border-gray-100 bg-white flex items-center pl-4 pr-1 gap-3 shadow-md"
+            className="fixed top-3 right-6 desktop:h-12 laptop:h-10 w-auto rounded-full z-30 border border-gray-100 bg-white flex items-center pl-4 pr-1 gap-3 shadow-md"
           >
             <span>
-              <AiOutlineMenu className="text-xl" />
+              <AiOutlineMenu className="desktop:text-xl laptop:text-lg" />
             </span>
             <div className="select-none pointer-events-none">
               <Image
@@ -170,7 +172,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
                 height={500}
                 src="/assets/images/placeholder.jpg"
                 alt="Placeholder"
-                className="w-10 h-10 rounded-full"
+                className="desktop:w-10 laptop:w-8 desktop:h-10 laptop:h-8 rounded-full"
               />
             </div>
           </button>
@@ -181,24 +183,24 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
         <div
           className={`${
             showMenuModal
-              ? "h-[8.5rem] opacity-1 visible"
+              ? "desktop:h-[8.5rem] laptop:h-[8rem] opacity-1 visible"
               : "h-0 opacity-0 invisible"
-          } fixed top-10 right-6 flex flex-col w-52 rounded-b-lg overflow-hidden bg-white border border-gray-100 shadow-lg transition-all duration-200 ease-in-out z-20`}
+          } fixed desktop:top-10 laptop:top-8 right-6 flex flex-col desktop:w-52 laptop:w-48 rounded-b-lg overflow-hidden bg-white border border-gray-100 shadow-lg transition-all duration-200 ease-in-out z-20 desktop:text-base laptop:text-sm`}
         >
           <Link
             onClick={() => setShowMenuModal(false)}
             href="/contul-meu"
-            className="flex items-center gap-4 pt-6 pb-2 px-4  hover:bg-cream transition-all duration-200"
+            className="flex items-center desktop:gap-4 laptop:gap-3 pt-6 laptop:pb-2 px-4  hover:bg-cream transition-all duration-200"
           >
-            <FiUser className="text-xl" />
+            <FiUser className="desktop:text-xl laptop:text-lg" />
             Contul meu
           </Link>
           <Link
             onClick={() => setShowMenuModal(false)}
             href="/contul-meu/comenzi"
-            className="py-2 px-4 flex items-center gap-4 hover:bg-cream transition-all duration-200"
+            className="laptop:py-2 px-4 flex items-center desktop:gap-4 laptop:gap-3 hover:bg-cream transition-all duration-200"
           >
-            <PiPackageLight className="text-2xl" />
+            <PiPackageLight className="desktop:text-2xl laptop:text-xl" />
             <p>Comenzi</p>
           </Link>
           <button
@@ -206,9 +208,9 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
               logout();
               setShowMenuModal(false);
             }}
-            className="w-full py-2 px-4 flex items-center gap-4 hover:bg-cream transition-all duration-200"
+            className="laptop:py-2 px-4 flex items-center desktop:gap-4 laptop:gap-3 hover:bg-cream transition-all duration-200"
           >
-            <SlLogout className="text-lg" />
+            <SlLogout className="desktop:text-lg laptop:text-base" />
             <p>Deconecteaza-te</p>
           </button>
         </div>

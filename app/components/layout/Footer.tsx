@@ -8,9 +8,9 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full h-60 border-t border-gray-100 px-20 py-4 bg-cream grid grid-cols-5 items-center gap-20 shadow-inner overflow-hidden">
+    <footer className="relative w-full desktop:h-60 laptop:h-48 border-t border-gray-100 desktop:px-20 laptop:px-16 desktop:py-4 laptop:py-2 bg-cream grid grid-cols-5 items-center desktop:gap-20 laptop:gap-16 shadow-inner overflow-hidden">
       {/* Copyright */}
-      <p className="absolute bottom-4 left-[50%] -translate-x-[50%] text-sm">
+      <p className="absolute bottom-4 left-[50%] -translate-x-[50%] desktop:text-sm laptop:text-xs">
         Copyright &copy; <span className="text-primary">PesteTot SRL</span> 2023
       </p>
       {/* Copyright */}
@@ -28,7 +28,7 @@ const Footer = () => {
         />
       </div>
       {/* Logo */}
-      <ul className="col-span-1 h-full flex flex-col justify-center gap-3">
+      <ul className="col-span-1 h-full flex flex-col justify-center gap-3 desktop:text-base laptop:text-sm">
         <li className="relative group w-fit">
           <Link href="/livrare">Livrare si transport</Link>
           <span className="absolute w-0 group-hover:w-full h-[1px] bottom-[2px] left-0 bg-black transition-all duration-200" />
@@ -50,7 +50,7 @@ const Footer = () => {
             id="newsletter"
             type="email"
             placeholder="Introduceti adresa dvs. de email"
-            className="w-full h-10 border border-gray-300 placeholder:font-thin placeholder:italic focus:border-primary px-6 rounded-full transition-all duration-200"
+            className="w-full desktop:h-10 laptop:h-8 border border-gray-300 desktop:text-base laptop:text-sm placeholder:font-thin placeholder:italic focus:border-primary px-6 rounded-full transition-all duration-200"
           />
 
           <button
@@ -58,7 +58,7 @@ const Footer = () => {
             onClick={() => {}}
             className="absolute right-4 top-[50%] -translate-y-[50%] group hover:translate-x-[2px] transition-all duration-300"
           >
-            <HiArrowLongRight className="text-2xl" />
+            <HiArrowLongRight className="desktop:text-2xl laptop:text-xl" />
           </button>
         </div>
       </form>
@@ -69,17 +69,22 @@ const Footer = () => {
             target="_blank"
             className="flex items-center gap-4 bg-primary text-white p-1 rounded-full"
           >
-            <SiFacebook className="text-2xl" />
-            <p>Facebook</p>
+            <SiFacebook className="desktop:text-2xl laptop:text-xl" />
+            <p className="desktop:text-base laptop:text-sm">Facebook</p>
           </Link>
         </li>
         <li className="flex items-center gap-4">
-          <MdLocalPhone className="text-2xl text-primary" />
-          <p>+40724949274</p>
+          <MdLocalPhone className="desktop:text-2xl laptop:text-xl text-primary" />
+          <p className="desktop:text-base laptop:text-sm">+40724949274</p>
         </li>
         <li className="flex items-center gap-4">
-          <BiLogoGmail className="text-2xl text-primary" />
-          <Link href="mailto:contact@pestetot.com">contact@pestetot.com</Link>
+          <BiLogoGmail className="desktop:text-2xl laptop:text-xl text-primary" />
+          <Link
+            href="mailto:contact@pestetot.com"
+            className="desktop:text-base laptop:text-sm"
+          >
+            contact@pestetot.com
+          </Link>
         </li>
       </ul>
     </footer>

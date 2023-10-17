@@ -94,23 +94,25 @@ const UserForm = () => {
 
   return (
     <div className="w-full h-full">
-      <section className="relative w-full border rounded-md overflow-hidden mb-10">
+      <section className="relative w-full border rounded-md overflow-hidden desktop:mb-10 laptop:mb-8">
         {/* Personal information table */}
-        <div className="flex items-start justify-between border-b px-6 py-4">
-          <h1 className="text-xl">Informatii personale</h1>
+        <div className="flex items-start justify-between border-b desktop:px-6 laptop:px-4 desktop:py-4 laptop:py-2">
+          <h1 className="desktop:text-xl laptop:text-lg">
+            Informatii personale
+          </h1>
           <button
             onClick={() => setShowModal(1)}
-            className="relative rounded-full group flex items-center justify-center w-32 py-1 bg-primary text-white overflow-hidden"
+            className="relative rounded-full group flex items-center justify-center desktop:w-32 laptop:w-28 py-1 bg-primary text-white overflow-hidden"
           >
-            <p className="group-hover:-translate-y-10 transition-all duration-200">
+            <p className="group-hover:-translate-y-10 transition-all duration-200 desktop:text-base laptop:text-sm">
               Editeaza
             </p>
             <p className="text-2xl absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
-              <FiEdit3 className="text-xl" />
+              <FiEdit3 className="desktop:text-xl laptop:text-lg" />
             </p>
           </button>
         </div>
-        <ul className="w-full flex flex-col rounded-b-md overflow-hidden">
+        <ul className="w-full flex flex-col rounded-b-md overflow-hidden desktop:text-base laptop:text-sm">
           <li className="py-3 grid grid-cols-2 bg-cream">
             <span className="col-span-1 h-full px-6">Prenume</span>
             <span className="col-span-1 h-full px-6">
@@ -156,15 +158,17 @@ const UserForm = () => {
           onSubmit={(ev) => savePersonal(ev)}
           className={`${
             showModal === 1 ? "opacity-1 visible" : "opacity-0 invisible"
-          } absolute top-0 left-0 w-full h-full flex gap-8 bg-white p-10 z-40 transition-all duration-200 ease-in-out`}
+          } absolute top-0 left-0 w-full h-full flex desktop:gap-8 laptop:gap-4 bg-white laptop:p-10 transition-all duration-200 ease-in-out desktop:text-base laptop:text-sm`}
         >
-          <section className="flex flex-col gap-8">
+          <section className="flex flex-col desktop:gap-8 laptop:gap-6">
             <div className="relative">
               <label
                 htmlFor="firstName"
                 className={`${
-                  firstNameFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  firstNameFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Prenume
               </label>
@@ -180,15 +184,17 @@ const UserForm = () => {
                 value={user.firstName}
                 onChange={(ev) => changeFirstName(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
               <label
                 htmlFor="lastName"
                 className={`${
-                  lastNameFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  lastNameFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Nume
               </label>
@@ -204,19 +210,21 @@ const UserForm = () => {
                 value={user.lastName}
                 onChange={(ev) => changeLastName(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
-            <div className="w-full flex gap-4">
-              <div className="h-10 px-4 border border-gray-300 grid place-content-center">
+            <div className="w-full flex desktop:gap-4 laptop:gap-2">
+              <div className="desktop:h-10 laptop:h-8 desktop:px-4 laptop:px-2 border border-gray-300 grid place-content-center">
                 +40
               </div>
               <div className="w-full relative">
                 <label
                   htmlFor="phoneNumber"
                   className={`${
-                    phoneNumberFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                  } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                    phoneNumberFocus
+                      ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                      : "-translate-y-[50%]"
+                  } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
                 >
                   Nr. de telefon
                 </label>
@@ -232,18 +240,20 @@ const UserForm = () => {
                   value={user.phoneNumber}
                   onChange={(ev) => changePhoneNumber(ev)}
                   placeholder=""
-                  className="w-full h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                  className="w-full desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
                 />
               </div>
             </div>
           </section>
-          <section className="flex flex-col gap-8">
+          <section className="flex flex-col desktop:gap-8 laptop:gap-6">
             <div className="relative">
               <label
                 htmlFor="username"
                 className={`${
-                  usernameFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  usernameFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Nume de utilizator
               </label>
@@ -259,15 +269,17 @@ const UserForm = () => {
                 value={user.username}
                 onChange={(ev) => changeUsername(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
               <label
                 htmlFor="email"
                 className={`${
-                  emailFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  emailFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Email
               </label>
@@ -283,18 +295,18 @@ const UserForm = () => {
                 value={user.email}
                 onChange={(ev) => changeEmail(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>
           <button
             type="submit"
-            className="absolute bottom-6 right-10 rounded-full group flex items-center justify-center w-40 py-2 bg-primary text-white overflow-hidden"
+            className="absolute bottom-6 right-10 rounded-full group flex items-center justify-center desktop:w-40 laptop:w-32 desktop:py-2 laptop:py-1 bg-primary text-white overflow-hidden"
           >
-            <p className="group-hover:-translate-y-10 transition-all duration-200">
+            <p className="group-hover:-translate-y-10 transition-all duration-200 desktop:text-base laptop:text-sm">
               Salveaza
             </p>
-            <p className="text-2xl absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
+            <p className="desktop:text-2xl laptop:text-xl absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
               <IoSaveOutline />
             </p>
           </button>
@@ -304,21 +316,21 @@ const UserForm = () => {
 
       <section className="relative w-full border rounded-md overflow-hidden">
         {/* Address table */}
-        <div className="flex items-start justify-between border-b px-6 py-4">
-          <h1 className="text-xl">Adresa de livrare</h1>
+        <div className="flex items-start justify-between border-b desktop:px-6 laptop:px-4 desktop:py-4 laptop:py-2">
+          <h1 className="desktop:text-xl laptop:text-lg">Adresa de livrare</h1>
           <button
             onClick={() => setShowModal(2)}
-            className="relative rounded-full group flex items-center justify-center w-32 py-1 bg-primary text-white overflow-hidden"
+            className="relative rounded-full group flex items-center justify-center desktop:w-32 laptop:w-28 py-1 bg-primary text-white overflow-hidden"
           >
-            <p className="group-hover:-translate-y-10 transition-all duration-200">
+            <p className="group-hover:-translate-y-10 transition-all duration-200 desktop:text-base laptop:text-sm">
               Editeaza
             </p>
-            <p className="text-2xl absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
-              <FiEdit3 className="text-xl" />
+            <p className="absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
+              <FiEdit3 className="desktop:text-xl laptop:text-lg" />
             </p>
           </button>
         </div>
-        <ul className="w-full flex flex-col rounded-b-md overflow-hidden">
+        <ul className="w-full flex flex-col rounded-b-md overflow-hidden desktop:text-base laptop:text-sm">
           <li className="py-3 grid grid-cols-2 bg-cream">
             <span className="col-span-1 h-full px-6">Tara</span>
             <span className="col-span-1 h-full px-6">Romania</span>
@@ -373,9 +385,9 @@ const UserForm = () => {
           onSubmit={(ev) => saveAddress(ev)}
           className={`${
             showModal === 2 ? "opacity-1 visible" : "opacity-0 invisible"
-          } absolute top-0 left-0 w-full h-full flex gap-8 bg-white rounded-md p-10 z-40 transition-all duration-200 ease-in-out`}
+          } absolute top-0 left-0 w-full h-full flex desktop:gap-8 laptop:gap-6 bg-white rounded-md desktop:p-10 laptop:p-8 transition-all duration-200 ease-in-out desktop:text-base laptop:text-sm`}
         >
-          <section className="w-full flex flex-col gap-8">
+          <section className="w-full flex flex-col desktop:gap-8 laptop:gap-6">
             <div className="relative">
               <label
                 htmlFor="country"
@@ -387,15 +399,17 @@ const UserForm = () => {
                 id="country"
                 type="text"
                 defaultValue="Romania"
-                className="w-full h-10 pointer-events-none border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
               <label
                 htmlFor="street"
                 className={`${
-                  streetFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  streetFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Strada
               </label>
@@ -411,15 +425,17 @@ const UserForm = () => {
                 value={user.address?.street}
                 onChange={(ev) => changeStreet(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
               <label
                 htmlFor="stair"
                 className={`${
-                  stairFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  stairFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Scara
               </label>
@@ -435,15 +451,17 @@ const UserForm = () => {
                 value={user.address?.stair}
                 onChange={(ev) => changeStair(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
               <label
                 htmlFor="flat"
                 className={`${
-                  flatFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  flatFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Apartament
               </label>
@@ -459,12 +477,12 @@ const UserForm = () => {
                 value={user.address?.flat}
                 onChange={(ev) => changeFlat(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>
-          <section className="w-full flex flex-col gap-8">
-            <div className="w-full flex gap-4">
+          <section className="w-full flex flex-col desktop:gap-8 laptop:gap-6">
+            <div className="desktop:w-96 laptop:w-80 flex laptop:flex-col desktop:flex-row desktop:gap-4 laptop:gap-6">
               <div className="w-full relative">
                 <label className="absolute -top-3 left-2 bg-white px-2">
                   Judet
@@ -478,7 +496,7 @@ const UserForm = () => {
                     }
                   }}
                   type="button"
-                  className="w-full h-10 border border-gray-300 px-4 flex items-center justify-between focus:border-gray-400 transition-all duration-200"
+                  className="flex items-center justify-between w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
                 >
                   <p>
                     {user.address?.county
@@ -492,7 +510,7 @@ const UserForm = () => {
                   />
                 </button>
                 {showDropdown === 1 && (
-                  <ul className="absolute top-12 w-full h-60 flex flex-col bg-white border border-gray-300 overflow-y-scroll z-40">
+                  <ul className="absolute desktop:top-12 laptop:top-10 w-full h-60 flex flex-col bg-white border border-gray-300 overflow-y-scroll z-40">
                     {countiesNames.sort().map((county, id) => {
                       return (
                         <li
@@ -528,7 +546,7 @@ const UserForm = () => {
                     }
                   }}
                   type="button"
-                  className="w-full h-10 border border-gray-300 px-4 flex items-center justify-between focus:border-gray-400 transition-all duration-200"
+                  className="flex items-center justify-between w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
                 >
                   <p>
                     {user.address?.city
@@ -544,7 +562,7 @@ const UserForm = () => {
                   )}
                 </button>
                 {showDropdown === 2 && citiesNames && (
-                  <ul className="absolute top-12 w-full h-60 flex flex-col bg-white border border-gray-300 overflow-y-scroll z-40">
+                  <ul className="absolute desktop:top-12 laptop:top-10 w-full h-60 flex flex-col bg-white border border-gray-300 overflow-y-scroll z-40">
                     {citiesNames &&
                       citiesNames.sort().map((city, id) => {
                         return (
@@ -558,7 +576,7 @@ const UserForm = () => {
                                 setShowDropdown(0);
                               }}
                               type="button"
-                              className="w-full h-full text-left py-2 px-4 "
+                              className="w-full h-full text-left py-2 px-4"
                             >
                               {city}
                             </button>
@@ -573,8 +591,10 @@ const UserForm = () => {
               <label
                 htmlFor="building"
                 className={`${
-                  buildingFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  buildingFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Bloc / Nr. casa
               </label>
@@ -590,15 +610,17 @@ const UserForm = () => {
                 value={user.address?.building}
                 onChange={(ev) => changeBuilding(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
               <label
                 htmlFor="postalCode"
                 className={`${
-                  postalCodeFocus ? "-translate-y-9" : "-translate-y-[50%]"
-                } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
+                  postalCodeFocus
+                    ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                    : "-translate-y-[50%]"
+                } absolute desktop:left-4 laptop:left-2 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
               >
                 Cod postal
               </label>
@@ -614,18 +636,18 @@ const UserForm = () => {
                 value={user.address?.postalCode}
                 onChange={(ev) => changePostalCode(ev)}
                 placeholder=""
-                className="w-96 h-10 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>
           <button
             type="submit"
-            className="absolute bottom-6 rounded-full group flex items-center justify-center w-40 py-2 bg-primary text-white overflow-hidden"
+            className="absolute bottom-6 rounded-full group flex items-center justify-center desktop:w-40 laptop:w-32 desktop:py-2 laptop:py-1 bg-primary text-white overflow-hidden"
           >
             <p className="group-hover:-translate-y-10 transition-all duration-200">
               Salveaza
             </p>
-            <p className="text-2xl absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
+            <p className="desktop:text-2xl laptop:text-xl absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
               <IoSaveOutline />
             </p>
           </button>

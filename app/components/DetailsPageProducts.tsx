@@ -35,12 +35,21 @@ const DetailsPageProducts: React.FC<FeaturedProductsProps> = ({
     setCarousel("-translate-x-[50%]");
   }
 
-  const [w, setW] = useState(1920);
+  const [w, setW] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
-  if (typeof window !== "undefined")
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setW(window.innerWidth);
+    }
+  }, []);
+
+  if (typeof window !== "undefined") {
     window.onresize = function (event) {
       setW(window.innerWidth);
     };
+  }
 
   return (
     <div className="w-full">

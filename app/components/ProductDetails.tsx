@@ -23,7 +23,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
   return (
     <div className="w-full h-full">
       <section className="desktop:px-20 laptop:px-16 desktop:mb-14 laptop:mb-10">
-        <div className="flex items-center gap-3 desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
+        <div className="flex items-center desktop:gap-3 laptop:gap-2 desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
           <p>Acasa</p>
           <p className="text-primary">/</p>
           <p>Detalii</p>

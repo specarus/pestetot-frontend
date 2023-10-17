@@ -29,8 +29,8 @@ const BrandProductsPage = async ({ params }: { params: { brand: string } }) => {
   const categories = await getCategories();
 
   return (
-    <div className="w-full h-full px-20 mb-24">
-      <section className="flex items-center gap-3 mb-6">
+    <div className="w-full h-full desktop:px-20 laptop:px-16 desktop:mb-24 laptop:mb-20">
+      <section className="flex items-center desktop:gap-3 laptop:gap-2 desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
         <p>Acasa</p>
         <p className="text-primary">/</p>
         <p>Catalog</p>
@@ -40,7 +40,7 @@ const BrandProductsPage = async ({ params }: { params: { brand: string } }) => {
         <p className="text-primary capitalize">{brand.title}</p>
       </section>
 
-      <section className="w-28 h-auto mb-8 select-none pointer-events-none border px-2">
+      <section className="desktop:w-28 laptop:w-24 h-auto mb-8 select-none pointer-events-none border px-2">
         <Image
           src={brand.img}
           alt="Brand"
@@ -58,10 +58,10 @@ const BrandProductsPage = async ({ params }: { params: { brand: string } }) => {
                 (product: any) => product.category === category.title
               ).length > 0 && (
                 <div>
-                  <div className="border-b flex justify-center uppercase text-xl pb-1 mb-10 select-none">
+                  <div className="border-b flex justify-center uppercase desktop:text-xl laptop:text-lg pb-1 desktop:mb-10 laptop:mb-8 select-none">
                     <p>{category.title}</p>
                   </div>
-                  <div className="grid grid-cols-7 gap-x-4 gap-y-8 mb-24">
+                  <div className="grid desktop:grid-cols-7 laptop:grid-cols-6 desktop:gap-x-4 laptop:gap-x-3 desktop:gap-y-8 laptop:gap-y-5">
                     {products
                       .filter(
                         (product: any) => product.category === category.title

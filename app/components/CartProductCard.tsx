@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import Image from "next/image";
 
@@ -13,12 +13,21 @@ const CartProduct = ({ item }: { item: any }) => {
   const { removeFromCart, increaseAmount, decreaseAmount } =
     useContext(CartContext);
 
-  const [w, setW] = useState(1920);
+  const [w, setW] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
-  if (typeof window !== "undefined")
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setW(window.innerWidth);
+    }
+  }, []);
+
+  if (typeof window !== "undefined") {
     window.onresize = function (event) {
       setW(window.innerWidth);
     };
+  }
 
   return (
     <div className="relative w-full desktop:h-24 laptop:h-20">

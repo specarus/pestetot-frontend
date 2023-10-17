@@ -121,12 +121,21 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
     setShowModal(0);
   }
 
-  const [w, setW] = useState(1920);
+  const [w, setW] = useState(
+    typeof window !== "undefined" ? window.innerWidth : 0
+  );
 
-  if (typeof window !== "undefined")
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setW(window.innerWidth);
+    }
+  }, []);
+
+  if (typeof window !== "undefined") {
     window.onresize = function (event) {
       setW(window.innerWidth);
     };
+  }
 
   return (
     <div className="w-full h-full">
@@ -145,7 +154,7 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
 
       {/* Reset button */}
       {showAppliedFilters && (
-        <button onClick={() => resetFilters()} className="">
+        <button onClick={() => resetFilters()}>
           <p className="absolute desktop:left-28 laptop:left-[5.5rem] desktop:top-[9.5rem] laptop:top-[7.3rem] group desktop:text-sm laptop:text-xs">
             Reseteaza
             <span className="absolute bottom-[2px] left-0 w-0 bg-black h-[1px] group-hover:w-full transition-all duration-200" />
@@ -162,10 +171,10 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
           </div>
         )}
         {filteredProducts.length === 0 ? (
-          <div className="w-[90rem] border-b desktop:pb-1 desktop:text-base laptop:text-sm">
+          <div className="desktop:w-[90rem] laptop:w-[65rem] border-b desktop:pb-1 desktop:text-base laptop:text-sm">
             <p>Niciun rezultat</p>
           </div>
-        ) : w >= 1750 ? (
+        ) : w > 1750 ? (
           filteredProducts.slice(0, 14).map((product: any) => {
             return (
               <div key={product._id}>
@@ -207,7 +216,7 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
         ? filteredProducts.length > 35
         : filteredProducts.length > 30 && (
             <section className="desktop:px-10 laptop:px-8">
-              <div className="relative w-full h-80 border desktop:mb-10 laptop:mb-8">
+              <div className="relative w-full desktop:h-80 laptop:h-72 border desktop:mb-10 laptop:mb-8">
                 <Image
                   src="/assets/images/waves.jpg"
                   alt="Fishing"
