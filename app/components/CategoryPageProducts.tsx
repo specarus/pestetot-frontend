@@ -702,7 +702,7 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
       {/* Reset button */}
       {showAppliedFilters && (
         <button onClick={() => resetFilters()}>
-          <p className="absolute desktop:left-28 laptop:left-[5.5rem] desktop:top-[9.5rem] laptop:top-[7.3rem] group desktop:text-sm laptop:text-xs">
+          <p className="absolute desktop:left-28 laptop:left-[5.5rem] desktop:top-[9.5rem] laptop:top-[7.2rem] group desktop:text-sm laptop:text-xs">
             Reseteaza
             <span className="absolute bottom-[2px] left-0 w-0 bg-black h-[1px] group-hover:w-full transition-all duration-200" />
           </p>

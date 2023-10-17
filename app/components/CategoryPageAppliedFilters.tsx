@@ -44,7 +44,7 @@ const CategoryPageAppliedFilters = () => {
                     removeSingleAvailability(item);
                   }}
                 >
-                  <IoMdClose className="text-lg" />
+                  <IoMdClose className="desktop:text-lg laptop:text-base" />
                 </button>
               </div>
             );
@@ -58,7 +58,7 @@ const CategoryPageAppliedFilters = () => {
           <div className="flex items-center gap-4 bg-yellow-500 text-white rounded-full px-4 py-1">
             <p>{"< " + filters.maxPrice + " lei"}</p>
             <button onClick={() => resetPrice()}>
-              <IoMdClose className="text-lg" />
+              <IoMdClose className="desktop:text-lg laptop:text-base" />
             </button>
           </div>
         )}
@@ -71,7 +71,7 @@ const CategoryPageAppliedFilters = () => {
               >
                 <p>{subCategory}</p>
                 <button onClick={() => removeSingleSubCategory(subCategory)}>
-                  <IoMdClose className="text-lg" />
+                  <IoMdClose className="desktop:text-lg laptop:text-base" />
                 </button>
               </div>
             );
@@ -85,7 +85,7 @@ const CategoryPageAppliedFilters = () => {
               >
                 <p>{brand}</p>
                 <button onClick={() => removeSingleBrand(brand)}>
-                  <IoMdClose className="text-lg" />
+                  <IoMdClose className="desktop:text-lg laptop:text-base" />
                 </button>
               </div>
             );

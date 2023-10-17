@@ -40,7 +40,7 @@ const HomePageAppliedFilters = () => {
                     removeSingleAvailability(item);
                   }}
                 >
-                  <IoMdClose className="text-lg" />
+                  <IoMdClose className="desktop:text-lg laptop:text-base" />
                 </button>
               </div>
             );
@@ -58,7 +58,7 @@ const HomePageAppliedFilters = () => {
                 resetPrice();
               }}
             >
-              <IoMdClose className="text-lg" />
+              <IoMdClose className="desktop:text-lg laptop:text-base" />
             </button>
           </div>
         )}
