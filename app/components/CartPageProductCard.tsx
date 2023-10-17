@@ -28,8 +28,8 @@ const CartPageProductCard: React.FC<CartPageProductCardProps> = ({ item }) => {
 
   return (
     <div className="flex items-center justify-between">
-      <div className="flex items-center gap-8">
-        <div className="relative w-36 h-40 grid place-content-center p-4 shadow-sm select-none pointer-events-none">
+      <div className="flex items-center desktop:gap-8 laptop:gap-6">
+        <div className="relative desktop:w-36 laptop:w-28 desktop:h-40 laptop:h-32 grid place-content-center p-4 shadow-sm select-none pointer-events-none">
           {/* Cream background */}
           <span className="w-full h-full bg-neutral-400 bg-opacity-10 absolute top-0 left-0" />
           {/* Cream background */}
@@ -40,11 +40,11 @@ const CartPageProductCard: React.FC<CartPageProductCardProps> = ({ item }) => {
             height={500}
             className="w-full h-full object-cover"
           />
-          <span className="bg-white w-24 border border-gray-300 grid place-content-center absolute bottom-2 left-[50%] -translate-x-[50%] text-sm">
+          <span className="bg-white desktop:w-24 laptop:w-20 desktop:text-base laptop:text-sm border border-gray-300 grid place-content-center absolute bottom-2 left-[50%] -translate-x-[50%] text-sm">
             {item.option.code}
           </span>
         </div>
-        <div className="flex flex-col gap-4 text-lg">
+        <div className="flex flex-col desktop:gap-4 laptop:gap-2 desktop:text-lg laptop:text-base">
           <Link
             href={`/detalii/${product.category}/${product.subCategory}/${product.slug}`}
           >
@@ -53,20 +53,20 @@ const CartPageProductCard: React.FC<CartPageProductCardProps> = ({ item }) => {
               <span className="absolute bottom-[2px] left-0 w-0 group-hover:w-full h-[1px] bg-black transition-all duration-200" />
             </h3>
           </Link>
-          <p className="text-[16px]">
+          <p className="desktop:text-base laptop:text-sm">
             {Number(item.option.price.split(" ")[0]) * item.amount}.00 Lei
           </p>
         </div>
       </div>
       <div className="flex items-center gap-4">
-        <p className="border h-10 w-10 grid place-content-center text-lg">
+        <p className="border desktop:h-10 desktop:w-10 laptop:w-8 laptop:h-8 grid place-content-center desktop:text-lg laptop:text-base">
           {item.amount}
         </p>
         <button
           onClick={() => removeFromCart(item._id, item.option)}
           className="hover:text-primary transition-all duration-200"
         >
-          <IoMdClose className="text-xl" />
+          <IoMdClose className="desktop:text-xl laptop:text-lg" />
         </button>
       </div>
     </div>

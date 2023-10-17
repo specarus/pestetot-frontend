@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="relative w-full desktop:h-60 laptop:h-48 border-t border-gray-100 desktop:px-20 laptop:px-16 desktop:py-4 laptop:py-2 bg-cream grid grid-cols-5 items-center desktop:gap-20 laptop:gap-16 shadow-inner overflow-hidden">
+    <footer className="relative w-full desktop:h-60 laptop:h-48 border-t border-gray-100 desktop:px-20 laptop:px-16 desktop:py-4 laptop:py-2 bg-cream grid grid-cols-5 items-center desktop:gap-20 laptop:gap-12 shadow-inner overflow-hidden">
       {/* Copyright */}
       <p className="absolute bottom-4 left-[50%] -translate-x-[50%] desktop:text-sm laptop:text-xs">
         Copyright &copy; <span className="text-primary">PesteTot SRL</span> 2023
@@ -67,23 +67,23 @@ const Footer = () => {
           <Link
             href="/"
             target="_blank"
-            className="flex items-center gap-4 bg-primary text-white p-1 rounded-full"
+            className="flex items-center desktop:gap-4 laptop:gap-2 bg-primary text-white p-1 rounded-full"
           >
             <SiFacebook className="desktop:text-2xl laptop:text-xl" />
             <p className="desktop:text-base laptop:text-sm">Facebook</p>
           </Link>
         </li>
-        <li className="flex items-center gap-4">
+        <li className="flex items-center desktop:gap-4 laptop:gap-2">
           <MdLocalPhone className="desktop:text-2xl laptop:text-xl text-primary" />
           <p className="desktop:text-base laptop:text-sm">+40724949274</p>
         </li>
-        <li className="flex items-center gap-4">
+        <li className="flex items-center desktop:gap-4 laptop:gap-2">
           <BiLogoGmail className="desktop:text-2xl laptop:text-xl text-primary" />
           <Link
             href="mailto:contact@pestetot.com"
             className="desktop:text-base laptop:text-sm"
           >
-            contact@pestetot.com
+            contact@gmail.com
           </Link>
         </li>
       </ul>

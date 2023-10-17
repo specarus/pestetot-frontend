@@ -4,21 +4,21 @@ import type { Metadata } from "next";
 
 const CheckoutPage = () => {
   return (
-    <div className="w-full h-full px-20 mb-20">
-      <section className="mb-6">
-        <div className="flex items-center gap-3 mb-6">
+    <div className="w-full h-full desktop:px-20 laptop:px-16">
+      <section className="desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
+        <div className="flex items-center desktop:gap-3 laptop:gap-2 desktop:mb-6 laptop:mb-4">
           <p>Acasa</p>
           <p className="text-primary">/</p>
           <p>Cos</p>
           <p className="text-primary">/</p>
           <p className="text-primary">Checkout</p>
         </div>
-        <div className="mb-14">
+        <div className="desktop:mb-14 laptop:mb-10">
           <Title title="Checkout" />
         </div>
       </section>
 
-      <section className="pl-20 pr-96 mb-52 flex flex-col gap-8"></section>
+      <section className="desktop:pl-20 laptop:pl-16 desktop:pr-96 laptop:pr-[30rem] mb-52"></section>
     </div>
   );
 };

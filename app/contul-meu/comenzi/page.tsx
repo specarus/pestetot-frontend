@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 const OrdersServerPage = () => {
   return (
-    <div className="w-full h-full px-20 mb-20">
+    <div className="w-full h-full desktop:px-20 laptop:px-16 desktop:mb-24 laptop:mb-20">
       <OrdersPage />
     </div>
   );

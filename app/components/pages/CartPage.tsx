@@ -17,29 +17,31 @@ const CartPage = () => {
 
   return (
     <div className="w-full h-full">
-      <section className="px-20 mb-6">
-        <div className="flex items-center gap-3 mb-6">
+      <section className="desktop:px-20 laptop:px-16 desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
+        <div className="flex items-center desktop:gap-3 laptop:gap-2 desktop:mb-6 laptop:mb-4">
           <p>Acasa</p>
           <p className="text-primary">/</p>
           <p className="text-primary">Cos</p>
         </div>
-        <div className="mb-14">
+        <div className="desktop:mb-14 laptop:mb-10">
           <Title title="Cos de cumparaturi" />
         </div>
       </section>
       {/* Cart */}
-      <section className="px-20">
+      <section className="desktop:px-20 laptop:px-16">
         {totalAmount > 0 ? (
-          <p className="border-b mb-10 select-none">
+          <p className="border-b desktop:mb-10 laptop:mb-8 select-none desktop:text-base laptop:text-sm">
             {totalAmount} {totalAmount === 1 ? "produs" : "produse"} in cosul
             tau
           </p>
         ) : (
-          <p className="border-b">Cosul tau este gol</p>
+          <p className="border-b desktop:mb-6 laptop:mb-4">
+            Cosul tau este gol
+          </p>
         )}
       </section>
-      <section className="pl-20 pr-96 mb-16">
-        <ul className="flex flex-col gap-6">
+      <section className="desktop:pl-20 laptop:pl-16 desktop:pr-96 laptop:pr-[30rem] desktop:mb-16 laptop:mb-12">
+        <ul className="flex flex-col desktop:gap-6 laptop:gap-4">
           {cart.map((item: any) => {
             return (
               <div key={item._id}>
@@ -51,12 +53,12 @@ const CartPage = () => {
       </section>
       {/* Cart */}
       {cart.length > 0 ? (
-        <div className="pl-20 pr-96">
+        <div className="desktop:pl-20 laptop:pl-16 desktop:pr-96 laptop:pr-[30rem]">
           {/* Instructions */}
-          <section className="relative mb-10">
+          <section className="relative desktop:mb-10 laptop:mb-8 desktop:text-base laptop:text-sm">
             <label
               htmlFor="instructions"
-              className="absolute -top-3 left-3 bg-white px-2"
+              className="absolute desktop:-top-3 laptop:-top-4 left-3 bg-white px-2"
             >
               Instructiuni suplimentare
             </label>
@@ -64,19 +66,19 @@ const CartPage = () => {
               id="instructions"
               value={instructions}
               onChange={(ev) => setInstructions(ev.target.value)}
-              className="w-[50%] h-40 border border-gray-300 resize-none px-4 py-2 focus:border-gray-400 transition-all duration-200"
+              className="w-[50%] desktop:h-40 laptop:h-32 border border-gray-300 resize-none px-4 py-2 focus:border-gray-400 transition-all duration-200"
             />
           </section>
           {/* Instructions */}
 
           {/* Checkout */}
-          <section className="mb-24 flex items-center justify-between">
+          <section className="desktop:mb-24 laptop:mb-20 flex items-center justify-between">
             <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-1 text-2xl select-none">
+              <div className="flex items-center gap-1 desktop:text-2xl laptop:text-xl select-none">
                 <h2>Total de plata:</h2>
                 <span className="font-semibold">{totalPrice}.00 Lei</span>
               </div>
-              <p className="text-sm">
+              <p className="desktop:text-sm laptop:text-xs">
                 Taxe incluse.&nbsp;
                 <Link href="/" className="underline">
                   Tranportul
@@ -87,12 +89,12 @@ const CartPage = () => {
             <div>
               <Link
                 href="/cos/checkout"
-                className="rounded-full group relative flex justify-center w-40 py-2 bg-primary text-white overflow-hidden"
+                className="rounded-full group relative flex justify-center desktop:w-40 laptop:w-36 py-2 bg-primary text-white overflow-hidden"
               >
-                <p className="group-hover:translate-x-96 transition-all duration-300">
+                <p className="group-hover:translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
                   Checkout
                 </p>
-                <p className="text-2xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+                <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
                   <BsArrowRight />
                 </p>
               </Link>
@@ -101,15 +103,15 @@ const CartPage = () => {
           {/* Checkout */}
         </div>
       ) : (
-        <div className="px-20 mb-24">
+        <div className="desktop:px-20 laptop:px-16 desktop:mb-24 laptop:mb-20">
           <Link
             href="/"
-            className="rounded-full group relative flex justify-center w-40 py-2 bg-primary text-white overflow-hidden"
+            className="rounded-full group relative flex justify-center desktop:w-40 laptop:w-36 desktop:py-2 laptop:py-1 bg-primary text-white overflow-hidden"
           >
-            <p className="group-hover:-translate-x-96 transition-all duration-300">
+            <p className="group-hover:-translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
               Mergi inapoi
             </p>
-            <p className="text-2xl absolute translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+            <p className="desktop:text-2xl laptop:text-xl absolute translate-x-96 group-hover:translate-x-0 transition-all duration-300">
               <BsArrowLeft />
             </p>
           </Link>

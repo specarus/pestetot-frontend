@@ -16,15 +16,17 @@ const OrdersPage = () => {
     return (
       <div className="w-full h-full">
         <div className="w-full h-full pb-96 relative">
-          <p>Nu sunteti conectat!</p>
+          <p className="desktop:text-base laptop:text-sm">
+            Nu sunteti conectat!
+          </p>
           <Link
             href="/"
-            className="absolute bottom-10 left-0 rounded-full group flex justify-center w-44 py-2 bg-primary text-white overflow-hidden"
+            className="absolute bottom-10 left-0 rounded-full group flex justify-center desktop:w-44 laptop:w-40 py-2 bg-primary text-white"
           >
-            <p className="group-hover:-translate-x-96 transition-all duration-300">
+            <p className="group-hover:-translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
               Mergeti inapoi
             </p>
-            <p className="text-2xl absolute translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+            <p className="desktop:text-2xl laptop:text-xl absolute translate-x-96 group-hover:translate-x-0 transition-all duration-300">
               <BsArrowLeft />
             </p>
           </Link>
