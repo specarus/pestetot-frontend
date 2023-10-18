@@ -48,7 +48,7 @@ const AccountPage = () => {
       {!!user && (
         <div className="relative w-full h-full">
           {isAdmin && (
-            <ul className="absolute desktop:top-[8.5rem] laptop:top-[6.4rem] -right-44 flex flex-col bg-white border desktop:w-40 laptop:w-36 rounded-md overflow-hidden desktop:text-base laptop:text-sm">
+            <ul className="absolute desktop:top-[8.5rem] laptop:top-[6.4rem] desktop:-right-44 laptop:-right-40 flex flex-col bg-white border desktop:w-40 laptop:w-36 rounded-md overflow-hidden desktop:text-base laptop:text-sm">
               <li className="hover:bg-cream transition-all duration-200">
                 <Link href="/admin" className="block w-full h-full py-2 px-4">
                   Dashboard

@@ -58,7 +58,7 @@ const BrandProductsPage = async ({ params }: { params: { brand: string } }) => {
                 (product: any) => product.category === category.title
               ).length > 0 && (
                 <div>
-                  <div className="border-b flex justify-center uppercase desktop:text-xl laptop:text-lg pb-1 desktop:mb-10 laptop:mb-8 select-none">
+                  <div className="border-b flex justify-center uppercase desktop:text-xl laptop:text-lg desktop:pb-1 desktop:mb-10 laptop:mb-8 select-none">
                     <p>{category.title}</p>
                   </div>
                   <div className="grid desktop:grid-cols-7 laptop:grid-cols-6 desktop:gap-x-4 laptop:gap-x-3 desktop:gap-y-8 laptop:gap-y-5">
