@@ -69,7 +69,7 @@ const LansetaOptionCard: React.FC<LansetaOptionCardProps> = ({
           <p className="desktop:text-base laptop:text-sm group-hover:-translate-y-10 transition-all duration-200">
             Adauga
           </p>
-          <p className="text-2xl absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
+          <p className="absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
             <AiOutlinePlus className="desktop:text-xl laptop:text-lg" />
           </p>
         </button>

@@ -20,33 +20,33 @@ const FirOptionCard: React.FC<FirOptionCardProps> = ({ option, product }) => {
 
   return (
     <div className="p-2 flex items-center justify-between">
-      <div className="w-28 grid place-content-center">
+      <div className="desktop:w-28 laptop:w-24 grid place-content-center">
         <p>{option.code}</p>
       </div>
-      <div className="w-28 grid place-content-center capitalize">
+      <div className="desktop:w-28 laptop:w-24 grid place-content-center capitalize">
         <p>{option.price}</p>
       </div>
       {option.color && (
-        <div className="w-28 grid place-content-center">
+        <div className="desktop:w-28 laptop:w-24 grid place-content-center">
           <p>{option.color}</p>
         </div>
       )}
       {option.diameter && (
-        <div className="w-28 grid place-content-center">
+        <div className="desktop:w-28 laptop:w-24 grid place-content-center">
           <p>{option.diameter}</p>
         </div>
       )}
       {option.stringResistance && (
-        <div className="w-28 grid place-content-center">
+        <div className="desktop:w-28 laptop:w-24 grid place-content-center">
           <p>{option.stringResistance}</p>
         </div>
       )}
       {option.length && (
-        <div className="w-20 grid place-content-center">
+        <div className="desktop:w-20 laptop:w-16 grid place-content-center">
           <p>{option.length}</p>
         </div>
       )}
-      <div className="w-32 grid place-content-center">
+      <div className="desktop:w-32 laptop:w-28 grid place-content-center">
         <button
           onClick={() => {
             addToCart(product, product._id, option);
@@ -55,13 +55,13 @@ const FirOptionCard: React.FC<FirOptionCardProps> = ({ option, product }) => {
               setTimeout(() => setShowCartContent(true), 200);
             }, 150);
           }}
-          className="rounded-full group relative flex items-center justify-center w-28 py-1 bg-primary text-white overflow-hidden"
+          className="rounded-full group relative flex items-center justify-center desktop:w-28 laptop:w-24 py-1 bg-primary text-white overflow-hidden"
         >
           <p className="group-hover:-translate-y-10 transition-all duration-200">
             Adauga
           </p>
-          <p className="text-2xl absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
-            <AiOutlinePlus className="text-xl" />
+          <p className="absolute translate-y-8 left-[50%] -translate-x-[50%] group-hover:translate-y-0 transition-all duration-200">
+            <AiOutlinePlus className="desktop:text-xl laptop:text-lg" />
           </p>
         </button>
       </div>

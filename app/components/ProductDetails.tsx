@@ -110,10 +110,10 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
       <section
         className={`${
           product.category === "lansete" && "desktop:pr-72 laptop:pr-[17rem]"
-        } ${product.category === "mulinete" && "pr-20"} ${
-          product.category === "fire" && "pr-40"
+        } ${product.category === "mulinete" && "desktop:pr-20 laptop:pr-16"} ${
+          product.category === "fire" && "desktop:pr-40 laptop:pr-52"
         } ${
-          product.category === "carlige" && "pr-96"
+          product.category === "carlige" && "laptop:pr-96"
         } desktop:mb-20 laptop:mb-14 desktop:pl-20 laptop:pl-16 w-full`}
       >
         <ul
@@ -123,7 +123,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
         >
           <li className="row-span-1 w-full bg-white h-auto border-b last-of-type:border-none">
             <div className="flex items-center justify-between desktop:p-2 laptop:p-[6px]">
-              <div className="desktop:w-28 laptop:w-24 grid place-content-center">
+              <div className="desktop:w-28 laptop:w-20 grid place-content-center">
                 <p>Cod</p>
               </div>
               <div className="desktop:w-28 laptop:w-24 grid place-content-center">
@@ -155,12 +155,12 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
                 </div>
               )}
               {product.options[0]?.noBearing && (
-                <div className="desktop:w-36 laptop:w-32 grid place-content-center">
+                <div className="desktop:w-36 laptop:w-28 grid place-content-center">
                   <p>Nr. rulmenti</p>
                 </div>
               )}
               {product.options[0]?.recoveryReport && (
-                <div className="desktop:w-40 laptop:w-36 grid place-content-center">
+                <div className="desktop:w-40 laptop:w-32 grid place-content-center">
                   <p>Raport recuperare</p>
                 </div>
               )}
