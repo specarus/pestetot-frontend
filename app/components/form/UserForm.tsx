@@ -260,6 +260,7 @@ const UserForm = () => {
               <input
                 id="username"
                 onFocus={() => setUsernameFocus(true)}
+                maxLength={14}
                 onBlur={() => {
                   if (!user.username) {
                     setUsernameFocus(false);
