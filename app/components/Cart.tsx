@@ -26,7 +26,7 @@ const Cart: React.FC<CartProps> = ({
     <div className="w-full h-full desktop:py-10 laptop:py-6">
       {cart.length < 1 ? (
         <div className="w-full h-full desktop:px-10 laptop:px-8">
-          <p className="desktop:text-base laptop:text-sm border-b pb-4 mb-4">
+          <p className="desktop:text-base laptop:text-sm border-b desktop:pb-4 laptop:pb-2 desktop:mb-4 laptop:mb-2">
             Cosul tau este momentan gol.
           </p>
           <button
