@@ -45,7 +45,7 @@ const MulinetaOptionCard: React.FC<MulinetaOptionCardProps> = ({
         </div>
       )}
       {option.drum && (
-        <div className="desktop:w-28 laptop:w-24 grid place-content-center">
+        <div className="desktop:w-28 laptop:w-28 grid place-content-center">
           <p>{option.drum}</p>
         </div>
       )}
@@ -65,7 +65,7 @@ const MulinetaOptionCard: React.FC<MulinetaOptionCardProps> = ({
         </div>
       )}
       {option.weight && (
-        <div className="desktop:w-28 laptop:w-24 grid place-content-center">
+        <div className="desktop:w-28 laptop:w-20 grid place-content-center">
           <p>{option.weight}</p>
         </div>
       )}
