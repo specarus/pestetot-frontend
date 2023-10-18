@@ -164,7 +164,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
             className="fixed top-3 right-6 desktop:h-12 laptop:h-10 w-auto rounded-full z-30 border border-gray-100 bg-white flex items-center pl-4 pr-1 gap-3 shadow-md"
           >
             <span>
-              <AiOutlineMenu className="desktop:text-xl laptop:text-lg" />
+              <AiOutlineMenu className="desktop:text-xl laptop:text-base" />
             </span>
             <div className="select-none pointer-events-none">
               <Image
@@ -183,7 +183,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
         <div
           className={`${
             showMenuModal
-              ? "desktop:h-[8.5rem] laptop:h-[8rem] opacity-1 visible"
+              ? "desktop:h-[8.5rem] laptop:h-[7.8rem] opacity-1 visible"
               : "h-0 opacity-0 invisible"
           } fixed desktop:top-10 laptop:top-8 right-6 flex flex-col desktop:w-52 laptop:w-48 rounded-b-lg overflow-hidden bg-white border border-gray-100 shadow-lg transition-all duration-200 ease-in-out z-20 desktop:text-base laptop:text-sm`}
         >
@@ -240,7 +240,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
             showAccountModal
               ? "top-[50%] opacity-1 visible delay-200"
               : "top-[60%] opacity-0 invisible"
-          } fixed left-[50%] -translate-x-[50%] -translate-y-[50%] w-[25rem] h-[30rem] bg-white shadow-lg border border-gray-100 z-50 transition-all duration-200 ease-in-out rounded-lg`}
+          } fixed left-[50%] -translate-x-[50%] -translate-y-[50%] desktop:w-[25rem] desktop:h-[30rem] laptop:w-[21rem] laptop:h-[26rem] bg-white shadow-lg border border-gray-100 z-50 transition-all duration-200 ease-in-out rounded-lg`}
         >
           <Account
             modal={modal}

@@ -184,7 +184,7 @@ const UserForm = () => {
                 value={user.firstName}
                 onChange={(ev) => changeFirstName(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -210,7 +210,7 @@ const UserForm = () => {
                 value={user.lastName}
                 onChange={(ev) => changeLastName(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="w-full flex desktop:gap-4 laptop:gap-2">
@@ -240,7 +240,7 @@ const UserForm = () => {
                   value={user.phoneNumber}
                   onChange={(ev) => changePhoneNumber(ev)}
                   placeholder=""
-                  className="w-full desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                  className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
                 />
               </div>
             </div>
@@ -269,7 +269,7 @@ const UserForm = () => {
                 value={user.username}
                 onChange={(ev) => changeUsername(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -295,7 +295,7 @@ const UserForm = () => {
                 value={user.email}
                 onChange={(ev) => changeEmail(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>
@@ -399,7 +399,7 @@ const UserForm = () => {
                 id="country"
                 type="text"
                 defaultValue="Romania"
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -425,7 +425,7 @@ const UserForm = () => {
                 value={user.address?.street}
                 onChange={(ev) => changeStreet(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -451,7 +451,7 @@ const UserForm = () => {
                 value={user.address?.stair}
                 onChange={(ev) => changeStair(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -477,7 +477,7 @@ const UserForm = () => {
                 value={user.address?.flat}
                 onChange={(ev) => changeFlat(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>
@@ -523,7 +523,7 @@ const UserForm = () => {
                               setShowDropdown(0);
                             }}
                             type="button"
-                            className="w-full h-full text-left py-2 px-4 "
+                            className="w-full h-full text-left py-2 px-4"
                           >
                             {county}
                           </button>
@@ -610,7 +610,7 @@ const UserForm = () => {
                 value={user.address?.building}
                 onChange={(ev) => changeBuilding(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -636,7 +636,7 @@ const UserForm = () => {
                 value={user.address?.postalCode}
                 onChange={(ev) => changePostalCode(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 desktop:px-4 laptop:px-2 focus:border-gray-400 transition-all duration-200"
+                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>

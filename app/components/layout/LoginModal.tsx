@@ -59,7 +59,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
         timerProgressBar: true,
         customClass: {
           title: "text-sm font-normal",
-          popup: "w-auto h-auto px-4 pb-2",
+          popup: "w-auto h-auto laptop:px-4 pb-2",
           timerProgressBar: "bg-red-500",
         },
       });
@@ -73,7 +73,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
         timerProgressBar: true,
         showConfirmButton: false,
         customClass: {
-          popup: "w-auto h-auto px-4 pb-2",
+          popup: "w-auto h-auto laptop:px-4 pb-2",
           title: "text-sm font-normal",
           timerProgressBar: "bg-green-500",
         },
@@ -87,14 +87,21 @@ const LoginModal: React.FC<LoginModalProps> = ({
   }
 
   return (
-    <div className="w-full h-full p-10">
-      <h1 className="border-b uppercase text-xl mb-16">Conectare</h1>
-      <form className="flex flex-col gap-4" onSubmit={(ev) => login(ev)}>
+    <div className="w-full h-full desktop:p-10 laptop:p-8">
+      <h1 className="border-b uppercase desktop:text-xl laptop:text-lg mb-16">
+        Conectare
+      </h1>
+      <form
+        className="flex flex-col dektop:gap-4 laptop:gap-3 desktop:text-base laptop:text-sm"
+        onSubmit={(ev) => login(ev)}
+      >
         <div className="relative">
           <label
             htmlFor="input-1"
             className={`${
-              loginFocus1 ? "-translate-y-9" : "-translate-y-[50%]"
+              loginFocus1
+                ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                : "-translate-y-[50%]"
             } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
           >
             Email
@@ -111,14 +118,16 @@ const LoginModal: React.FC<LoginModalProps> = ({
             value={loginUser.email}
             onChange={(ev) => changeLoginEmail(ev)}
             placeholder=""
-            className="w-full h-12 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+            className="w-full desktop:h-12 laptop:h-10 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
           />
         </div>
-        <div className="relative mb-28">
+        <div className="relative desktop:mb-28 laptop:mb-20">
           <label
             htmlFor="input-2"
             className={`${
-              loginFocus2 ? "-translate-y-9" : "-translate-y-[50%]"
+              loginFocus2
+                ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                : "-translate-y-[50%]"
             } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
           >
             Parola
@@ -135,25 +144,25 @@ const LoginModal: React.FC<LoginModalProps> = ({
             value={loginUser.password}
             onChange={(ev) => changeLoginPassword(ev)}
             placeholder=""
-            className="w-full h-12 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200 pr-14"
+            className="w-full desktop:h-12 laptop:h-10 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200 pr-14"
           />
           <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
-            className="absolute right-4 top-[50%] -translate-y-[50%] text-2xl p-2 text-primary bg-white"
+            className="absolute right-4 top-[50%] -translate-y-[50%] desktop:text-2xl laptop:text-xl p-2 text-primary bg-white"
           >
             {showPassword ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
           </button>
         </div>
         <button className="rounded-full group relative flex items-center justify-center w-full py-2 bg-primary text-white overflow-hidden">
-          <p className="group-hover:translate-x-96 transition-all duration-300">
+          <p className="group-hover:translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
             Conecteaza-te
           </p>
-          <p className="text-2xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+          <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
             <BsArrowRight />
           </p>
         </button>
-        <div className="flex justify-center gap-1 text-sm">
+        <div className="flex justify-center gap-1 desktop:text-sm laptop:text-xs">
           <p>Nu ai cont deja?</p>
           <button
             onClick={() => setModal(2)}

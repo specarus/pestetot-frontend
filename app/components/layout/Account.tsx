@@ -20,7 +20,7 @@ const Account: React.FC<AccountModalProps> = ({
 
   return (
     <div>
-      <div className="absolute -top-12 left-8 right-8 h-10 bg-white flex border border-gray-100 rounded-full overflow-hidden">
+      <div className="absolute desktop:-top-12 laptop:-top-10 laptop:left-8 desktop:text-base laptop:text-sm right-8 desktop:h-10 laptop:h-8 bg-white flex border border-gray-100 rounded-full overflow-hidden">
         <button
           onClick={() => {
             setModal(1);

@@ -79,17 +79,21 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
   }
 
   return (
-    <div className="w-full h-full p-10">
-      <h1 className="text-xl mb-8 uppercase border-b">Intregistrare</h1>
+    <div className="w-full h-full laptop:p-10">
+      <h1 className="desktop:text-xl laptop:text-lg desktop:mb-8 laptop:mb-6 uppercase border-b">
+        Intregistrare
+      </h1>
       <form
         onSubmit={(ev) => register(ev)}
-        className="flex flex-col justify-center gap-4"
+        className="flex flex-col justify-center desktop:gap-4 laptop:gap-3 desktop:text-base laptop:text-sm"
       >
         <div className="relative">
           <label
             htmlFor="input-1"
             className={`${
-              focus1 ? "-translate-y-9" : "-translate-y-[50%]"
+              focus1
+                ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                : "-translate-y-[50%]"
             } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
           >
             Nume de utilizator
@@ -106,14 +110,16 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
             value={user.username}
             onChange={(ev) => changeUsername(ev)}
             placeholder=""
-            className="w-full h-12 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+            className="w-full desktop:h-12 laptop:h-10 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
           />
         </div>
         <div className="relative">
           <label
             htmlFor="input-2"
             className={`${
-              focus2 ? "-translate-y-9" : "-translate-y-[50%]"
+              focus2
+                ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                : "-translate-y-[50%]"
             } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
           >
             Email
@@ -130,14 +136,16 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
             value={user.email}
             onChange={(ev) => changeEmail(ev)}
             placeholder=""
-            className="w-full h-12 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200"
+            className="w-full desktop:h-12 laptop:h-10 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
           />
         </div>
         <div className="relative">
           <label
             htmlFor="input-3"
             className={`${
-              focus3 ? "-translate-y-9" : "-translate-y-[50%]"
+              focus3
+                ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                : "-translate-y-[50%]"
             } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
           >
             Parola
@@ -154,12 +162,12 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
             value={user.password}
             onChange={(ev) => changePassword(ev)}
             placeholder=""
-            className="w-full h-12 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200 pr-14"
+            className="w-full desktop:h-12 laptop:h-10 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200 pr-14"
           />
           <button
             type="button"
             onClick={() => setShowPassword1(!showPassword1)}
-            className="absolute right-4 top-[50%] -translate-y-[50%] text-2xl text-primary p-2 bg-white"
+            className="absolute right-4 top-[50%] -translate-y-[50%] desktop:text-2xl laptop:text-xl text-primary p-2 bg-white"
           >
             {showPassword1 ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
           </button>
@@ -168,7 +176,9 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
           <label
             htmlFor="input-4"
             className={`${
-              focus4 ? "-translate-y-9" : "-translate-y-[50%]"
+              focus4
+                ? "desktop:-translate-y-9 laptop:-translate-y-7"
+                : "-translate-y-[50%]"
             } absolute left-4 top-[50%] bg-white px-2 transition-all duration-200 cursor-text`}
           >
             Confirma parola
@@ -185,25 +195,25 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
             value={confirmPassword}
             onChange={(ev) => changeConfirmPassword(ev)}
             placeholder=""
-            className="w-full h-12 border border-gray-300 px-4 focus:border-gray-400 transition-all duration-200 pr-14"
+            className="w-full desktop:h-12 laptop:h-10 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200 pr-14"
           />
           <button
             type="button"
             onClick={() => setShowPassword2(!showPassword2)}
-            className="absolute right-4 top-[50%] -translate-y-[50%] text-2xl text-primary p-2 bg-white"
+            className="absolute right-4 top-[50%] -translate-y-[50%] desktop:text-2xl laptop:text-xl text-primary p-2 bg-white"
           >
             {showPassword2 ? <AiOutlineEyeInvisible /> : <AiOutlineEye />}
           </button>
         </div>
         <button className="rounded-full group relative flex items-center justify-center w-full py-2 bg-primary text-white overflow-hidden">
-          <p className="group-hover:translate-x-96 transition-all duration-300">
+          <p className="group-hover:translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
             Inregistreaza-te
           </p>
-          <p className="text-2xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+          <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
             <BsArrowRight />
           </p>
         </button>
-        <div className="flex justify-center gap-1 text-sm">
+        <div className="flex justify-center gap-1 desktop:text-sm laptop:text-xs">
           <p>Ai deja un cont?</p>
           <button
             onClick={() => setModal(1)}
