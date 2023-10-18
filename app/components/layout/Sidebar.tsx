@@ -105,7 +105,7 @@ const Sidebar: React.FC<SidebarProps> = ({ categories, products }) => {
               setTimeout(() => setShowCartContent(true), 200);
             }
           }}
-          className="desktop:w-7 desktop:h-7 laptop:w-5 laptop:h-5 desktop:text-lg laptop:text-sm bg-primary text-white font-medium rounded-full grid place-content-center"
+          className="desktop:w-7 desktop:h-7 laptop:w-[5.5rem] laptop:h-[5.5rem] desktop:text-lg laptop:text-base bg-primary text-white font-medium rounded-full grid place-content-center"
         >
           {totalAmount}
         </button>
