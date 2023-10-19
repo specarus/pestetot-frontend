@@ -26,7 +26,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >
-      <div className="relative w-full desktop:h-40 laptop:h-32 grid place-content-center overflow-hidden border-b border-gray-100">
+      <div className="relative w-full desktop:h-40 laptop:h-36 grid place-content-center overflow-hidden border-b border-gray-100">
         <span
           className={`${
             product.availability === "in stoc" ? "bg-green-500" : "bg-red-500"
