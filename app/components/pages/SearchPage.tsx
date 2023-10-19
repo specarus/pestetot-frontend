@@ -23,7 +23,11 @@ const SearchPage = () => {
   });
 
   return (
-    <div className="w-full h-full">
+    <div
+      className={`w-full h-full ${
+        filteredProducts.length === 0 ? "desktop:mb-24 laptop:mb-20" : "mb-0"
+      }`}
+    >
       <section>
         <div className="flex items-center desktop:gap-3 laptop:gap-2 desktop:mb-6 laptop:mb-4 desktop:text-base laptop:text-sm">
           <p>Acasa</p>
