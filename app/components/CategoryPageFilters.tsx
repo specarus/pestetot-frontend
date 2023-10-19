@@ -234,18 +234,18 @@ const CategoryPageFilters: React.FC<CategoryPageFiltersProps> = ({
                           >
                             <button
                               onClick={() =>
-                                selectSubCategory(subCategory.title)
+                                selectSubCategory(subCategory.slug)
                               }
                               className="flex items-center desktop:gap-4 laptop:gap-3"
                             >
                               <span
                                 className={`${
                                   filters.subCategories.includes(
-                                    `${subCategory.title}`
+                                    `${subCategory.slug}`
                                   ) && "bg-primary"
                                 } desktop:w-4 laptop:w-3 desktop:h-4 laptop:h-3 rounded-full border border-gray-300`}
                               />
-                              <p>{subCategory.title}</p>
+                              <p>{subCategory.slug.split("-").join(" ")}</p>
                             </button>
                           </li>
                         );

@@ -69,7 +69,7 @@ const CategoryPageAppliedFilters = () => {
                 key={subCategory}
                 className="flex items-center gap-4 bg-yellow-500 text-white rounded-full laptop:px-4 laptop:py-1 desktop:text-base laptop:text-sm"
               >
-                <p>{subCategory.split("-").join(" ")}</p>
+                <p>{subCategory}</p>
                 <button onClick={() => removeSingleSubCategory(subCategory)}>
                   <IoMdClose className="desktop:text-lg laptop:text-base" />
                 </button>
