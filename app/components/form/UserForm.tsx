@@ -160,7 +160,7 @@ const UserForm = () => {
             showModal === 1 ? "opacity-1 visible" : "opacity-0 invisible"
           } absolute top-0 left-0 w-full h-full flex desktop:gap-8 laptop:gap-4 bg-white laptop:p-10 transition-all duration-200 ease-in-out desktop:text-base laptop:text-sm`}
         >
-          <section className="flex flex-col desktop:gap-8 laptop:gap-6">
+          <section className="desktop:w-[28rem] laptop:w-80 flex flex-col desktop:gap-8 laptop:gap-6">
             <div className="relative">
               <label
                 htmlFor="firstName"
@@ -184,7 +184,7 @@ const UserForm = () => {
                 value={user.firstName}
                 onChange={(ev) => changeFirstName(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -210,7 +210,7 @@ const UserForm = () => {
                 value={user.lastName}
                 onChange={(ev) => changeLastName(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="w-full flex desktop:gap-4 laptop:gap-2">
@@ -245,7 +245,7 @@ const UserForm = () => {
               </div>
             </div>
           </section>
-          <section className="flex flex-col desktop:gap-8 laptop:gap-6">
+          <section className="desktop:w-[28rem] laptop:w-80 flex flex-col desktop:gap-8 laptop:gap-6">
             <div className="relative">
               <label
                 htmlFor="username"
@@ -270,7 +270,7 @@ const UserForm = () => {
                 value={user.username}
                 onChange={(ev) => changeUsername(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -296,7 +296,7 @@ const UserForm = () => {
                 value={user.email}
                 onChange={(ev) => changeEmail(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>
@@ -388,7 +388,7 @@ const UserForm = () => {
             showModal === 2 ? "opacity-1 visible" : "opacity-0 invisible"
           } absolute top-0 left-0 w-full h-full flex desktop:gap-8 laptop:gap-6 bg-white rounded-md desktop:p-10 laptop:p-8 transition-all duration-200 ease-in-out desktop:text-base laptop:text-sm`}
         >
-          <section className="w-full flex flex-col desktop:gap-8 laptop:gap-6">
+          <section className="desktop:w-[28rem] laptop:w-80 flex flex-col desktop:gap-8 laptop:gap-6">
             <div className="relative">
               <label
                 htmlFor="country"
@@ -400,7 +400,7 @@ const UserForm = () => {
                 id="country"
                 type="text"
                 defaultValue="Romania"
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -426,7 +426,7 @@ const UserForm = () => {
                 value={user.address?.street}
                 onChange={(ev) => changeStreet(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -452,7 +452,7 @@ const UserForm = () => {
                 value={user.address?.stair}
                 onChange={(ev) => changeStair(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -478,12 +478,12 @@ const UserForm = () => {
                 value={user.address?.flat}
                 onChange={(ev) => changeFlat(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>
-          <section className="w-full flex flex-col desktop:gap-8 laptop:gap-6">
-            <div className="desktop:w-96 laptop:w-80 flex laptop:flex-col desktop:flex-row desktop:gap-4 laptop:gap-6">
+          <section className="desktop:w-[28rem] laptop:w-80 flex flex-col desktop:gap-8 laptop:gap-6">
+            <div className="w-full flex laptop:flex-col desktop:flex-row desktop:gap-4 laptop:gap-6">
               <div className="w-full relative">
                 <label className="absolute -top-3 left-2 bg-white px-2">
                   Judet
@@ -611,7 +611,7 @@ const UserForm = () => {
                 value={user.address?.building}
                 onChange={(ev) => changeBuilding(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
             <div className="relative">
@@ -637,7 +637,7 @@ const UserForm = () => {
                 value={user.address?.postalCode}
                 onChange={(ev) => changePostalCode(ev)}
                 placeholder=""
-                className="desktop:w-96 laptop:w-80 desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
+                className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
               />
             </div>
           </section>
