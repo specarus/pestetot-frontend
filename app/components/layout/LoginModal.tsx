@@ -92,7 +92,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
         Conectare
       </h1>
       <form
-        className="flex flex-col dektop:gap-4 laptop:gap-3 desktop:text-base laptop:text-sm"
+        className="flex flex-col desktop:gap-4 laptop:gap-3 desktop:text-base laptop:text-sm"
         onSubmit={(ev) => login(ev)}
       >
         <div className="relative">

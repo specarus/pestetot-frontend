@@ -79,7 +79,7 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
   }
 
   return (
-    <div className="w-full h-full laptop:p-10">
+    <div className="w-full h-full desktop:p-8 laptop:p-8">
       <h1 className="desktop:text-xl laptop:text-lg desktop:mb-8 laptop:mb-6 uppercase border-b">
         Intregistrare
       </h1>
