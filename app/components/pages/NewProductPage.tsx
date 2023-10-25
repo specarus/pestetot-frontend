@@ -39,7 +39,7 @@ const NewProductPage = ({ params }: { params: { category: string } }) => {
 
   return (
     <div className="w-full h-full">
-      <div className="relative mb-10">
+      <div className="relative desktop:mb-10 laptop:mb-8">
         <Link
           href="/admin/produse/adauga"
           className="absolute -left-14 top-0 w-8 h-8 rounded-full border border-gray-300 grid place-content-center"

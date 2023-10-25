@@ -66,7 +66,7 @@ const ProductsAdminPage = () => {
   }
   return (
     <div className="w-full h-full">
-      <div className="relative w-full flex items-center justify-between mb-10">
+      <div className="relative w-full flex items-center justify-between desktop:mb-10 laptop:mb-8">
         <Link
           href="/contul-meu"
           className="absolute -left-14 top-0 w-8 h-8 rounded-full border border-gray-300 grid place-content-center"
@@ -87,7 +87,7 @@ const ProductsAdminPage = () => {
         </Link>
       </div>
       <div className="border rounded-md overflow-hidden">
-        <div className="w-full grid grid-cols-7 h-14 text-lg">
+        <div className="w-full grid grid-cols-7 desktop:h-14 laptop:h-12 desktop:text-lg laptop:text-base">
           <div className="col-span-2 grid border-r place-content-center">
             Titlu
           </div>
@@ -109,7 +109,7 @@ const ProductsAdminPage = () => {
           return (
             <div
               key={product._id}
-              className="w-full grid grid-cols-7 border-t h-9"
+              className="w-full grid grid-cols-7 border-t desktop:h-9 laptop:h-8 desktop:text-base laptop:text-sm"
             >
               <div className="col-span-2 border-r grid place-content-center">
                 {product.title}
@@ -158,20 +158,20 @@ const ProductsAdminPage = () => {
                   {product.availability}
                 </p>
               </div>
-              <div className="col-span-1 h-full flex items-center justify-center gap-4">
+              <div className="col-span-1 h-full flex items-center justify-center desktop:gap-4 laptop:gap-2">
                 <Link
                   href={`/admin/produse/editare/${product.category}/${product._id}`}
-                  className="flex items-center justify-center px-6 h-6 border rounded-full hover:border-primary hover:text-primary transition-all duration-200"
+                  className="flex items-center justify-center px-6 desktop:h-6 laptop:h-5 border rounded-full hover:border-primary hover:text-primary transition-all duration-200"
                 >
-                  <p className="text-lg">
+                  <p className="desktop:text-lg laptop:text-base">
                     <FiEdit3 />
                   </p>
                 </Link>
                 <button
                   onClick={() => deleteProduct(product._id, product.category)}
-                  className="h-6 px-6 rounded-full border flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-all duration-200"
+                  className="desktop:h-6 laptop:h-5 px-6 rounded-full border flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-all duration-200"
                 >
-                  <p className="text-lg">
+                  <p className="desktop:text-lg laptop:text-base">
                     <RiDeleteBin7Line />
                   </p>
                 </button>
