@@ -72,7 +72,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   // logout user
   async function logout() {
-    const res = await axios.post("/logout", {}, { withCredentials: true });
+    const res = await axios.get("/logout", { withCredentials: true });
     const data = res.data;
     if (data.status === "ok") {
       Swal.fire({
