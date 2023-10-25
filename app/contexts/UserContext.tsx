@@ -92,6 +92,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
       clearCart();
       setIsAdmin(false);
       router.push("/");
+      location.reload();
     }
   }
 
@@ -305,7 +306,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
         .then((res) => setUser(res.data));
       setIsMounted(true);
     }
-  }, []);
+  }, [user._id]);
 
   return (
     <UserContext.Provider
