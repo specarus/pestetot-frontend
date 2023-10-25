@@ -92,7 +92,6 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
       clearCart();
       setIsAdmin(false);
       router.push("/");
-      location.reload();
     }
   }
 
