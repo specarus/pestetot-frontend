@@ -69,18 +69,18 @@ const ProductsAdminPage = () => {
       <div className="relative w-full flex items-center justify-between desktop:mb-10 laptop:mb-8">
         <Link
           href="/contul-meu"
-          className="absolute -left-14 top-0 w-8 h-8 rounded-full border border-gray-300 grid place-content-center"
+          className="absolute -left-14 top-0 desktop:w-8 laptop:w-7 desktop:h-8 laptop:h-7 rounded-full border border-gray-300 grid place-content-center"
         >
-          <BsChevronLeft />
+          <BsChevronLeft className="desktop:text-base laptop:text-sm" />
         </Link>
-        <div className="mb-14">
+        <div className="desktop:mb-14 laptop:mb-12">
           <Title title="Produse" />
         </div>
         <Link
           href="/admin/produse/adauga"
           className="group grid place-content-center"
         >
-          <p className="relative">
+          <p className="relative desktop:text-base laptop:text-sm">
             Adauga un produs
             <span className="absolute bottom-[1px] left-0 group-hover:w-full w-0 h-[1px] bg-black transition-all duration-200" />
           </p>
@@ -161,7 +161,7 @@ const ProductsAdminPage = () => {
               <div className="col-span-1 h-full flex items-center justify-center desktop:gap-4 laptop:gap-2">
                 <Link
                   href={`/admin/produse/editare/${product.category}/${product._id}`}
-                  className="flex items-center justify-center px-6 desktop:h-6 laptop:h-5 border rounded-full hover:border-primary hover:text-primary transition-all duration-200"
+                  className="flex items-center justify-center px-6 h-6 border rounded-full hover:border-primary hover:text-primary transition-all duration-200"
                 >
                   <p className="desktop:text-lg laptop:text-base">
                     <FiEdit3 />
@@ -169,7 +169,7 @@ const ProductsAdminPage = () => {
                 </Link>
                 <button
                   onClick={() => deleteProduct(product._id, product.category)}
-                  className="desktop:h-6 laptop:h-5 px-6 rounded-full border flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-all duration-200"
+                  className="h-6 px-6 rounded-full border flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-all duration-200"
                 >
                   <p className="desktop:text-lg laptop:text-base">
                     <RiDeleteBin7Line />
