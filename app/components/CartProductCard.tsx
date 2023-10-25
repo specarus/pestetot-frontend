@@ -49,11 +49,10 @@ const CartProduct = ({ item }: { item: any }) => {
         </div>
       </div>
       <p className="absolute desktop:left-24 laptop:left-20 desktop:text-base laptop:text-sm desktop:top-2 laptop:top-1 px-4">
-        {w > 1750
-          ? item.title.length > 30
-            ? item.title.slice(0, 30) + "..."
-            : item.title
-          : item.title.length > 20
+        {w > 1750 && item.title.length > 30
+          ? item.title.slice(0, 30) + "..."
+          : item.title}
+        {w <= 1750 && item.title.length > 20
           ? item.title.slice(0, 20) + "..."
           : item.title}
       </p>
