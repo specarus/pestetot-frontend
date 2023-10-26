@@ -8,6 +8,10 @@
   box-sizing: border-box;
 }
 
+*::selection {
+  background-color: rgba(119, 136, 153, 0.178);
+}
+
 *::-webkit-scrollbar {
   width: 12px;
 }
