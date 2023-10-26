@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 const OrdersPage = () => {
   return (
-    <div className="w-full desktop:px-20 laptop:px-16 desktop:mb-24 laptop:mb-20">
+    <div className="w-full desktop:px-20 laptop:px-16 desktop:mb-48 laptop:mb-32">
       <section className="mb-6">
         <div className="flex items-center gap-3 mb-6">
           <p>Acasa</p>
