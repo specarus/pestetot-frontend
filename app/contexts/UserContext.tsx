@@ -73,10 +73,10 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
     axios.get(`/api/users/${session?.user?.email}`).then((res) => {
       setUser(res.data);
       setCart(res.data.cart);
+      if (res.data.email === "specarus@gmail.com") {
+        setIsAdmin(true);
+      }
     });
-    if (user?.email === "specarus@gmail.com") {
-      setIsAdmin(true);
-    }
     setIsMounted(true);
   }, [session?.user]);
 
