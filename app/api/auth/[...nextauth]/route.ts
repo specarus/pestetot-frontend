@@ -1,17 +1,18 @@
-import NextAuth from "next-auth/next";
+import NextAuth, { AuthOptions } from "next-auth";
+
 import Credentials from "next-auth/providers/credentials";
 
 import { connectMongoDB } from "@/lib/mongodb";
 import User from "@/models/User";
 import bcrypt from "bcrypt";
 
-export const authOptions = {
+export const authOptions: AuthOptions = {
   providers: [
     Credentials({
       name: "credentials",
       credentials: {},
 
-      async authorize(credentials) {
+      async authorize(credentials: any) {
         const { email, password } = credentials;
         try {
           await connectMongoDB();
@@ -36,7 +37,7 @@ export const authOptions = {
     }),
   ],
   session: {
-    jwt: true,
+    strategy: "jwt",
   },
   secret: process.env.NEXTAUTH_SECRET,
   pages: {

@@ -32,6 +32,7 @@
     "use-local-storage-state": "^18.3.3"
   },
   "devDependencies": {
+    "@types/bcrypt": "^5.0.1",
     "@types/jsonwebtoken": "^9.0.2"
   }
 }
