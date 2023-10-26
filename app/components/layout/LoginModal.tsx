@@ -12,8 +12,6 @@ import { BsArrowRight } from "react-icons/bs";
 
 // auth
 import { signIn } from "next-auth/react";
-import { CartContext } from "@/app/contexts/CartContext";
-import { UserContext } from "@/app/contexts/UserContext";
 
 interface LoginModalProps {
   setModal: (value: number) => void;
@@ -37,9 +35,6 @@ const LoginModal: React.FC<LoginModalProps> = ({
   } = useContext(ModalContext);
 
   const [showPassword, setShowPassword] = useState(false);
-
-  const { setCart } = useContext(CartContext);
-  const { user } = useContext(UserContext);
 
   async function login(ev: any) {
     ev.preventDefault();
@@ -79,7 +74,6 @@ const LoginModal: React.FC<LoginModalProps> = ({
         setShowAccountModal(false);
         resetLoginFocuses();
         resetLoginUser();
-        setCart(user.cart);
       }
     } catch (error) {
       console.log(error);

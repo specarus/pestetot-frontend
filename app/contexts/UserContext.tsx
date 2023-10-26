@@ -78,6 +78,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   useEffect(() => {
     axios.get(`/api/users/${session?.user?.email}`).then((res) => {
       setUser(res.data);
+      setCart(res.data.cart);
     });
     setIsMounted(true);
   }, [session?.user]);
