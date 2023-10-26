@@ -2,6 +2,11 @@
 
 import axios from "axios";
 
+import { useContext } from "react";
+import { UserContext } from "./UserContext";
+
+import { useSession } from "next-auth/react";
+
 import { createContext, useEffect, useState } from "react";
 
 interface CartContextProps {
@@ -25,9 +30,11 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const [cart, setCart] = useState(cartFromLocalStorage);
 
+  const { data: session } = useSession();
+
   // clear cart
   function clearCart() {
-    setCart([]);
+    setCart([] as []);
   }
 
   useEffect(() => {
@@ -63,16 +70,12 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
       setCart(newCart);
 
       // push to db
-      await axios.put("/api/cart", newCart, {
-        withCredentials: true,
-      });
+      await axios.put(`/api/cart/${session?.user?.email}`, newCart);
     } else {
       // add new item
       setCart([...cart, newItem]);
       // push to db
-      await axios.put("/api/cart", [...cart, newItem], {
-        withCredentials: true,
-      });
+      await axios.put(`/api/cart/${session?.user?.email}`, [...cart, newItem]);
     }
   }
 
@@ -84,9 +87,7 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
     setCart(newCart);
 
     // push to db
-    await axios.put("/api/cart", newCart, {
-      withCredentials: true,
-    });
+    await axios.put(`/api/cart/${session?.user?.email}`, newCart);
   }
 
   // increase amount
@@ -117,28 +118,26 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
       setCart(newCart);
 
       // push to db
-      await axios.put("/api/cart", newCart, {
-        withCredentials: true,
-      });
+      await axios.put(`/api/cart/${session?.user?.email}`, newCart);
     }
     if (cartItem.amount < 2) {
       removeFromCart(_id, option);
     }
   }
 
-  const amounts = cart.map((item: any) => {
+  const amounts = cart?.map((item: any) => {
     return item.amount;
   });
 
-  const totalAmount = amounts.reduce((accumulator: any, value: any) => {
+  const totalAmount = amounts?.reduce((accumulator: any, value: any) => {
     return accumulator + value;
   }, 0);
 
-  const prices = cart.map((item: any) => {
+  const prices = cart?.map((item: any) => {
     return Number(item.option.price.split(" ")[0]) * item.amount;
   });
 
-  const totalPrice = prices.reduce((accumulator: any, value: any) => {
+  const totalPrice = prices?.reduce((accumulator: any, value: any) => {
     return accumulator + value;
   }, 0);
 

@@ -48,48 +48,48 @@ const UserForm = () => {
   const [flatFocus, setFlatFocus] = useState(false);
 
   useEffect(() => {
-    if (user.firstName) {
+    if (user?.firstName) {
       setFirstNameFocus(true);
     }
-    if (user.lastName) {
+    if (user?.lastName) {
       setLastNameFocus(true);
     }
-    if (user.email) {
+    if (user?.email) {
       setEmailFocus(true);
     }
-    if (user.username) {
+    if (user?.username) {
       setUsernameFocus(true);
     }
-    if (user.phoneNumber) {
+    if (user?.phoneNumber) {
       setPhoneNumberFocus(true);
     }
 
-    if (user.address?.street) {
+    if (user?.address?.street) {
       setStreetFocus(true);
     }
-    if (user.address?.building) {
+    if (user?.address?.building) {
       setBuildingFocus(true);
     }
-    if (user.address?.stair) {
+    if (user?.address?.stair) {
       setStairFocus(true);
     }
-    if (user.address?.postalCode) {
+    if (user?.address?.postalCode) {
       setPostalCodeFocus(true);
     }
-    if (user.address?.flat) {
+    if (user?.address?.flat) {
       setFlatFocus(true);
     }
   }, [
-    user.address?.building,
-    user.address?.flat,
-    user.address?.postalCode,
-    user.address?.stair,
-    user.address?.street,
-    user.email,
-    user.firstName,
-    user.lastName,
-    user.phoneNumber,
-    user.username,
+    user?.address?.building,
+    user?.address?.flat,
+    user?.address?.postalCode,
+    user?.address?.stair,
+    user?.address?.street,
+    user?.email,
+    user?.firstName,
+    user?.lastName,
+    user?.phoneNumber,
+    user?.username,
   ]);
 
   return (
@@ -116,13 +116,13 @@ const UserForm = () => {
           <li className="py-3 grid grid-cols-2 bg-cream">
             <span className="col-span-1 h-full px-6">Prenume</span>
             <span className="col-span-1 h-full px-6">
-              {user.firstName ? user.firstName : "-"}
+              {user?.firstName ? user?.firstName : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2">
             <span className="col-span-1 h-full px-6">Nume</span>
             <span className="col-span-1 h-full px-6">
-              {user.lastName ? user.lastName : "-"}
+              {user?.lastName ? user?.lastName : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2 bg-cream">
@@ -134,20 +134,20 @@ const UserForm = () => {
                   "bg-yellow-500 text-white px-4 rounded-full w-fit select-none"
                 }`}
               >
-                {user.username ? user.username : "-"}
+                {user?.username ? user?.username : "-"}
               </p>
             </span>
           </li>
           <li className="py-3 grid grid-cols-2">
             <span className="col-span-1 h-full px-6">Email</span>
             <span className="col-span-1 h-full px-6">
-              {user.email ? user.email : "-"}
+              {user?.email ? user?.email : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2 bg-cream">
             <span className="col-span-1 h-full px-6">Numar de telefon</span>
             <span className="col-span-1 h-full px-6">
-              {user.phoneNumber ? "+40" + user.phoneNumber : "-"}
+              {user?.phoneNumber ? "+40" + user?.phoneNumber : "-"}
             </span>
           </li>
         </ul>
@@ -176,12 +176,12 @@ const UserForm = () => {
                 id="firstName"
                 onFocus={() => setFirstNameFocus(true)}
                 onBlur={() => {
-                  if (!user.firstName) {
+                  if (!user?.firstName) {
                     setFirstNameFocus(false);
                   }
                 }}
                 type="text"
-                value={user.firstName}
+                value={user?.firstName}
                 onChange={(ev) => changeFirstName(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -202,12 +202,12 @@ const UserForm = () => {
                 id="lastName"
                 onFocus={() => setLastNameFocus(true)}
                 onBlur={() => {
-                  if (!user.lastName) {
+                  if (!user?.lastName) {
                     setLastNameFocus(false);
                   }
                 }}
                 type="text"
-                value={user.lastName}
+                value={user?.lastName}
                 onChange={(ev) => changeLastName(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -232,12 +232,12 @@ const UserForm = () => {
                   id="phoneNumber"
                   onFocus={() => setPhoneNumberFocus(true)}
                   onBlur={() => {
-                    if (!user.phoneNumber) {
+                    if (!user?.phoneNumber) {
                       setPhoneNumberFocus(false);
                     }
                   }}
                   type="text"
-                  value={user.phoneNumber}
+                  value={user?.phoneNumber}
                   onChange={(ev) => changePhoneNumber(ev)}
                   placeholder=""
                   className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -262,12 +262,12 @@ const UserForm = () => {
                 onFocus={() => setUsernameFocus(true)}
                 maxLength={14}
                 onBlur={() => {
-                  if (!user.username) {
+                  if (!user?.username) {
                     setUsernameFocus(false);
                   }
                 }}
                 type="text"
-                value={user.username}
+                value={user?.username}
                 onChange={(ev) => changeUsername(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -288,12 +288,12 @@ const UserForm = () => {
                 id="email"
                 onFocus={() => setEmailFocus(true)}
                 onBlur={() => {
-                  if (!user.email) {
+                  if (!user?.email) {
                     setEmailFocus(false);
                   }
                 }}
                 type="text"
-                value={user.email}
+                value={user?.email}
                 onChange={(ev) => changeEmail(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -339,43 +339,43 @@ const UserForm = () => {
           <li className="py-3 grid grid-cols-2">
             <span className="col-span-1 h-full px-6">Judet</span>
             <span className="col-span-1 h-full px-6">
-              {user.address?.county ? user.address.county : "-"}
+              {user?.address?.county ? user?.address.county : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2 bg-cream">
             <span className="col-span-1 h-full px-6">Oras / Sector</span>
             <span className="col-span-1 h-full px-6">
-              {user.address?.city ? user.address.city : "-"}
+              {user?.address?.city ? user?.address.city : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2">
             <span className="col-span-1 h-full px-6">Strada</span>
             <span className="col-span-1 h-full px-6">
-              {user.address?.street ? user.address.street : "-"}
+              {user?.address?.street ? user?.address.street : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2 bg-cream">
             <span className="col-span-1 h-full px-6">Bloc / Nr. casa</span>
             <span className="col-span-1 h-full px-6">
-              {user.address?.building ? user.address.building : "-"}
+              {user?.address?.building ? user?.address.building : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2">
             <span className="col-span-1 h-full px-6">Scara</span>
             <span className="col-span-1 h-full px-6">
-              {user.address?.stair ? user.address.stair : "-"}
+              {user?.address?.stair ? user?.address.stair : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2 bg-cream">
             <span className="col-span-1 h-full px-6">Apartament</span>
             <span className="col-span-1 h-full px-6">
-              {user.address?.flat ? user.address.flat : "-"}
+              {user?.address?.flat ? user?.address.flat : "-"}
             </span>
           </li>
           <li className="py-3 grid grid-cols-2">
             <span className="col-span-1 h-full px-6">Cod postal</span>
             <span className="col-span-1 h-full px-6">
-              {user.address?.postalCode ? user.address.postalCode : "-"}
+              {user?.address?.postalCode ? user?.address.postalCode : "-"}
             </span>
           </li>
         </ul>
@@ -418,12 +418,12 @@ const UserForm = () => {
                 id="street"
                 onFocus={() => setStreetFocus(true)}
                 onBlur={() => {
-                  if (!user.address.street) {
+                  if (!user?.address.street) {
                     setStreetFocus(false);
                   }
                 }}
                 type="text"
-                value={user.address?.street}
+                value={user?.address?.street}
                 onChange={(ev) => changeStreet(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -444,12 +444,12 @@ const UserForm = () => {
                 id="stair"
                 onFocus={() => setStairFocus(true)}
                 onBlur={() => {
-                  if (!user.address.stair) {
+                  if (!user?.address.stair) {
                     setStairFocus(false);
                   }
                 }}
                 type="text"
-                value={user.address?.stair}
+                value={user?.address?.stair}
                 onChange={(ev) => changeStair(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -470,12 +470,12 @@ const UserForm = () => {
                 id="flat"
                 onFocus={() => setFlatFocus(true)}
                 onBlur={() => {
-                  if (!user.address.flat) {
+                  if (!user?.address.flat) {
                     setFlatFocus(false);
                   }
                 }}
                 type="text"
-                value={user.address?.flat}
+                value={user?.address?.flat}
                 onChange={(ev) => changeFlat(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -500,8 +500,8 @@ const UserForm = () => {
                   className="flex items-center justify-between w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
                 >
                   <p>
-                    {user.address?.county
-                      ? user.address.county
+                    {user?.address?.county
+                      ? user?.address.county
                       : "Selecteaza judetul"}
                   </p>
                   <BsChevronDown
@@ -550,11 +550,11 @@ const UserForm = () => {
                   className="flex items-center justify-between w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
                 >
                   <p>
-                    {user.address?.city
-                      ? user.address.city
+                    {user?.address?.city
+                      ? user?.address.city
                       : "Selecteaza orasul"}
                   </p>
-                  {user.address?.county && (
+                  {user?.address?.county && (
                     <BsChevronDown
                       className={`${
                         showDropdown === 2 ? "rotate-180" : ""
@@ -603,12 +603,12 @@ const UserForm = () => {
                 id="building"
                 onFocus={() => setBuildingFocus(true)}
                 onBlur={() => {
-                  if (!user.address.building) {
+                  if (!user?.address.building) {
                     setBuildingFocus(false);
                   }
                 }}
                 type="text"
-                value={user.address?.building}
+                value={user?.address?.building}
                 onChange={(ev) => changeBuilding(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"
@@ -629,12 +629,12 @@ const UserForm = () => {
                 id="postalCode"
                 onFocus={() => setPostalCodeFocus(true)}
                 onBlur={() => {
-                  if (!user.address.postalCode) {
+                  if (!user?.address.postalCode) {
                     setPostalCodeFocus(false);
                   }
                 }}
                 type="text"
-                value={user.address?.postalCode}
+                value={user?.address?.postalCode}
                 onChange={(ev) => changePostalCode(ev)}
                 placeholder=""
                 className="w-full desktop:h-10 laptop:h-8 border border-gray-300 laptop:px-4 focus:border-gray-400 transition-all duration-200"

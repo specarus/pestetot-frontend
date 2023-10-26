@@ -6,6 +6,8 @@ import { createContext, useState, useEffect, useContext } from "react";
 
 import axios from "axios";
 
+import { useSession } from "next-auth/react";
+
 import Swal from "sweetalert2";
 
 import { User } from "../types/User";
@@ -15,7 +17,6 @@ import { CartContext } from "./CartContext";
 interface UserContextProps {
   user: User;
   showModal: number;
-  logout: () => void;
   deleteUser: () => void;
   setShowModal: (value: number) => void;
   showMenuModal: boolean;
@@ -40,7 +41,6 @@ interface UserContextProps {
   changeFlat: (ev: any) => void;
   changeStair: (ev: any) => void;
   changePostalCode: (ev: any) => void;
-  resetLoggedUser: () => void;
 
   isAdmin: boolean;
 }
@@ -49,6 +49,8 @@ export const UserContext = createContext<UserContextProps>(null!);
 
 const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   const router = useRouter();
+
+  const { setCart } = useContext(CartContext);
 
   const [user, setUser] = useState({} as User);
   const [isMounted, setIsMounted] = useState(false);
@@ -70,45 +72,31 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const { clearCart } = useContext(CartContext);
 
-  // logout user
-  async function logout() {
-    const res = await axios.get("/logout", { withCredentials: true });
-    const data = res.data;
-    if (data.status === "ok") {
-      Swal.fire({
-        position: "top",
-        showConfirmButton: false,
-        title: "V-ati deconectat cu succes!",
-        backdrop: "transparent",
-        timer: 1200,
-        timerProgressBar: true,
-        customClass: {
-          title: "text-sm font-normal",
-          popup: "w-auto h-auto px-4 pb-2",
-          timerProgressBar: "bg-green-500",
-        },
-      });
-      resetLoggedUser();
-      clearCart();
-      setIsAdmin(false);
-      router.push("/");
+  // get user
+  const { data: session } = useSession();
+
+  useEffect(() => {
+    axios.get(`/api/users/${session?.user?.email}`).then((res) => {
+      setUser(res.data);
+    });
+    if (user?.cart) {
+      setCart(user.cart);
     }
-  }
+
+    setIsMounted(true);
+  }, [session]);
 
   // save personal information
   async function savePersonal(ev: any) {
     ev.preventDefault();
-    const res = await axios.put(
-      "/api/personal",
-      {
-        username: user.username,
-        email: user.email,
-        firstName: user.firstName,
-        lastName: user.lastName,
-        phoneNumber: user.phoneNumber,
-      },
-      { withCredentials: true }
-    );
+    const res = await axios.put("/api/personal", {
+      _id: user._id,
+      username: user.username,
+      email: user.email,
+      firstName: user.firstName,
+      lastName: user.lastName,
+      phoneNumber: user.phoneNumber,
+    });
     const data = res.data;
     if (data.status === "ok") {
       Swal.fire({
@@ -131,11 +119,10 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   // save address
   async function saveAddress(ev: any) {
     ev.preventDefault();
-    const res = await axios.put(
-      "/api/address",
-      { address: user.address },
-      { withCredentials: true }
-    );
+    const res = await axios.put("/api/address", {
+      _id: user._id,
+      address: user.address,
+    });
     const data = res.data;
     if (data.status === "ok") {
       Swal.fire({
@@ -195,7 +182,6 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
           timerProgressBar: "bg-red-400",
         },
       });
-      resetLoggedUser();
       clearCart();
       router.push("/");
     }
@@ -294,19 +280,6 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
     });
   }
 
-  function resetLoggedUser() {
-    setUser({} as User);
-  }
-
-  useEffect(() => {
-    if (!user?._id) {
-      axios
-        .get("/profile", { withCredentials: true })
-        .then((res) => setUser(res.data));
-      setIsMounted(true);
-    }
-  }, []);
-
   return (
     <UserContext.Provider
       value={{
@@ -320,7 +293,6 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
         setShowModal,
         showDeletePopup,
         setShowDeletePopup,
-        logout,
         deleteUser,
         saveAddress,
         savePersonal,
@@ -337,8 +309,6 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
         changeFlat,
         changeStair,
         changePostalCode,
-        resetLoggedUser,
-
         isAdmin,
       }}
     >

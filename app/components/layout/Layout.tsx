@@ -25,6 +25,8 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { ModalContext } from "@/app/contexts/ModalContext";
 import { SidebarContext } from "@/app/contexts/SidebarContext";
 import Image from "next/image";
+import { signOut } from "next-auth/react";
+import { CartContext } from "@/app/contexts/CartContext";
 
 interface LayoutProps {
   products: any[];
@@ -54,11 +56,12 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     showDeletePopup,
     showMenuModal,
     deleteUser,
-    logout,
     setShowDeletePopup,
     setShowMenuModal,
     showModal,
   } = useContext(UserContext);
+
+  const { clearCart } = useContext(CartContext);
 
   return (
     <main className="w-full h-full">
@@ -205,7 +208,8 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
           </Link>
           <button
             onClick={() => {
-              logout();
+              signOut();
+              clearCart();
               setShowMenuModal(false);
             }}
             className="laptop:py-2 px-4 flex items-center desktop:gap-4 laptop:gap-3 hover:bg-cream transition-all duration-200"

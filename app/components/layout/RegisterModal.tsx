@@ -35,14 +35,10 @@ const RegisterModal = ({ setModal }: { setModal: (value: number) => void }) => {
 
   async function register(ev: any) {
     ev.preventDefault();
-    const res = await axios.post(
-      "/register",
-      {
-        ...user,
-        confirmPassword,
-      },
-      { withCredentials: true }
-    );
+    const res = await axios.post("/register", {
+      ...user,
+      confirmPassword,
+    });
     const data = res.data;
     if (data.status === "error") {
       Swal.fire({

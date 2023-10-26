@@ -2,18 +2,17 @@
 
 import { useContext, useState } from "react";
 
-import axios from "axios";
-
 import Swal from "sweetalert2";
 
 import { ModalContext } from "@/app/contexts/ModalContext";
-import { UserContext } from "@/app/contexts/UserContext";
-import { CartContext } from "@/app/contexts/CartContext";
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
 import { useRouter } from "next/navigation";
 import { BsArrowRight } from "react-icons/bs";
+
+// auth
+import { signIn } from "next-auth/react";
 
 interface LoginModalProps {
   setModal: (value: number) => void;
@@ -38,33 +37,30 @@ const LoginModal: React.FC<LoginModalProps> = ({
     resetLoginUser,
   } = useContext(ModalContext);
 
-  const { setUser } = useContext(UserContext);
-  const { setCart } = useContext(CartContext);
-
   const [showPassword, setShowPassword] = useState(false);
 
   async function login(ev: any) {
     ev.preventDefault();
-    const res = await axios.post("/login", loginUser, {
-      withCredentials: true,
-    });
-    const data = res.data;
-    if (data.status === "error") {
-      Swal.fire({
-        position: "top",
-        showConfirmButton: false,
-        title: `${data.error}`,
-        backdrop: "transparent",
-        timer: 1200,
-        timerProgressBar: true,
-        customClass: {
-          title: "text-sm font-normal",
-          popup: "w-auto h-auto laptop:px-4 pb-2",
-          timerProgressBar: "bg-red-500",
-        },
+    try {
+      const res = await signIn("credentials", {
+        ...loginUser,
+        redirect: false,
       });
-    } else {
-      router.push("/contul-meu");
+      if (res?.error) {
+        Swal.fire({
+          position: "top",
+          timer: 2000,
+          backdrop: "transparent",
+          title: "Acreditari nevalide!",
+          timerProgressBar: true,
+          showConfirmButton: false,
+          customClass: {
+            popup: "w-auto h-auto laptop:px-4 pb-2",
+            title: "text-sm font-normal",
+            timerProgressBar: "bg-red-500",
+          },
+        });
+      }
       Swal.fire({
         position: "top",
         timer: 2000,
@@ -78,11 +74,12 @@ const LoginModal: React.FC<LoginModalProps> = ({
           timerProgressBar: "bg-green-500",
         },
       });
-      setUser(data);
-      setCart(data?.cart);
+      router.push("/contul-meu");
       setShowAccountModal(false);
       resetLoginFocuses();
       resetLoginUser();
+    } catch (error) {
+      console.log(error);
     }
   }
 

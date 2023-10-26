@@ -24,7 +24,7 @@ const Cart: React.FC<CartProps> = ({
 
   return (
     <div className="w-full h-full desktop:py-10 laptop:py-6">
-      {cart.length < 1 ? (
+      {cart?.length < 1 ? (
         <div className="w-full h-full desktop:px-10 laptop:px-8">
           <p className="desktop:text-base laptop:text-sm border-b desktop:pb-4 laptop:pb-2 desktop:mb-4 laptop:mb-2">
             Cosul tau este momentan gol.
@@ -68,7 +68,7 @@ const Cart: React.FC<CartProps> = ({
           </div>
           <ul className="w-full h-auto desktop:mb-10 laptop:mb-8 desktop:px-10 laptop:px-8">
             <div className="w-full desktop:max-h-[36rem] laptop:max-h-[29rem] flex flex-col desktop:gap-6 laptop:gap-4 overflow-y-auto overflow-x-hidden">
-              {cart.map((item: any) => {
+              {cart?.map((item: any) => {
                 return (
                   <li key={item._id} className="w-full h-auto">
                     <CartProductCard item={item} />

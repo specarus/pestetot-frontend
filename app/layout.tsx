@@ -13,6 +13,8 @@ import SidebarContextProvider from "./contexts/SidebarContext";
 import ModalContextProvider from "./contexts/ModalContext";
 import UserContextProvider from "./contexts/UserContext";
 
+import AuthProvider from "./components/AuthProvider";
+
 const rubik = Rubik({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800", "900"],
@@ -41,24 +43,26 @@ export default async function RootLayout({
   const products = await getProducts();
 
   return (
-    <CartContextProvider>
-      <UserContextProvider>
-        <ModalContextProvider>
-          <SidebarContextProvider>
-            <CategoryPageFiltersContextProvider>
-              <HomePageFiltersContextProvider>
-                <html lang="en">
-                  <body className={rubik.className}>
-                    <Layout categories={categories} products={products}>
-                      {children}
-                    </Layout>
-                  </body>
-                </html>
-              </HomePageFiltersContextProvider>
-            </CategoryPageFiltersContextProvider>
-          </SidebarContextProvider>
-        </ModalContextProvider>
-      </UserContextProvider>
-    </CartContextProvider>
+    <AuthProvider>
+      <CartContextProvider>
+        <UserContextProvider>
+          <ModalContextProvider>
+            <SidebarContextProvider>
+              <CategoryPageFiltersContextProvider>
+                <HomePageFiltersContextProvider>
+                  <html lang="en">
+                    <body className={rubik.className}>
+                      <Layout categories={categories} products={products}>
+                        {children}
+                      </Layout>
+                    </body>
+                  </html>
+                </HomePageFiltersContextProvider>
+              </CategoryPageFiltersContextProvider>
+            </SidebarContextProvider>
+          </ModalContextProvider>
+        </UserContextProvider>
+      </CartContextProvider>
+    </AuthProvider>
   );
 }
