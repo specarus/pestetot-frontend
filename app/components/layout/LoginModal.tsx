@@ -8,7 +8,6 @@ import { ModalContext } from "@/app/contexts/ModalContext";
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-import { redirect } from "next/navigation";
 import { BsArrowRight } from "react-icons/bs";
 
 // auth
@@ -42,7 +41,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
     try {
       const res = await signIn("credentials", {
         ...loginUser,
-        redirect: false,
+        callbackUrl: "/contul-meu",
       });
       if (res?.error) {
         Swal.fire({
@@ -72,7 +71,6 @@ const LoginModal: React.FC<LoginModalProps> = ({
             timerProgressBar: "bg-green-500",
           },
         });
-        redirect("/contul-meu");
         setShowAccountModal(false);
         resetLoginFocuses();
         resetLoginUser();
