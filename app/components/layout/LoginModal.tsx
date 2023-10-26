@@ -8,7 +8,7 @@ import { ModalContext } from "@/app/contexts/ModalContext";
 
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 
-import { useRouter } from "next/navigation";
+import { redirect } from "next/navigation";
 import { BsArrowRight } from "react-icons/bs";
 
 // auth
@@ -23,8 +23,6 @@ const LoginModal: React.FC<LoginModalProps> = ({
   setModal,
   setShowAccountModal,
 }) => {
-  const router = useRouter();
-
   const {
     loginUser,
     loginFocus1,
@@ -74,7 +72,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
             timerProgressBar: "bg-green-500",
           },
         });
-        router.push("/contul-meu");
+        redirect("/contul-meu");
         setShowAccountModal(false);
         resetLoginFocuses();
         resetLoginUser();
