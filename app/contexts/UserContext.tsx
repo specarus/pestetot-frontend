@@ -76,15 +76,16 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   const { data: session } = useSession();
 
   useEffect(() => {
-    axios.get(`/api/users/${session?.user?.email}`).then((res) => {
-      setUser(res.data);
-    });
-    if (user?.cart) {
-      setCart(user.cart);
-    }
-
-    setIsMounted(true);
-  }, [session]);
+    axios
+      .get(`/api/users/${session?.user?.email}`)
+      .then((res) => {
+        setUser(res.data);
+      })
+      .then(() => {
+        setCart(user.cart);
+        setIsMounted(true);
+      });
+  }, [session?.user]);
 
   // save personal information
   async function savePersonal(ev: any) {
