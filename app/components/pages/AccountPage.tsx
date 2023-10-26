@@ -13,6 +13,7 @@ import { SlLogout } from "react-icons/sl";
 import Title from "../layout/Title";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { CartContext } from "@/app/contexts/CartContext";
+import Swal from "sweetalert2";
 
 const AccountPage = () => {
   const { isMounted, setShowDeletePopup, isAdmin } = useContext(UserContext);
@@ -103,6 +104,19 @@ const AccountPage = () => {
               onClick={() => {
                 signOut();
                 clearCart();
+                Swal.fire({
+                  position: "top",
+                  timer: 2000,
+                  backdrop: "transparent",
+                  title: "V-ati deconectat cu succes!",
+                  timerProgressBar: true,
+                  showConfirmButton: false,
+                  customClass: {
+                    popup: "w-auto h-auto laptop:px-4 pb-2",
+                    title: "text-sm font-normal",
+                    timerProgressBar: "bg-red-500",
+                  },
+                });
               }}
               className="flex items-center gap-2 group"
             >

@@ -6,6 +6,8 @@ import Link from "next/link";
 
 import { useContext, useState } from "react";
 
+import Swal from "sweetalert2";
+
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 import Announcement from "./Announcement";
@@ -209,6 +211,19 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
           <button
             onClick={() => {
               signOut();
+              Swal.fire({
+                position: "top",
+                timer: 2000,
+                backdrop: "transparent",
+                title: "V-ati deconectat cu succes!",
+                timerProgressBar: true,
+                showConfirmButton: false,
+                customClass: {
+                  popup: "w-auto h-auto laptop:px-4 pb-2",
+                  title: "text-sm font-normal",
+                  timerProgressBar: "bg-red-500",
+                },
+              });
               clearCart();
               setShowMenuModal(false);
             }}
