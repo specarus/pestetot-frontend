@@ -64,12 +64,6 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   // admin
   const [isAdmin, setIsAdmin] = useState(false);
 
-  useEffect(() => {
-    if (user?.email === "specarus@gmail.com") {
-      setIsAdmin(true);
-    }
-  }, [user]);
-
   const { clearCart } = useContext(CartContext);
 
   // get user
@@ -80,6 +74,9 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
       setUser(res.data);
       setCart(res.data.cart);
     });
+    if (user?.email === "specarus@gmail.com") {
+      setIsAdmin(true);
+    }
     setIsMounted(true);
   }, [session?.user]);
 
