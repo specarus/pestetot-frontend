@@ -60,24 +60,25 @@ const LoginModal: React.FC<LoginModalProps> = ({
             timerProgressBar: "bg-red-500",
           },
         });
+      } else {
+        Swal.fire({
+          position: "top",
+          timer: 2000,
+          backdrop: "transparent",
+          title: "V-ati conectat cu succes!",
+          timerProgressBar: true,
+          showConfirmButton: false,
+          customClass: {
+            popup: "w-auto h-auto laptop:px-4 pb-2",
+            title: "text-sm font-normal",
+            timerProgressBar: "bg-green-500",
+          },
+        });
+        router.push("/contul-meu");
+        setShowAccountModal(false);
+        resetLoginFocuses();
+        resetLoginUser();
       }
-      Swal.fire({
-        position: "top",
-        timer: 2000,
-        backdrop: "transparent",
-        title: "V-ati conectat cu succes!",
-        timerProgressBar: true,
-        showConfirmButton: false,
-        customClass: {
-          popup: "w-auto h-auto laptop:px-4 pb-2",
-          title: "text-sm font-normal",
-          timerProgressBar: "bg-green-500",
-        },
-      });
-      router.push("/contul-meu");
-      setShowAccountModal(false);
-      resetLoginFocuses();
-      resetLoginUser();
     } catch (error) {
       console.log(error);
     }
