@@ -8,6 +8,8 @@ import LansetaOptionCard from "./LansetaOptionCard";
 import MulinetaOptionCard from "./MulinetaOptionCard";
 
 import Title from "./layout/Title";
+import { useEffect, useState } from "react";
+import Loading from "../loading";
 
 interface DetailsPageProps {
   product: any;
@@ -20,6 +22,16 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
   category,
   subCategory,
 }) => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <Loading />;
+  }
+
   return (
     <div className="w-full h-full">
       <section className="desktop:px-20 laptop:px-16 desktop:mb-14 laptop:mb-10">
