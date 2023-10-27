@@ -9,18 +9,24 @@ import { FiEdit3 } from "react-icons/fi";
 import { useState, useEffect, useContext } from "react";
 
 import Swal from "sweetalert2";
-import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
+import { BsChevronLeft } from "react-icons/bs";
 import { SubCategory } from "@/app/types/SubCategory";
 import { UserContext } from "@/app/contexts/UserContext";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import Title from "@/app/components/layout/Title";
 import { redirect } from "next/navigation";
 
+import Loading from "@/app/loading";
+
 const SubCategoriesAdminPage = () => {
   const [subCategories, setSubCategories] = useState([]);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    axios.get("/api/subcategories").then((res) => setSubCategories(res.data));
+    axios.get("/api/subcategories").then((res) => {
+      setSubCategories(res.data);
+      setIsMounted(true);
+    });
   }, []);
 
   const { isAdmin } = useContext(UserContext);
@@ -46,6 +52,10 @@ const SubCategoriesAdminPage = () => {
       });
       location.reload();
     }
+  }
+
+  if (!isMounted) {
+    return <Loading />;
   }
 
   return (

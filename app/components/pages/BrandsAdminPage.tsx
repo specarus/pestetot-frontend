@@ -17,11 +17,17 @@ import Title from "@/app/components/layout/Title";
 
 import { redirect } from "next/navigation";
 
+import Loading from "@/app/loading";
+
 const BrandsAdminPage = () => {
   const [brands, setBrands] = useState([]);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    axios.get("/api/brands").then((res) => setBrands(res.data));
+    axios.get("/api/brands").then((res) => {
+      setBrands(res.data);
+      setIsMounted(true);
+    });
   }, []);
 
   const { isAdmin } = useContext(UserContext);
@@ -48,6 +54,10 @@ const BrandsAdminPage = () => {
   }
 
   if (!isAdmin) redirect("/");
+
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   return (
     <div className="w-full h-full">

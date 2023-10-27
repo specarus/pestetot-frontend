@@ -20,11 +20,17 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import Title from "@/app/components/layout/Title";
 
+import Loading from "@/app/loading";
+
 const CategoriesAdminPage = () => {
   const [categories, setCategories] = useState([]);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    axios.get("/api/categories").then((res) => setCategories(res.data));
+    axios.get("/api/categories").then((res) => {
+      setCategories(res.data);
+      setIsMounted(true);
+    });
   }, []);
 
   async function deleteCategory(id: string) {
@@ -51,6 +57,10 @@ const CategoriesAdminPage = () => {
   const { isAdmin } = useContext(UserContext);
 
   if (!isAdmin) redirect("/");
+
+  if (!isMounted) {
+    return <Loading />;
+  }
   return (
     <div className="w-full h-full">
       <div className="relative w-full flex items-center justify-between mb-10">

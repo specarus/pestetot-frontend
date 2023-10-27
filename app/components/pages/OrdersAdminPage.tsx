@@ -6,7 +6,7 @@ import { useContext } from "react";
 
 import { UserContext } from "@/app/contexts/UserContext";
 
-import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
+import { BsChevronLeft } from "react-icons/bs";
 import Title from "@/app/components/layout/Title";
 import { redirect } from "next/navigation";
 
