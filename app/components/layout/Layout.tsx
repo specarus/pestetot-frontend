@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Link from "next/link";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
 
@@ -53,6 +53,12 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   const [showAccountModal, setShowAccountModal] = useState(false);
   const [showOverlay, setShowOverlay] = useState(false);
   const [modal, setModal] = useState(1);
+
+  const { setShowModal } = useContext(UserContext);
+
+  useEffect(() => {
+    setShowModal(0);
+  }, []);
 
   const {
     user,
