@@ -24,7 +24,7 @@ const TermsAndConditionsPage = () => {
             <span className="desktop:w-6 laptop:w-5">1.1</span>
             <p className="text-justify">
               Accesând și utilizând acest site web
-              <span className="ml-1 underline">peste-tot.ro</span>, sunteți de
+              <span className="ml-1 underline">pestetot.ro</span>, sunteți de
               acord să respectați și să fiți obligat de acești termeni și
               condiții. Dacă nu sunteți de acord cu acești termeni, vă rugăm să
               nu utilizați site-ul.

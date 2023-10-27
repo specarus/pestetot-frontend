@@ -80,6 +80,10 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
     setIsMounted(true);
   }, [update]);
 
+  useEffect(() => {
+    setShowModal(0);
+  }, []);
+
   // save personal information
   async function savePersonal(ev: any) {
     ev.preventDefault();
