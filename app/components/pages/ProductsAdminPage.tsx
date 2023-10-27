@@ -14,12 +14,17 @@ import Swal from "sweetalert2";
 import { UserContext } from "@/app/contexts/UserContext";
 import Title from "@/app/components/layout/Title";
 import { redirect } from "next/navigation";
+import Loading from "@/app/loading";
 
 const ProductsAdminPage = () => {
   const [products, setProducts] = useState([]);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    axios.get("/api/products").then((res) => setProducts(res.data));
+    axios.get("/api/products").then((res) => {
+      setProducts(res.data);
+      setIsMounted(true);
+    });
   }, []);
 
   async function deleteProduct(id: string, category: string) {
@@ -46,6 +51,10 @@ const ProductsAdminPage = () => {
   const { isAdmin } = useContext(UserContext);
 
   if (!isAdmin) redirect("/");
+
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   return (
     <div className="w-full h-full">

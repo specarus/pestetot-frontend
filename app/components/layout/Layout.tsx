@@ -29,7 +29,7 @@ import { SidebarContext } from "@/app/contexts/SidebarContext";
 import Image from "next/image";
 import { signOut, useSession } from "next-auth/react";
 import { CartContext } from "@/app/contexts/CartContext";
-import Loading from "@/app/loading";
+import BigLoading from "../BigLoading";
 
 interface LayoutProps {
   products: any[];
@@ -69,7 +69,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   const { status } = useSession();
 
   if (status === "loading") {
-    return <Loading />;
+    return <BigLoading />;
   }
 
   return (
