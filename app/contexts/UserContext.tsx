@@ -67,18 +67,20 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   const { clearCart } = useContext(CartContext);
 
   // get user
-  const { data: session } = useSession();
+  const { data: session, status } = useSession();
 
   useEffect(() => {
-    axios.get(`/api/users/${session?.user?.email}`).then((res) => {
-      setUser(res.data);
-      setCart(res.data.cart);
-      if (res.data.email === "specarus@gmail.com") {
-        setIsAdmin(true);
-      }
-    });
-    setIsMounted(true);
-  }, [session?.user]);
+    if (status === "authenticated") {
+      axios.get(`/api/users/${session?.user?.email}`).then((res) => {
+        setUser(res.data);
+        setCart(res.data.cart);
+        if (res.data.email === "specarus@gmail.com") {
+          setIsAdmin(true);
+        }
+      });
+      setIsMounted(true);
+    }
+  }, [status]);
 
   // save personal information
   async function savePersonal(ev: any) {
