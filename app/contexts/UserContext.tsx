@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 
 import { createContext, useState, useEffect, useContext } from "react";
 
@@ -52,6 +52,8 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
 
   const { setCart } = useContext(CartContext);
 
+  const pathname = usePathname();
+
   const [user, setUser] = useState({} as User);
   const [isMounted, setIsMounted] = useState(false);
   const [showModal, setShowModal] = useState(0);
@@ -79,6 +81,8 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
     });
     setIsMounted(true);
   }, [update]);
+
+  useEffect(() => setShowModal(0), [pathname]);
 
   // save personal information
   async function savePersonal(ev: any) {

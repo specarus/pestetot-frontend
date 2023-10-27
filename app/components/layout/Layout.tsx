@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Link from "next/link";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import Swal from "sweetalert2";
 
@@ -30,7 +30,6 @@ import Image from "next/image";
 import { signOut, useSession } from "next-auth/react";
 import { CartContext } from "@/app/contexts/CartContext";
 import Loading from "@/app/loading";
-import { usePathname } from "next/navigation";
 
 interface LayoutProps {
   products: any[];
@@ -63,7 +62,6 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     setShowDeletePopup,
     setShowMenuModal,
     showModal,
-    setShowModal,
   } = useContext(UserContext);
 
   const { clearCart } = useContext(CartContext);
@@ -73,12 +71,6 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   if (status === "loading") {
     return <Loading />;
   }
-
-  const pathname = usePathname();
-
-  useEffect(() => {
-    setShowModal(0);
-  }, [pathname]);
 
   return (
     <main className="w-full h-full">
