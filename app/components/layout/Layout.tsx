@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Link from "next/link";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
 
@@ -63,6 +63,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     setShowDeletePopup,
     setShowMenuModal,
     showModal,
+    setShowModal,
   } = useContext(UserContext);
 
   const { clearCart } = useContext(CartContext);
@@ -74,6 +75,10 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   }
 
   const pathname = usePathname();
+
+  useEffect(() => {
+    setShowModal(0);
+  }, [pathname]);
 
   return (
     <main className="w-full h-full">
@@ -138,7 +143,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
             }  fixed top-3 right-6 desktop:h-12 laptop:h-10 rounded-full z-30 border border-gray-100 bg-white flex items-center p-1 desktop:w-52 laptop:w-48 transition-all duration-300`}
           >
             <span className="flex justify-center grow">
-              {pathname === "/contul-meu" && showModal ? (
+              {showModal ? (
                 <FiEdit3 className="text-xl" />
               ) : (
                 <p className="desktop:text-base laptop:text-sm">
