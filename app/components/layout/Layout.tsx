@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Link from "next/link";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext, useState } from "react";
 
 import Swal from "sweetalert2";
 
@@ -30,6 +30,7 @@ import Image from "next/image";
 import { signOut, useSession } from "next-auth/react";
 import { CartContext } from "@/app/contexts/CartContext";
 import Loading from "@/app/loading";
+import { usePathname } from "next/navigation";
 
 interface LayoutProps {
   products: any[];
@@ -54,12 +55,6 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   const [showOverlay, setShowOverlay] = useState(false);
   const [modal, setModal] = useState(1);
 
-  const { setShowModal } = useContext(UserContext);
-
-  useEffect(() => {
-    setShowModal(0);
-  }, []);
-
   const {
     user,
     showDeletePopup,
@@ -77,6 +72,8 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   if (status === "loading") {
     return <Loading />;
   }
+
+  const pathname = usePathname();
 
   return (
     <main className="w-full h-full">
@@ -141,7 +138,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
             }  fixed top-3 right-6 desktop:h-12 laptop:h-10 rounded-full z-30 border border-gray-100 bg-white flex items-center p-1 desktop:w-52 laptop:w-48 transition-all duration-300`}
           >
             <span className="flex justify-center grow">
-              {showModal ? (
+              {pathname === "/contul-meu" && showModal ? (
                 <FiEdit3 className="text-xl" />
               ) : (
                 <p className="desktop:text-base laptop:text-sm">
