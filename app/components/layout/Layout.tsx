@@ -27,8 +27,9 @@ import { UserContext } from "@/app/contexts/UserContext";
 import { ModalContext } from "@/app/contexts/ModalContext";
 import { SidebarContext } from "@/app/contexts/SidebarContext";
 import Image from "next/image";
-import { signOut } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 import { CartContext } from "@/app/contexts/CartContext";
+import Loading from "@/app/loading";
 
 interface LayoutProps {
   products: any[];
@@ -64,6 +65,12 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
   } = useContext(UserContext);
 
   const { clearCart } = useContext(CartContext);
+
+  const { status } = useSession();
+
+  if (status === "loading") {
+    return <Loading />;
+  }
 
   return (
     <main className="w-full h-full">
