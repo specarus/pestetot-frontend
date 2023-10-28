@@ -55,7 +55,7 @@ const CheckoutPage = () => {
           <Title title="Checkout" />
         </div>
       </section>
-      <section className="desktop:pr-80 laptop:pr-[30rem] desktop:mb-24 laptop:mb-16 flex gap-4">
+      <section className="desktop:pr-80 laptop:pr-[30rem] desktop:mb-24 laptop:mb-16 flex gap-4 desktop:text-base laptop:text-sm">
         <div className="relative w-fit h-fit border rounded-md select-none">
           <h2 className="absolute left-0 -top-9 text-lg px-4 rounded-full bg-primary text-white">
             Cosul de cumparaturi
@@ -78,7 +78,7 @@ const CheckoutPage = () => {
                   <p>
                     {product.title} ~ {product.option.code}
                   </p>
-                  <div className="flex gap-1 text-sm">
+                  <div className="flex gap-1 desktop:text-sm laptop:text-xs">
                     <p>{product.amount} x</p>
                     <p>
                       {Number(product.option.price.split(" ")[0])}
@@ -93,7 +93,7 @@ const CheckoutPage = () => {
         </div>
 
         <div className="relative w-64 h-fit border rounded-md select-none">
-          <h2 className="absolute left-0 -top-9 text-lg bg-primary text-white px-4 rounded-full">
+          <h2 className="absolute left-0 -top-9 bg-primary text-white px-4 rounded-full">
             Adresa de livrare
           </h2>
           <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
