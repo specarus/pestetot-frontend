@@ -79,7 +79,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   const { clearCart } = useContext(CartContext);
 
   // get user
-  const { data: session, update } = useSession();
+  const { data: session } = useSession();
 
   useEffect(() => {
     axios.get(`/api/users/${session?.user?.email}`).then((res) => {
@@ -90,7 +90,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
       }
     });
     setIsMounted(true);
-  }, [update]);
+  }, []);
 
   useEffect(() => setShowModal(0), [pathname]);
 
