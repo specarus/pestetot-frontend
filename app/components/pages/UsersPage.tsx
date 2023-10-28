@@ -21,6 +21,8 @@ import Loading from "@/app/loading";
 const UsersPage = () => {
   const [users, setUsers] = useState([]);
 
+  const { isAdmin } = useContext(UserContext);
+
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -54,8 +56,6 @@ const UsersPage = () => {
   if (!isMounted) {
     return <Loading />;
   }
-
-  const { isAdmin } = useContext(UserContext);
 
   if (!isAdmin) redirect("/");
 
