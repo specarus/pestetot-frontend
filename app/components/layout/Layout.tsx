@@ -121,7 +121,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
         {/* Delete account popup overlay */}
 
         {/* Account button */}
-        {session ? (
+        {status === "authenticated" ? (
           <button
             onClick={() => {
               if (!showModal) {
