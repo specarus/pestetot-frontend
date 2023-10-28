@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Link from "next/link";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import Swal from "sweetalert2";
 
@@ -50,6 +50,12 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     setShowCartContent,
   } = useContext(SidebarContext);
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  });
+
   const {
     user,
     showDeletePopup,
@@ -70,7 +76,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
 
   const { status } = useSession();
 
-  if (status === "loading") {
+  if (status === "loading" || !isMounted) {
     return <BigLoading />;
   }
 
