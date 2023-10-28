@@ -68,7 +68,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
 
   const { clearCart } = useContext(CartContext);
 
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   if (status === "loading") {
     return <BigLoading />;
@@ -121,7 +121,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
         {/* Delete account popup overlay */}
 
         {/* Account button */}
-        {status === "authenticated" ? (
+        {user._id ? (
           <button
             onClick={() => {
               if (!showModal) {
