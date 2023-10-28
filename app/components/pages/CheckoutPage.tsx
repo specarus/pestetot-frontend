@@ -2,18 +2,30 @@
 
 import Title from "@/app/components/layout/Title";
 
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 import { CartContext } from "@/app/contexts/CartContext";
 import { UserContext } from "@/app/contexts/UserContext";
 import { redirect } from "next/navigation";
 import { useSession } from "next-auth/react";
+import { useState } from "react";
+import Loading from "@/app/loading";
 
 const CheckoutPage = () => {
   const { cart } = useContext(CartContext);
   const { user } = useContext(UserContext);
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  });
+
   const { data: session } = useSession();
+
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   if (
     !session ||
