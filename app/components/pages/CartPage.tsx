@@ -102,14 +102,14 @@ const CartPage = () => {
             </div>
             <div>
               {session ? (
-                (!user?.address.building &&
-                  !user?.address.city &&
-                  !user?.address.county &&
-                  !user?.address.street &&
-                  !user?.address.postalCode &&
-                  !user?.phoneNumber &&
-                  !user?.firstName &&
-                  !user?.lastName) ||
+                !user?.address.building ||
+                !user?.address.city ||
+                !user?.address.county ||
+                !user?.address.street ||
+                !user?.address.postalCode ||
+                !user?.phoneNumber ||
+                !user?.firstName ||
+                !user?.lastName ||
                 cart.length < 0 ? (
                   <button
                     onClick={() => {
