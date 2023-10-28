@@ -24,8 +24,8 @@ const CheckoutPage = () => {
       !user?.address.postalCode &&
       !user?.phoneNumber &&
       !user?.firstName &&
-      !user?.lastName &&
-      user?.cart.length === 0)
+      !user?.lastName) ||
+    cart.length < 1
   )
     redirect("/contul-meu");
 
