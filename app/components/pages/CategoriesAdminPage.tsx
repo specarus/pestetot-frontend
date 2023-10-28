@@ -61,6 +61,7 @@ const CategoriesAdminPage = () => {
   if (!isMounted) {
     return <Loading />;
   }
+
   return (
     <div className="w-full h-full">
       <div className="relative w-full flex items-center justify-between mb-10">

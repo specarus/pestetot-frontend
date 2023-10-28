@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 
-import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
+import { BsChevronLeft } from "react-icons/bs";
 
 import axios from "axios";
 
@@ -16,8 +16,16 @@ import Title from "@/app/components/layout/Title";
 import { RiDeleteBin7Line } from "react-icons/ri";
 import { redirect } from "next/navigation";
 
+import Loading from "@/app/loading";
+
 const UsersPage = () => {
   const [users, setUsers] = useState([]);
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   useEffect(() => {
     axios.get("/api/users").then((res) => setUsers(res.data));
@@ -44,9 +52,14 @@ const UsersPage = () => {
     }
   }
 
+  if (!isMounted) {
+    return <Loading />;
+  }
+
   const { isAdmin } = useContext(UserContext);
 
   if (!isAdmin) redirect("/");
+
   return (
     <div className="w-full h-full">
       <div className="relative mb-10">

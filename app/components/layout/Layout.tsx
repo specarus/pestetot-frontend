@@ -50,12 +50,6 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     setShowCartContent,
   } = useContext(SidebarContext);
 
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  });
-
   const {
     user,
     showDeletePopup,
@@ -74,9 +68,9 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
 
   const { clearCart } = useContext(CartContext);
 
-  const { status } = useSession();
+  const { data: session, status } = useSession();
 
-  if (status === "loading" || !isMounted) {
+  if (status === "loading") {
     return <BigLoading />;
   }
 
@@ -127,7 +121,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
         {/* Delete account popup overlay */}
 
         {/* Account button */}
-        {user?._id ? (
+        {session ? (
           <button
             onClick={() => {
               if (!showModal) {
