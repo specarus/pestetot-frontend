@@ -98,7 +98,7 @@ const SubCategoriesAdminPage = () => {
             return (
               <div
                 key={subCategory._id}
-                className="w-full grid grid-cols-6 border-t h-9"
+                className="w-full grid grid-cols-6 border-t h-9 hover:bg-cream transition-all duration-200"
               >
                 <div className="col-span-2 border-r grid place-content-center capitalize">
                   {subCategory.title}
@@ -107,31 +107,7 @@ const SubCategoriesAdminPage = () => {
                   {subCategory.slug}
                 </div>
                 <div className="col-span-1 border-r grid place-content-center capitalize">
-                  <p
-                    className={`${
-                      subCategory.category === "lansete" && "bg-yellow-500"
-                    } ${
-                      subCategory.category === "mulinete" && "bg-orange-500"
-                    } ${subCategory.category === "fire" && "bg-green-500"} ${
-                      subCategory.category === "carlige" && "bg-red-400"
-                    } ${subCategory.category === "plumbi" && "bg-blue-500"} ${
-                      subCategory.category === "plute" && "bg-gray-500"
-                    } ${
-                      subCategory.category === "cutii-plastic" &&
-                      "bg-purple-500"
-                    } ${subCategory.category === "plase" && "bg-cyan-500"} ${
-                      subCategory.category === "scaune-umbrele" &&
-                      "bg-emerald-500"
-                    } ${
-                      subCategory.category === "genti-huse" && "bg-orange-800"
-                    } ${
-                      subCategory.category === "barci-motoare" && "bg-black"
-                    } ${
-                      subCategory.category === "accesorii" && "bg-pink-500"
-                    } ${
-                      subCategory.category === "suporti-bete" && "bg-sky-700"
-                    } px-4 h-6 flex items-center rounded-full text-white`}
-                  >
+                  <p className="px-4 h-6 flex items-center rounded-full">
                     {subCategory.category.split("-").join(" ")}
                   </p>
                 </div>

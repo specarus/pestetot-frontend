@@ -41,6 +41,12 @@ interface UserContextProps {
   changeFlat: (ev: any) => void;
   changeStair: (ev: any) => void;
   changePostalCode: (ev: any) => void;
+  modal: number;
+  setModal: (value: number) => void;
+  showOverlay: boolean;
+  setShowOverlay: (value: boolean) => void;
+  showAccountModal: boolean;
+  setShowAccountModal: (value: boolean) => void;
 
   isAdmin: boolean;
 }
@@ -60,6 +66,10 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   const [showDeletePopup, setShowDeletePopup] = useState(false);
   const [counties, setCounties] = useState([] as []);
   const [cities, setCities] = useState([] as []);
+
+  const [showAccountModal, setShowAccountModal] = useState(false);
+  const [showOverlay, setShowOverlay] = useState(false);
+  const [modal, setModal] = useState(1);
 
   const [showMenuModal, setShowMenuModal] = useState(false);
 
@@ -308,6 +318,12 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
         changeStair,
         changePostalCode,
         isAdmin,
+        modal,
+        setModal,
+        showAccountModal,
+        setShowAccountModal,
+        showOverlay,
+        setShowOverlay,
       }}
     >
       {children}

@@ -50,10 +50,6 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     setShowCartContent,
   } = useContext(SidebarContext);
 
-  const [showAccountModal, setShowAccountModal] = useState(false);
-  const [showOverlay, setShowOverlay] = useState(false);
-  const [modal, setModal] = useState(1);
-
   const {
     user,
     showDeletePopup,
@@ -62,6 +58,12 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     setShowDeletePopup,
     setShowMenuModal,
     showModal,
+    modal,
+    setModal,
+    showAccountModal,
+    setShowAccountModal,
+    showOverlay,
+    setShowOverlay,
   } = useContext(UserContext);
 
   const { clearCart } = useContext(CartContext);

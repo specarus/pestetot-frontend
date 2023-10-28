@@ -101,38 +101,18 @@ const ProductsAdminPage = () => {
           return (
             <div
               key={product._id}
-              className="w-full grid grid-cols-7 border-t desktop:h-9 laptop:h-8 desktop:text-base laptop:text-sm"
+              className="w-full grid grid-cols-7 border-t desktop:h-9 laptop:h-8 desktop:text-base laptop:text-sm hover:bg-cream transition-all duration-200"
             >
               <div className="col-span-2 border-r grid place-content-center">
                 {product.title}
               </div>
               <div className="col-span-1 border-r grid place-content-center capitalize">
-                <p
-                  className={`${
-                    product.category === "lansete" && "bg-yellow-500"
-                  } ${product.category === "mulinete" && "bg-orange-500"}  ${
-                    product.category === "fire" && "bg-green-600"
-                  } ${
-                    product.category === "carlige" && "bg-gray-600"
-                  } px-4 h-6 flex items-center rounded-full text-white`}
-                >
+                <p className="px-4 h-6 flex items-center rounded-full">
                   {product.category}
                 </p>
               </div>
               <div className="col-span-1 border-r grid place-content-center capitalize">
-                <p
-                  className={`${
-                    product.subCategory === "vergi" && "bg-blue-500"
-                  } ${product.subCategory === "bologneze" && "bg-purple-500"} ${
-                    product.subCategory === "match" && "bg-green-800"
-                  } ${
-                    product.subCategory === "feeder-peeker" && "bg-red-800"
-                  } ${product.subCategory === "spinning" && "bg-cyan-500"} ${
-                    product.subCategory === "impletite-spinning" && "bg-red-300"
-                  } ${
-                    product.subCategory === "boilie" && "bg-yellow-800"
-                  } px-4 h-6 flex items-center rounded-full text-white`}
-                >
+                <p className="px-4 h-6 flex items-center rounded-full">
                   {product.subCategory.split("-").join(" ")}
                 </p>
               </div>

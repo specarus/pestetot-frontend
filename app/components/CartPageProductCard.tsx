@@ -58,16 +58,10 @@ const CartPageProductCard: React.FC<CartPageProductCardProps> = ({ item }) => {
           </p>
         </div>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex items-center">
         <p className="border desktop:h-10 desktop:w-10 laptop:w-8 laptop:h-8 grid place-content-center desktop:text-lg laptop:text-base">
           {item.amount}
         </p>
-        <button
-          onClick={() => removeFromCart(item._id, item.option)}
-          className="hover:text-primary transition-all duration-200"
-        >
-          <IoMdClose className="desktop:text-xl laptop:text-lg" />
-        </button>
       </div>
     </div>
   );

@@ -99,7 +99,7 @@ const BrandsAdminPage = () => {
             return (
               <div
                 key={brand._id}
-                className="w-full grid grid-cols-5 border-t h-9"
+                className="w-full grid grid-cols-5 border-t h-9 hover:bg-cream transition-all duration-200"
               >
                 <div className="col-span-1 border-r grid place-content-center capitalize">
                   {brand.title}

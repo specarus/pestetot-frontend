@@ -239,7 +239,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
             return (
               <li
                 key={product._id}
-                className="row-span-1 w-full bg-white h-auto border-b last-of-type:border-none"
+                className="row-span-1 w-full bg-white h-auto border-b last-of-type:border-none hover:bg-cream transition-all duration-200"
               >
                 <div className="w-full h-full">
                   {product.category === "lansete" && (

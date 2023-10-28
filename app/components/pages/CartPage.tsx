@@ -9,11 +9,25 @@ import { useState, useContext } from "react";
 import { CartContext } from "@/app/contexts/CartContext";
 import CartPageProductCard from "../CartPageProductCard";
 import Title from "../layout/Title";
+import { useSession } from "next-auth/react";
+import { UserContext } from "@/app/contexts/UserContext";
+
+import Swal from "sweetalert2";
+import { Router } from "next/router";
+
+import { useRouter } from "next/navigation";
 
 const CartPage = () => {
   const { cart, totalAmount, totalPrice } = useContext(CartContext);
 
   const [instructions, setInstructions] = useState("");
+
+  const { data: session } = useSession();
+
+  const { user, setModal, setShowOverlay, setShowAccountModal } =
+    useContext(UserContext);
+
+  const router = useRouter();
 
   return (
     <div className="w-full h-full">
@@ -87,17 +101,72 @@ const CartPage = () => {
               </p>
             </div>
             <div>
-              <Link
-                href="/cos/checkout"
-                className="rounded-full group relative flex justify-center desktop:w-40 laptop:w-36 py-2 bg-primary text-white overflow-hidden"
-              >
-                <p className="group-hover:translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
-                  Checkout
-                </p>
-                <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
-                  <BsArrowRight />
-                </p>
-              </Link>
+              {session ? (
+                !user?.address.building &&
+                !user?.address.city &&
+                !user?.address.county &&
+                !user?.address.street &&
+                !user?.address.postalCode &&
+                !user?.phoneNumber &&
+                !user?.firstName &&
+                !user?.lastName &&
+                user?.cart.length === 0 ? (
+                  <button
+                    onClick={() => {
+                      Swal.fire({
+                        position: "top",
+                        timer: 2000,
+                        backdrop: "transparent",
+                        title: "Nu ati completat toate detaliile!",
+                        timerProgressBar: true,
+                        showConfirmButton: false,
+                        customClass: {
+                          popup: "w-auto h-auto laptop:px-4 pb-2",
+                          title: "text-sm font-normal",
+                          timerProgressBar: "bg-red-500",
+                        },
+                      });
+                      router.push("/contul-meu");
+                    }}
+                    className="rounded-full group relative flex justify-center desktop:w-40 laptop:w-36 py-2 bg-primary text-white overflow-hidden"
+                  >
+                    <p className="group-hover:translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
+                      Checkout
+                    </p>
+                    <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+                      <BsArrowRight />
+                    </p>
+                  </button>
+                ) : (
+                  <Link
+                    href="/cos/checkout"
+                    className="rounded-full group relative flex justify-center desktop:w-40 laptop:w-36 py-2 bg-primary text-white overflow-hidden"
+                  >
+                    <p className="group-hover:translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
+                      Checkout
+                    </p>
+                    <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+                      <BsArrowRight />
+                    </p>
+                  </Link>
+                )
+              ) : (
+                <button
+                  onClick={() => {
+                    setShowAccountModal(true);
+                    setShowOverlay(true);
+                    setModal(2);
+                  }}
+                  className="rounded-full group relative flex justify-center desktop:w-40 laptop:w-36 py-2 bg-primary text-white overflow-hidden"
+                >
+                  <p className="group-hover:translate-x-96 transition-all duration-300 desktop:text-base laptop:text-sm">
+                    Checkout
+                  </p>
+                  <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
+                    <BsArrowRight />
+                  </p>
+                </button>
+              )}
             </div>
           </section>
           {/* Checkout */}
