@@ -24,11 +24,10 @@ const UsersPage = () => {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
-  useEffect(() => {
-    axios.get("/api/users").then((res) => setUsers(res.data));
+    axios.get("/api/users").then((res) => {
+      setUsers(res.data);
+      setIsMounted(true);
+    });
   }, []);
 
   async function deleteUser(id: string) {
