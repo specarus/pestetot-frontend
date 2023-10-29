@@ -43,6 +43,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
     ev.preventDefault();
     signIn("credentials", {
       ...loginUser,
+      redirect: false,
       callbackUrl: "/contul-meu",
     }).then((res) => {
       if (res?.ok) {
