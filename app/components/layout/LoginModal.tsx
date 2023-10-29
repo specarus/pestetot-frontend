@@ -12,6 +12,7 @@ import { BsArrowRight } from "react-icons/bs";
 
 // auth
 import { signIn } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 interface LoginModalProps {
   setModal: (value: number) => void;
@@ -34,16 +35,35 @@ const LoginModal: React.FC<LoginModalProps> = ({
     resetLoginUser,
   } = useContext(ModalContext);
 
+  const router = useRouter();
+
   const [showPassword, setShowPassword] = useState(false);
 
   async function login(ev: any) {
     ev.preventDefault();
-    try {
-      const res = await signIn("credentials", {
-        ...loginUser,
-        callbackUrl: "/contul-meu",
-      });
-      if (res?.error) {
+    signIn("credentials", {
+      ...loginUser,
+      redirect: false,
+    }).then((res) => {
+      if (res?.ok) {
+        Swal.fire({
+          position: "top",
+          timer: 2000,
+          backdrop: "transparent",
+          title: "V-ati conectat cu succes!",
+          timerProgressBar: true,
+          showConfirmButton: false,
+          customClass: {
+            popup: "w-auto h-auto laptop:px-4 pb-2",
+            title: "text-sm font-normal",
+            timerProgressBar: "bg-green-500",
+          },
+        });
+        router.push("/contul-meu");
+        setShowAccountModal(false);
+        resetLoginFocuses();
+        resetLoginUser();
+      } else {
         Swal.fire({
           position: "top",
           timer: 2000,
@@ -57,27 +77,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
             timerProgressBar: "bg-red-500",
           },
         });
-        return;
       }
-      Swal.fire({
-        position: "top",
-        timer: 2000,
-        backdrop: "transparent",
-        title: "V-ati conectat cu succes!",
-        timerProgressBar: true,
-        showConfirmButton: false,
-        customClass: {
-          popup: "w-auto h-auto laptop:px-4 pb-2",
-          title: "text-sm font-normal",
-          timerProgressBar: "bg-green-500",
-        },
-      });
-      setShowAccountModal(false);
-      resetLoginFocuses();
-      resetLoginUser();
-    } catch (error) {
-      console.log(error);
-    }
+    });
   }
 
   return (
