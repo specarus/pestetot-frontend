@@ -93,12 +93,6 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
     });
   }, [update]);
 
-  useEffect(() => {
-    if (status === "unauthenticated") {
-      setIsMounted(true);
-    }
-  }, []);
-
   useEffect(() => setShowModal(0), [pathname]);
 
   // save personal information

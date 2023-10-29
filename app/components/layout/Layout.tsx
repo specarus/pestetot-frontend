@@ -72,7 +72,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
 
   const { status } = useSession();
 
-  if (status === "loading" || !isMounted) {
+  if (status === "loading" || (!isMounted && status === "authenticated")) {
     return <BigLoading />;
   }
 
