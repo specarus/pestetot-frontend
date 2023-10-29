@@ -4,7 +4,7 @@ import axios from "axios";
 
 import Link from "next/link";
 
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 
 import Swal from "sweetalert2";
 
@@ -64,13 +64,14 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     setShowAccountModal,
     showOverlay,
     setShowOverlay,
+    isMounted,
   } = useContext(UserContext);
 
   const { clearCart } = useContext(CartContext);
 
-  const { status } = useSession();
+  const { data: session, status } = useSession();
 
-  if (status === "loading") {
+  if (status === "loading" || !isMounted) {
     return <BigLoading />;
   }
 
@@ -121,7 +122,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
         {/* Delete account popup overlay */}
 
         {/* Account button */}
-        {user._id ? (
+        {session ? (
           <button
             onClick={() => {
               if (!showModal) {
