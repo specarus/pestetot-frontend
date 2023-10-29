@@ -122,7 +122,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
         {/* Delete account popup overlay */}
 
         {/* Account button */}
-        {session ? (
+        {user?._id ? (
           <button
             onClick={() => {
               if (!showModal) {

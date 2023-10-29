@@ -110,7 +110,7 @@ const CartPage = () => {
                 !user?.phoneNumber ||
                 !user?.firstName ||
                 !user?.lastName ||
-                cart.length < 0 ? (
+                cart?.length < 0 ? (
                   <button
                     onClick={() => {
                       Swal.fire({

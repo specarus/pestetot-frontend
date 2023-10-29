@@ -37,7 +37,7 @@ const CheckoutPage = () => {
     !user?.phoneNumber ||
     !user?.firstName ||
     !user?.lastName ||
-    cart.length < 1
+    cart?.length < 1
   )
     redirect("/contul-meu");
 
