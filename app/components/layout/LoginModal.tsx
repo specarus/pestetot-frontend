@@ -57,7 +57,8 @@ const LoginModal: React.FC<LoginModalProps> = ({
             timerProgressBar: "bg-red-500",
           },
         });
-      } else {
+      }
+      if (res?.ok) {
         Swal.fire({
           position: "top",
           timer: 2000,
