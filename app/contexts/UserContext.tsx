@@ -29,6 +29,7 @@ interface UserContextProps {
   saveAddress: (ev: any) => void;
   setUser: (user: User) => void;
   isMounted: boolean;
+  setIsMounted: (value: boolean) => void;
   changeUsername: (ev: any) => void;
   changeEmail: (ev: any) => void;
   changeFirstName: (ev: any) => void;
@@ -321,6 +322,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
         modal,
         setModal,
         showAccountModal,
+        setIsMounted,
         setShowAccountModal,
         showOverlay,
         setShowOverlay,

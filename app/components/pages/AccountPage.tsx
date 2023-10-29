@@ -16,7 +16,8 @@ import { CartContext } from "@/app/contexts/CartContext";
 import Swal from "sweetalert2";
 
 const AccountPage = () => {
-  const { isMounted, setShowDeletePopup, isAdmin } = useContext(UserContext);
+  const { isMounted, setShowDeletePopup, isAdmin, setIsMounted } =
+    useContext(UserContext);
 
   const { clearCart } = useContext(CartContext);
 
@@ -103,7 +104,6 @@ const AccountPage = () => {
             <button
               onClick={() => {
                 signOut();
-                clearCart();
                 Swal.fire({
                   position: "top",
                   timer: 2000,
@@ -117,6 +117,8 @@ const AccountPage = () => {
                     timerProgressBar: "bg-red-500",
                   },
                 });
+                clearCart();
+                setIsMounted(true);
               }}
               className="flex items-center gap-2 group"
             >

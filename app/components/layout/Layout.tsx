@@ -65,11 +65,12 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
     showOverlay,
     setShowOverlay,
     isMounted,
+    setIsMounted,
   } = useContext(UserContext);
 
   const { clearCart } = useContext(CartContext);
 
-  const { data: session, status } = useSession();
+  const { status } = useSession();
 
   if (status === "loading" || !isMounted) {
     return <BigLoading />;
@@ -236,6 +237,7 @@ const Layout: React.FC<LayoutProps> = ({ products, categories, children }) => {
               });
               clearCart();
               setShowMenuModal(false);
+              setIsMounted(true);
             }}
             className="laptop:py-2 px-4 flex items-center desktop:gap-4 laptop:gap-3 hover:bg-cream transition-all duration-200"
           >
