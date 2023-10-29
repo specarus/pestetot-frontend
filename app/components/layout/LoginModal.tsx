@@ -44,9 +44,9 @@ const LoginModal: React.FC<LoginModalProps> = ({
     signIn("credentials", {
       ...loginUser,
       redirect: false,
-      callbackUrl: "/contul-meu",
     }).then((res) => {
       if (res?.ok) {
+        router.push("/contul-meu");
         Swal.fire({
           position: "top",
           timer: 2000,
