@@ -43,7 +43,7 @@ const LoginModal: React.FC<LoginModalProps> = ({
     ev.preventDefault();
     signIn("credentials", {
       ...loginUser,
-      redirect: false,
+      callbackUrl: "/contul-meu",
     }).then((res) => {
       if (res?.ok) {
         Swal.fire({
@@ -59,7 +59,6 @@ const LoginModal: React.FC<LoginModalProps> = ({
             timerProgressBar: "bg-green-500",
           },
         });
-        router.push("/contul-meu");
         setShowAccountModal(false);
         resetLoginFocuses();
         resetLoginUser();
