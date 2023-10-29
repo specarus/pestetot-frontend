@@ -24,12 +24,9 @@ const EditProductPage = () => {
   const params = useParams();
   const { category } = params;
   const { id } = params;
+  const { isAdmin } = useContext(UserContext);
 
   const [isMounted, setIsMounted] = useState(false);
-
-  if (!isMounted) {
-    return <Loading />;
-  }
 
   useEffect(() => {
     if (!id) {
@@ -41,7 +38,9 @@ const EditProductPage = () => {
     });
   }, [category, id]);
 
-  const { isAdmin } = useContext(UserContext);
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   if (!isAdmin) redirect("/");
 

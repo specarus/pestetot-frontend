@@ -18,12 +18,9 @@ const EditSubCategoryPage = () => {
   const { id } = params;
 
   const [subCategory, setSubCategory] = useState({} as SubCategory);
+  const { isAdmin } = useContext(UserContext);
 
   const [isMounted, setIsMounted] = useState(false);
-
-  if (!isMounted) {
-    return <Loading />;
-  }
 
   useEffect(() => {
     if (!id) {
@@ -35,7 +32,9 @@ const EditSubCategoryPage = () => {
     });
   }, [id]);
 
-  const { isAdmin } = useContext(UserContext);
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   if (!isAdmin) redirect("/");
 

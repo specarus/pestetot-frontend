@@ -19,14 +19,11 @@ import Loading from "@/app/loading";
 const EditBrandPage = () => {
   const params = useParams();
   const { id } = params;
+  const { isAdmin } = useContext(UserContext);
 
   const [brand, setBrand] = useState({} as Brand);
 
   const [isMounted, setIsMounted] = useState(false);
-
-  if (!isMounted) {
-    return <Loading />;
-  }
 
   useEffect(() => {
     if (!id) {
@@ -38,7 +35,9 @@ const EditBrandPage = () => {
     });
   }, [id]);
 
-  const { isAdmin } = useContext(UserContext);
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   if (!isAdmin) redirect("/");
 

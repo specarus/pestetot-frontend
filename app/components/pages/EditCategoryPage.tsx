@@ -18,12 +18,9 @@ const EditCategoryPage = () => {
   const { id } = params;
 
   const [category, setCategory] = useState({} as Category);
+  const { isAdmin } = useContext(UserContext);
 
   const [isMounted, setIsMounted] = useState(false);
-
-  if (!isMounted) {
-    return <Loading />;
-  }
 
   useEffect(() => {
     if (!id) {
@@ -35,7 +32,9 @@ const EditCategoryPage = () => {
     });
   }, [id]);
 
-  const { isAdmin } = useContext(UserContext);
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   if (!isAdmin) redirect("/");
 
