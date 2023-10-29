@@ -14,6 +14,7 @@ import { BsChevronLeft } from "react-icons/bs";
 import Title from "@/app/components/layout/Title";
 
 import { redirect } from "next/navigation";
+import Loading from "@/app/loading";
 
 const EditBrandPage = () => {
   const params = useParams();
@@ -21,11 +22,20 @@ const EditBrandPage = () => {
 
   const [brand, setBrand] = useState({} as Brand);
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  if (!isMounted) {
+    return <Loading />;
+  }
+
   useEffect(() => {
     if (!id) {
       return;
     }
-    axios.get(`/api/brands/edit/${id}`).then((res) => setBrand(res.data));
+    axios.get(`/api/brands/edit/${id}`).then((res) => {
+      setBrand(res.data);
+      setIsMounted(true);
+    });
   }, [id]);
 
   const { isAdmin } = useContext(UserContext);

@@ -80,7 +80,7 @@ const UserContextProvider = ({ children }: { children: React.ReactNode }) => {
   const { clearCart } = useContext(CartContext);
 
   // get user
-  const { data: session, update, status } = useSession();
+  const { data: session, update } = useSession();
 
   useEffect(() => {
     axios.get(`/api/users/${session?.user?.email}`).then((res) => {

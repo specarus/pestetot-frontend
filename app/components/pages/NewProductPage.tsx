@@ -2,8 +2,8 @@
 
 import Link from "next/link";
 
-import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
-import { useContext } from "react";
+import { BsChevronLeft } from "react-icons/bs";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "@/app/contexts/UserContext";
 import Title from "@/app/components/layout/Title";
 
@@ -12,10 +12,21 @@ import MulinetaForm from "@/app/components/form/MulinetaForm";
 import FirForm from "@/app/components/form/FirForm";
 import CarligForm from "@/app/components/form/CarligForm";
 import { redirect } from "next/navigation";
+import Loading from "@/app/loading";
 
 const NewProductPage = ({ params }: { params: { category: string } }) => {
   const { category } = params;
   const { isAdmin } = useContext(UserContext);
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   if (!isAdmin) redirect("/");
 

@@ -4,14 +4,25 @@ import Link from "next/link";
 
 import CategoryForm from "@/app/components/form/CategoryForm";
 
-import { BsArrowLeft, BsChevronLeft } from "react-icons/bs";
+import { BsChevronLeft } from "react-icons/bs";
 import { UserContext } from "@/app/contexts/UserContext";
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import Title from "@/app/components/layout/Title";
 import { redirect } from "next/navigation";
+import Loading from "@/app/loading";
 
 const NewCategoryPage = () => {
   const { isAdmin } = useContext(UserContext);
+
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return <Loading />;
+  }
 
   if (!isAdmin) redirect("/");
 

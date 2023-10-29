@@ -16,6 +16,7 @@ import LansetaForm from "@/app/components/form/LansetaForm";
 import MulinetaForm from "@/app/components/form/MulinetaForm";
 import FirForm from "@/app/components/form/FirForm";
 import CarligForm from "@/app/components/form/CarligForm";
+import Loading from "@/app/loading";
 
 const EditProductPage = () => {
   const [product, setProduct] = useState({} as any);
@@ -24,13 +25,20 @@ const EditProductPage = () => {
   const { category } = params;
   const { id } = params;
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  if (!isMounted) {
+    return <Loading />;
+  }
+
   useEffect(() => {
     if (!id) {
       return;
     }
-    axios
-      .get(`/api/products/edit/${category}/${id}`)
-      .then((res) => setProduct(res.data));
+    axios.get(`/api/products/edit/${category}/${id}`).then((res) => {
+      setProduct(res.data);
+      setIsMounted(true);
+    });
   }, [category, id]);
 
   const { isAdmin } = useContext(UserContext);

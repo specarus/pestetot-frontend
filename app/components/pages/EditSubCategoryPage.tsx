@@ -11,6 +11,7 @@ import SubCategoryForm from "@/app/components/form/SubCategoryForm";
 import { BsChevronLeft } from "react-icons/bs";
 import { UserContext } from "@/app/contexts/UserContext";
 import Title from "@/app/components/layout/Title";
+import Loading from "@/app/loading";
 
 const EditSubCategoryPage = () => {
   const params = useParams();
@@ -18,13 +19,20 @@ const EditSubCategoryPage = () => {
 
   const [subCategory, setSubCategory] = useState({} as SubCategory);
 
+  const [isMounted, setIsMounted] = useState(false);
+
+  if (!isMounted) {
+    return <Loading />;
+  }
+
   useEffect(() => {
     if (!id) {
       return;
     }
-    axios
-      .get(`/api/subcategories/edit/${id}`)
-      .then((res) => setSubCategory(res.data));
+    axios.get(`/api/subcategories/edit/${id}`).then((res) => {
+      setSubCategory(res.data);
+      setIsMounted(true);
+    });
   }, [id]);
 
   const { isAdmin } = useContext(UserContext);
