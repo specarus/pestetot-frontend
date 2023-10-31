@@ -57,7 +57,7 @@ const CheckoutPage = () => {
       </section>
       <section className="desktop:pr-80 laptop:pr-[30rem] desktop:mb-24 laptop:mb-16 flex gap-4 desktop:text-base laptop:text-sm">
         <div className="relative w-fit h-fit border rounded-md select-none">
-          <h2 className="absolute left-0 -top-8 px-4 rounded-full bg-primary text-white">
+          <h2 className="absolute left-0 desktop:-top-8 laptop:-top-7 px-4 rounded-full bg-primary text-white">
             Cosul de cumparaturi
           </h2>
           {cart.map((product: any) => {
@@ -93,7 +93,7 @@ const CheckoutPage = () => {
         </div>
 
         <div className="relative w-64 h-fit border rounded-md select-none">
-          <h2 className="absolute left-0 -top-8 bg-primary text-white px-4 rounded-full">
+          <h2 className="absolute left-0 desktop:-top-8 laptop:-top-7 bg-primary text-white px-4 rounded-full">
             Adresa de livrare
           </h2>
           <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
