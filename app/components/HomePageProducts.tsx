@@ -257,7 +257,7 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
                   <Link
                     href={`/catalog/brand/${brand.slug}`}
                     key={brand._id}
-                    className="w-44 h-24 bg-white border border-gray-100 rounded-md shadow-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
+                    className="w-44 desktop:h-24 laptop:h-20 bg-white border border-gray-100 rounded-md shadow-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
                   >
                     <BrandCard brand={brand} />
                   </Link>
@@ -295,7 +295,7 @@ const HomePageProducts: React.FC<HomePageProductsProps> = ({
                   <Link
                     href={`/catalog/brand/${brand.slug}`}
                     key={brand._id}
-                    className="w-44 h-24 border border-gray-100 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
+                    className="w-44 desktop:h-24 laptop:h-20 border border-gray-100 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
                   >
                     <BrandCard brand={brand} />
                   </Link>

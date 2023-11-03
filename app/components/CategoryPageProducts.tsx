@@ -753,7 +753,7 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
             />
             <span className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-20" />
 
-            <div className="absolute top-0 right-0 w-[35%] h-full bg-black bg-opacity-30 desktop:p-4 laptop:p-6">
+            <div className="absolute top-0 right-0 desktop:w-[35%] laptop:w-[45%] h-full bg-black bg-opacity-30 desktop:p-4 laptop:p-6">
               <p className="w-full h-full desktop:text-7xl laptop:text-6xl font-medium text-white">
                 Cine se trezeste de dimineata, prinde peste!
               </p>
@@ -849,7 +849,7 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
                 return (
                   <div
                     key={brand._id}
-                    className="w-44 h-24 border border-gray-100 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
+                    className="w-44 desktop:h-24 laptop:h-20 border border-gray-100 bg-white shadow-md rounded-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
                   >
                     <BrandCard brand={brand} />
                   </div>
@@ -886,7 +886,7 @@ const CategoryPageProducts: React.FC<CategoryPageProductsProps> = ({
                 return (
                   <div
                     key={brand._id}
-                    className="w-44 h-24 bg-white border border-gray-100 rounded-md shadow-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
+                    className="w-44 desktop:h-24 laptop:h-20 bg-white border border-gray-100 rounded-md shadow-md hover:shadow-lg hover:-translate-y-1 grid place-content-center transition-all duration-200"
                   >
                     <BrandCard brand={brand} />
                   </div>

@@ -38,7 +38,7 @@ const Search: React.FC<SearchProps> = ({
             type="text"
             value={search}
             onChange={(ev) => setSearch(ev.target.value)}
-            className="peer w-full h-10 border-b-2 pr-12"
+            className="peer w-full desktop:h-10 laptop:h-8 border-b-2 pr-12 desktop:text-base laptop:text-sm"
           />
           <span
             className={`${
@@ -59,7 +59,7 @@ const Search: React.FC<SearchProps> = ({
                 <IoSearchOutline
                   className={`${
                     search ? "text-primary" : ""
-                  } text-gray-200 peer-focus:text-primary text-2xl transition-all duration-200`}
+                  } text-gray-200 peer-focus:text-primary desktop:text-2xl laptop:text-xl transition-all duration-200`}
                 />
               </p>
               <p className="text-sm absolute translate-y-40 group-hover:translate-y-0 transition-all duration-200">
@@ -70,7 +70,7 @@ const Search: React.FC<SearchProps> = ({
             <IoSearchOutline
               className={`${
                 search ? "text-primary" : ""
-              } text-gray-200 absolute top-[50%] -translate-y-[50%] right-0 peer-focus:text-primary text-2xl transition-all duration-200`}
+              } text-gray-200 absolute top-[50%] -translate-y-[50%] right-0 peer-focus:text-primary desktop:text-2xl laptop:text-xl transition-all duration-200`}
             />
           )}
         </div>

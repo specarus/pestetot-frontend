@@ -133,7 +133,7 @@ const ProductsAdminPage = () => {
               <div className="col-span-1 h-full flex items-center justify-center desktop:gap-4 laptop:gap-2">
                 <Link
                   href={`/admin/produse/editare/${product.category}/${product._id}`}
-                  className="flex items-center justify-center px-6 h-6 border rounded-full hover:border-primary hover:text-primary transition-all duration-200"
+                  className="flex items-center justify-center desktop:px-6 laptop:px-4 h-6 border rounded-full hover:border-primary hover:text-primary transition-all duration-200"
                 >
                   <p className="desktop:text-lg laptop:text-base">
                     <FiEdit3 />
@@ -141,7 +141,7 @@ const ProductsAdminPage = () => {
                 </Link>
                 <button
                   onClick={() => deleteProduct(product._id, product.category)}
-                  className="h-6 px-6 rounded-full border flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-all duration-200"
+                  className="h-6 desktop:px-6 laptop:px-4 rounded-full border flex items-center justify-center hover:border-red-500 hover:text-red-500 transition-all duration-200"
                 >
                   <p className="desktop:text-lg laptop:text-base">
                     <RiDeleteBin7Line />

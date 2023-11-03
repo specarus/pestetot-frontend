@@ -23,9 +23,9 @@ const MulinetaOptionCard: React.FC<MulinetaOptionCardProps> = ({
 
   return (
     <div className="p-2 flex items-center justify-between">
-      <div className="desktop:w-28 laptop:w-20 grid place-content-center">
+      {/*<div className="desktop:w-28 laptop:w-20 grid place-content-center">
         <p>{option.code}</p>
-      </div>
+      </div>*/}
       <div className="desktop:w-28 laptop:w-24 grid place-content-center capitalize">
         <p>{option.price}</p>
       </div>
@@ -35,7 +35,7 @@ const MulinetaOptionCard: React.FC<MulinetaOptionCardProps> = ({
         </div>
       )}
       {option.noBearing && (
-        <div className="desktop:w-36 laptop:w-28 grid place-content-center">
+        <div className="desktop:w-36 laptop:w-24 grid place-content-center">
           <p>{option.noBearing}</p>
         </div>
       )}
@@ -55,7 +55,7 @@ const MulinetaOptionCard: React.FC<MulinetaOptionCardProps> = ({
         </div>
       )}
       {option.material && (
-        <div className="desktop:w-36 laptop:w-32 grid place-content-center">
+        <div className="desktop:w-36 laptop:w-[7.5rem] grid place-content-center">
           <p>{option.material}</p>
         </div>
       )}
@@ -65,7 +65,7 @@ const MulinetaOptionCard: React.FC<MulinetaOptionCardProps> = ({
         </div>
       )}
       {option.weight && (
-        <div className="desktop:w-28 laptop:w-20 grid place-content-center">
+        <div className="desktop:w-28 laptop:w-[4.5rem] grid place-content-center">
           <p>{option.weight}</p>
         </div>
       )}

@@ -97,7 +97,7 @@ const UserForm = () => {
       <section className="relative w-full border rounded-md overflow-hidden desktop:mb-10 laptop:mb-8">
         {/* Personal information table */}
         <div className="flex items-start justify-between border-b desktop:px-6 laptop:px-4 desktop:py-4 laptop:py-2">
-          <h1 className="desktop:text-xl laptop:text-lg border-l-4 border-primary pl-2">
+          <h1 className="desktop:text-xl laptop:text-lg">
             Informatii personale
           </h1>
           <button
@@ -318,9 +318,7 @@ const UserForm = () => {
       <section className="relative w-full border rounded-md overflow-hidden">
         {/* Address table */}
         <div className="flex items-start justify-between border-b desktop:px-6 laptop:px-4 desktop:py-4 laptop:py-2">
-          <h1 className="desktop:text-xl laptop:text-lg border-l-4 border-primary pl-4">
-            Adresa de livrare
-          </h1>
+          <h1 className="desktop:text-xl laptop:text-lg">Adresa de livrare</h1>
           <button
             onClick={() => setShowModal(2)}
             className="relative rounded-full group flex items-center justify-center desktop:w-32 laptop:w-28 py-1 bg-primary text-white overflow-hidden"

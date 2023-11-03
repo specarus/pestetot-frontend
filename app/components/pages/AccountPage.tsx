@@ -133,7 +133,7 @@ const AccountPage = () => {
               onClick={() => setShowDeletePopup(true)}
               className="border rounded-full py-1 desktop:px-8 laptop:px-6 hover:text-red-500 hover:border-red-500 transition-all duration-200"
             >
-              <p className="desktop:text-2xl laptop:text-xl">
+              <p className="desktop:text-2xl laptop:text-lg">
                 <RiDeleteBin7Line />
               </p>
             </button>

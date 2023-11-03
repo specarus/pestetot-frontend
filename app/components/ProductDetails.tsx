@@ -121,7 +121,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
       {/* Options */}
       <section
         className={`${
-          product.category === "lansete" && "desktop:pr-72 laptop:pr-[17rem]"
+          product.category === "lansete" && "desktop:pr-72 laptop:pr-52"
         } ${product.category === "mulinete" && "desktop:pr-20 laptop:pr-16"} ${
           product.category === "fire" && "desktop:pr-40 laptop:pr-52"
         } ${
@@ -135,9 +135,9 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
         >
           <li className="row-span-1 w-full bg-white h-auto border-b last-of-type:border-none">
             <div className="flex items-center justify-between desktop:p-2 laptop:p-[6px]">
-              <div className="desktop:w-28 laptop:w-20 grid place-content-center">
+              {/*<div className="desktop:w-28 laptop:w-20 grid place-content-center">
                 <p>Cod</p>
-              </div>
+        </div>*/}
               <div className="desktop:w-28 laptop:w-24 grid place-content-center">
                 <p>Pret</p>
               </div>
@@ -167,7 +167,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
                 </div>
               )}
               {product.options[0]?.noBearing && (
-                <div className="desktop:w-36 laptop:w-28 grid place-content-center">
+                <div className="desktop:w-36 laptop:w-24 grid place-content-center">
                   <p>Nr. rulmenti</p>
                 </div>
               )}
@@ -187,7 +187,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
                 </div>
               )}
               {product.options[0]?.material && (
-                <div className="desktop:w-36 laptop:w-32 grid place-content-center">
+                <div className="desktop:w-36 laptop:w-[7.5rem] grid place-content-center">
                   <p>Material</p>
                 </div>
               )}
@@ -197,7 +197,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
                 </div>
               )}
               {product.options[0]?.weight && (
-                <div className="desktop:w-28 laptop:w-20 grid place-content-center">
+                <div className="desktop:w-28 laptop:w-[4.5rem] grid place-content-center">
                   <p>Greutate</p>
                 </div>
               )}

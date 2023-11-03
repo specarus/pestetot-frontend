@@ -23,9 +23,9 @@ const CarligOptionCard: React.FC<FireOptionCardProps> = ({
 
   return (
     <div className="p-2 flex items-center justify-between">
-      <div className="desktop:w-28 laptop:w-24 grid place-content-center">
+      {/*<div className="desktop:w-28 laptop:w-24 grid place-content-center">
         <p>{option.code}</p>
-      </div>
+  </div>*/}
       <div className="desktop:w-28 laptop:w-24 grid place-content-center capitalize">
         <p>{option.price}</p>
       </div>

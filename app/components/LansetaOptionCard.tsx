@@ -23,9 +23,9 @@ const LansetaOptionCard: React.FC<LansetaOptionCardProps> = ({
 
   return (
     <div className="desktop:p-2 laptop:p-[6px] flex items-center justify-between">
-      <div className="desktop:w-28 laptop:w-24 grid place-content-center">
+      {/*<div className="desktop:w-28 laptop:w-24 grid place-content-center">
         <p>{option.code}</p>
-      </div>
+  </div>*/}
       <div className="desktop:w-28 laptop:w-24 grid place-content-center capitalize">
         <p>{option.price}</p>
       </div>
@@ -46,7 +46,7 @@ const LansetaOptionCard: React.FC<LansetaOptionCardProps> = ({
         </div>
       )}
       {option.weight && (
-        <div className="desktop:w-28 laptop:w-24 grid place-content-center">
+        <div className="desktop:w-28 laptop:w-[4.5rem] grid place-content-center">
           <p>{option.weight}</p>
         </div>
       )}

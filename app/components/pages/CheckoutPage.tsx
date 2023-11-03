@@ -96,46 +96,46 @@ const CheckoutPage = () => {
           <h2 className="absolute left-0 desktop:-top-8 laptop:-top-7 bg-primary text-white px-4 rounded-full">
             Adresa de livrare
           </h2>
-          <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
+          <div className="w-full desktop:h-9 laptop:h-8 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
             Romania
           </div>
           {user?.lastName && user?.firstName && (
-            <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
+            <div className="w-full desktop:h-9 laptop:h-8 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
               {user?.lastName} {user?.firstName}
             </div>
           )}
           {user?.address.county && (
-            <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
+            <div className="w-full desktop:h-9 laptop:h-8 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
               {user?.address.county}
             </div>
           )}
           {user?.address.city && (
-            <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
+            <div className="w-full desktop:h-9 laptop:h-8 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
               {user?.address.city}
             </div>
           )}
           {user?.address.street && user?.address.building && (
-            <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
+            <div className="w-full desktop:h-9 laptop:h-8 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
               {user?.address.street} {user?.address.building}
             </div>
           )}
           {user?.address.stair && (
-            <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
+            <div className="w-full desktop:h-9 laptop:h-8 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
               {"Scara " + user?.address.stair}
             </div>
           )}
           {user?.address.flat && (
-            <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
+            <div className="w-full desktop:h-9 laptop:h-8 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
               {"Aparament " + user?.address.flat}
             </div>
           )}
           {user?.address.postalCode && (
-            <div className="w-full h-9 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
+            <div className="w-full desktop:h-9 laptop:h-8 border-b px-4 flex items-center hover:bg-cream transition-all duration-200">
               {user?.address.postalCode}
             </div>
           )}
           {user?.phoneNumber && (
-            <div className="w-full h-9 px-4 flex items-center hover:bg-cream transition-all duration-200">
+            <div className="w-full desktop:h-9 laptop:h-8 px-4 flex items-center hover:bg-cream transition-all duration-200">
               {user?.phoneNumber}
             </div>
           )}
