@@ -22,7 +22,7 @@ const ProductCard: React.FC<ProductCardProps> = ({ product }) => {
 
   return (
     <div
-      className="col-span-1 h-auto border border-gray-100 flex flex-col overflow-hidden rounded-md shadow-sm"
+      className="col-span-1 h-auto border border-gray-100 flex flex-col overflow-hidden rounded-md shadow-md"
       onMouseOver={() => setHover(true)}
       onMouseOut={() => setHover(false)}
     >
