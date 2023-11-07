@@ -177,7 +177,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
                 </div>
               )}
               {product.options[0]?.drum && (
-                <div className="desktop:w-28 laptop:w-28 grid place-content-center">
+                <div className="desktop:w-28 laptop:w-24 grid place-content-center">
                   <p>Tambur</p>
                 </div>
               )}

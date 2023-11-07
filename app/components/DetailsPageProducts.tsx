@@ -53,13 +53,13 @@ const DetailsPageProducts: React.FC<FeaturedProductsProps> = ({
 
   return (
     <div className="w-full">
-      <section className="relative w-full desktop:h-40 laptop:h-36 desktop:mb-10 laptop:mb-8 select-none pointer-events-none border-t-2 border-b-2 border-primary">
+      <section className="relative w-full desktop:h-40 laptop:h-36 desktop:mb-10 laptop:mb-8  border-t-2 border-b-2 border-primary">
         <Image
-          width={1000}
-          height={500}
+          width={4000}
+          height={2000}
           src="/assets/images/fisherman.jpg"
           alt="Fishing"
-          className="w-full h-full object-cover"
+          className="w-full h-full object-cover select-none pointer-events-none"
         />
       </section>
 
