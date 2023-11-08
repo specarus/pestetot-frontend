@@ -126,7 +126,7 @@ const DetailsPage: React.FC<DetailsPageProps> = ({
           product.category === "fire" && "desktop:pr-40 laptop:pr-52"
         } ${
           product.category === "carlige" && "laptop:pr-96"
-        } desktop:mb-20 laptop:mb-14 desktop:pl-20 laptop:pl-16 w-full`}
+        } desktop:mb-20 laptop:mb-14 desktop:pl-20 laptop:pl-16 w-fit`}
       >
         <ul
           className={`w-full h-auto grid grid-rows-${

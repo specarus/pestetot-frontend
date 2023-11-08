@@ -4,6 +4,7 @@ import ProductCard from "@/app/components/ProductCard";
 
 import { Category } from "@/app/types/Category";
 import Image from "next/image";
+import Loading from "@/app/loading";
 
 const getBrand = async (brandSlug: string) => {
   const res = await axios.get(`/api/brands/single/${brandSlug}`);
@@ -27,6 +28,10 @@ const BrandProductsPage = async ({ params }: { params: { brand: string } }) => {
   const brand = await getBrand(params.brand);
   const products = await getProducts(brand.title);
   const categories = await getCategories();
+
+  if (!brand) {
+    return <Loading />;
+  }
 
   return (
     <div className="w-full h-full desktop:px-20 laptop:px-16 desktop:mb-24 laptop:mb-20">
