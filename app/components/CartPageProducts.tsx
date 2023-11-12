@@ -8,7 +8,7 @@ import { useContext, useState } from "react";
 
 import { CartContext } from "../contexts/CartContext";
 
-import CartPageProductCard from "./CartPageProductCard";
+import CartPageProductCard from "./cards/CartPageProductCard";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 
 const CartPageProducts = () => {

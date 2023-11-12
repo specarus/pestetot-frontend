@@ -2,12 +2,12 @@
 
 import { useContext } from "react";
 
-import { CartContext } from "../contexts/CartContext";
-import { SidebarContext } from "../contexts/SidebarContext";
+import { CartContext } from "../../contexts/CartContext";
+import { SidebarContext } from "../../contexts/SidebarContext";
 
 import { AiOutlinePlus } from "react-icons/ai";
-import { CarligOption } from "../types/CarligOption";
-import { Carlig } from "../types/Carlig";
+import { CarligOption } from "../../types/CarligOption";
+import { Carlig } from "../../types/Carlig";
 
 interface FireOptionCardProps {
   option: CarligOption;

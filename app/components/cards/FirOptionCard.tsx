@@ -2,12 +2,12 @@
 
 import { useContext } from "react";
 
-import { CartContext } from "../contexts/CartContext";
-import { SidebarContext } from "../contexts/SidebarContext";
+import { CartContext } from "../../contexts/CartContext";
+import { SidebarContext } from "../../contexts/SidebarContext";
 
 import { AiOutlinePlus } from "react-icons/ai";
-import { FirOption } from "../types/FirOption";
-import { Fir } from "../types/Fir";
+import { FirOption } from "../../types/FirOption";
+import { Fir } from "../../types/Fir";
 
 interface FirOptionCardProps {
   option: FirOption;

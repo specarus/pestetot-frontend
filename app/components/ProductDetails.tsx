@@ -2,10 +2,10 @@
 
 import Image from "next/image";
 
-import CarligOptionCard from "./CarligOptionCard";
-import FireOptionCard from "./FirOptionCard";
-import LansetaOptionCard from "./LansetaOptionCard";
-import MulinetaOptionCard from "./MulinetaOptionCard";
+import CarligOptionCard from "./cards/CarligOptionCard";
+import FireOptionCard from "./cards/FirOptionCard";
+import LansetaOptionCard from "./cards/LansetaOptionCard";
+import MulinetaOptionCard from "./cards/MulinetaOptionCard";
 
 import Title from "./layout/Title";
 import Loading from "../loading";

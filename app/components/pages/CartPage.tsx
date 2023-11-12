@@ -7,7 +7,7 @@ import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
 import { useState, useContext } from "react";
 
 import { CartContext } from "@/app/contexts/CartContext";
-import CartPageProductCard from "../CartPageProductCard";
+import CartPageProductCard from "../cards/CartPageProductCard";
 import Title from "../layout/Title";
 import { useSession } from "next-auth/react";
 import { UserContext } from "@/app/contexts/UserContext";

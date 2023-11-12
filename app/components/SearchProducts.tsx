@@ -1,6 +1,6 @@
 "use client";
 
-import SearchProductCard from "./SearchProductCard";
+import SearchProductCard from "./cards/SearchProductCard";
 
 interface SearchProductsProps {
   filteredProducts: any[];

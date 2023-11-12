@@ -13,7 +13,7 @@ import SidebarContextProvider from "./contexts/SidebarContext";
 import ModalContextProvider from "./contexts/ModalContext";
 import UserContextProvider from "./contexts/UserContext";
 
-import AuthProvider from "./components/SessionProvider";
+import AuthProvider from "./components/session/SessionProvider";
 
 const rubik = Rubik({
   subsets: ["latin"],

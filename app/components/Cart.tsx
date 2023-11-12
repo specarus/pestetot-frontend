@@ -6,10 +6,12 @@ import { useContext } from "react";
 
 import { CartContext } from "../contexts/CartContext";
 
-import CartProductCard from "./CartProductCard";
+import CartProductCard from "./cards/CartProductCard";
 
 import { SlBag } from "react-icons/sl";
 import { BsArrowLeft, BsArrowRight } from "react-icons/bs";
+import Button from "./Button";
+import SecondaryButton from "./SecondaryButton";
 
 interface CartProps {
   setShowCartModal: (status: boolean) => void;
@@ -29,20 +31,17 @@ const Cart: React.FC<CartProps> = ({
           <p className="desktop:text-base laptop:text-sm border-b desktop:pb-4 laptop:pb-2 desktop:mb-4 laptop:mb-2">
             Cosul tau este momentan gol.
           </p>
-          <button
-            onClick={() => {
+          <Button
+            type="button"
+            width="w-full"
+            onClickFunction={() => {
               setShowCartContent(false);
               setTimeout(() => setShowCartModal(false), 200);
             }}
-            className="rounded-full group relative flex justify-center w-full py-2 bg-primary text-white overflow-hidden"
+            Icon={BsArrowLeft}
           >
-            <p className="desktop:text-base laptop:text-sm group-hover:-translate-x-96 transition-all duration-300">
-              Continua navigarea
-            </p>
-            <p className="desktop:text-2xl laptop:text-xl absolute translate-x-96 group-hover:translate-x-0 transition-all duration-300">
-              <BsArrowLeft />
-            </p>
-          </button>
+            Continua navigarea
+          </Button>
           <Link
             href="/cos"
             onClick={() => {
@@ -95,33 +94,28 @@ const Cart: React.FC<CartProps> = ({
 
           {/* Buttons */}
           <section className="w-full flex items-center gap-4 desktop:px-10 laptop:px-8">
-            <button
-              onClick={() => {
+            <SecondaryButton
+              onClickFunction={() => {
                 setShowCartContent(false);
                 setTimeout(() => setShowCartModal(false), 200);
               }}
-              className="w-[60%] h-full grid place-content-center"
+              width="w-[60%]"
             >
-              <p className="desktop:text-base laptop:text-sm relative group">
-                Continua cumparaturile
-                <span className="w-0 h-[1px] absolute bottom-[1px] left-0 bg-black group-hover:w-full transition-all duration-200" />
-              </p>
-            </button>
-            <Link
+              Continua cumparaturile
+            </SecondaryButton>
+
+            <Button
+              onClickFunction={() => {
+                setShowCartContent(false);
+                setTimeout(() => setShowCartModal(false), 200);
+              }}
+              width="w-[40%]"
               href="/cos"
-              onClick={() => {
-                setShowCartContent(false);
-                setTimeout(() => setShowCartModal(false), 200);
-              }}
-              className="rounded-full group relative flex justify-center w-[40%] py-2 bg-primary text-white overflow-hidden"
+              Icon={BsArrowRight}
+              type="link"
             >
-              <p className="desktop:text-base laptop:text-sm group-hover:translate-x-96 transition-all duration-300">
-                Vezi cosul
-              </p>
-              <p className="desktop:text-2xl laptop:text-xl absolute -translate-x-96 group-hover:translate-x-0 transition-all duration-300">
-                <BsArrowRight />
-              </p>
-            </Link>
+              Vezi cosul
+            </Button>
           </section>
           {/* Buttons */}
         </div>

@@ -4,8 +4,8 @@ import { HomePageFiltersContext } from "../contexts/HomePageFiltersContext";
 
 import { useContext, useEffect, useState } from "react";
 
-import ProductCard from "./ProductCard";
-import BrandCard from "./BrandCard";
+import ProductCard from "./cards/ProductCard";
+import BrandCard from "./cards/BrandCard";
 
 import Image from "next/image";
 

@@ -2,12 +2,12 @@
 
 import { useContext } from "react";
 
-import { CartContext } from "../contexts/CartContext";
-import { SidebarContext } from "../contexts/SidebarContext";
+import { CartContext } from "../../contexts/CartContext";
+import { SidebarContext } from "../../contexts/SidebarContext";
 
 import { AiOutlinePlus } from "react-icons/ai";
-import { LansetaOption } from "../types/LansetaOption";
-import { Lanseta } from "../types/Lanseta";
+import { LansetaOption } from "../../types/LansetaOption";
+import { Lanseta } from "../../types/Lanseta";
 
 interface LansetaOptionCardProps {
   option: LansetaOption;

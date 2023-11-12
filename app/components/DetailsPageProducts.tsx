@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 
 import { BsChevronLeft, BsChevronRight } from "react-icons/bs";
 
-import ProductCard from "./ProductCard";
+import ProductCard from "./cards/ProductCard";
 import Image from "next/image";
 import Title from "./layout/Title";
 

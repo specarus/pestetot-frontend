@@ -4,7 +4,7 @@ import axios from "axios";
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard from "@/app/components/cards/ProductCard";
 
 const SearchPage = () => {
   const params = useParams();

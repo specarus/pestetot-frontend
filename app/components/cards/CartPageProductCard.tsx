@@ -6,7 +6,7 @@ import Image from "next/image";
 
 import { useContext, useEffect, useState } from "react";
 
-import { CartContext } from "../contexts/CartContext";
+import { CartContext } from "../../contexts/CartContext";
 
 import { IoMdClose } from "react-icons/io";
 import axios from "axios";

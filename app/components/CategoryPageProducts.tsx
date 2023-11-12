@@ -8,8 +8,8 @@ import { CategoryPageFiltersContext } from "../contexts/CategoryPageFiltersConte
 
 import { FaFilter } from "react-icons/fa";
 
-import ProductCard from "./ProductCard";
-import BrandCard from "./BrandCard";
+import ProductCard from "./cards/ProductCard";
+import BrandCard from "./cards/BrandCard";
 
 import { Brand } from "../types/Brand";
 

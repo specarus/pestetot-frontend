@@ -4,7 +4,7 @@ import { useState, useContext, useEffect } from "react";
 
 import Image from "next/image";
 
-import { CartContext } from "../contexts/CartContext";
+import { CartContext } from "../../contexts/CartContext";
 
 import { AiOutlinePlus, AiOutlineMinus } from "react-icons/ai";
 import { IoMdClose } from "react-icons/io";

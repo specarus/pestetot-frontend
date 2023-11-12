@@ -7,8 +7,8 @@ import { useState, useContext } from "react";
 
 import { SlBag } from "react-icons/sl";
 
-import { CartContext } from "../contexts/CartContext";
-import { SidebarContext } from "../contexts/SidebarContext";
+import { CartContext } from "../../contexts/CartContext";
+import { SidebarContext } from "../../contexts/SidebarContext";
 
 interface ProductCardProps {
   product: any;

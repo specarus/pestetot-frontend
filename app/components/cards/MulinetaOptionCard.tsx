@@ -2,12 +2,12 @@
 
 import { useContext } from "react";
 
-import { CartContext } from "../contexts/CartContext";
-import { SidebarContext } from "../contexts/SidebarContext";
+import { CartContext } from "../../contexts/CartContext";
+import { SidebarContext } from "../../contexts/SidebarContext";
 
 import { AiOutlinePlus } from "react-icons/ai";
-import { Mulineta } from "../types/Mulineta";
-import { MulinetaOption } from "../types/MulinetaOption";
+import { Mulineta } from "../../types/Mulineta";
+import { MulinetaOption } from "../../types/MulinetaOption";
 
 interface MulinetaOptionCardProps {
   option: MulinetaOption;

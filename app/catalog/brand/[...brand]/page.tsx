@@ -1,6 +1,6 @@
 import axios from "axios";
 
-import ProductCard from "@/app/components/ProductCard";
+import ProductCard from "@/app/components/cards/ProductCard";
 
 import { Category } from "@/app/types/Category";
 import Image from "next/image";
